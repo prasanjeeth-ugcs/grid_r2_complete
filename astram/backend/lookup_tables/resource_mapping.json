@@ -1,0 +1,416 @@
+{
+  "tree_fall": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Units",
+          "Area Barricading"
+        ]
+      },
+      {
+        "phase": "15-30 min",
+        "actions": [
+          "BBMP Tree Crew"
+        ]
+      },
+      {
+        "phase": "30-60 min",
+        "actions": [
+          "Barricades",
+          "Traffic Diversion"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "1.2h",
+      "range": "0.4h\u20134.0h"
+    },
+    "resources": {
+      "police": 2,
+      "barricades": 4,
+      "crew": "BBMP Tree Crew",
+      "tow": 0,
+      "diversion": true
+    }
+  },
+  "vehicle_breakdown": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Unit"
+        ]
+      },
+      {
+        "phase": "15-30 min",
+        "actions": [
+          "Tow Truck"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "0.5h",
+      "range": "0.5h\u20131.0h"
+    },
+    "resources": {
+      "police": 1,
+      "barricades": 0,
+      "crew": "None",
+      "tow": 1,
+      "diversion": false
+    }
+  },
+  "accident": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Units (2)",
+          "Ambulance"
+        ]
+      },
+      {
+        "phase": "15-30 min",
+        "actions": [
+          "Tow Truck",
+          "Barricades"
+        ]
+      },
+      {
+        "phase": "30-60 min",
+        "actions": [
+          "Investigation Team",
+          "Traffic Diversion"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "2.0h",
+      "range": "1.0h\u20133.0h"
+    },
+    "resources": {
+      "police": 2,
+      "barricades": 2,
+      "crew": "Accident Investigation",
+      "tow": 1,
+      "diversion": true
+    }
+  },
+  "water_logging": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Unit",
+          "Barricading"
+        ]
+      },
+      {
+        "phase": "15-60 min",
+        "actions": [
+          "BWSSB Drainage Team"
+        ]
+      },
+      {
+        "phase": "Ongoing",
+        "actions": [
+          "Traffic Diversion"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "3.0h",
+      "range": "2.0h\u20138.0h"
+    },
+    "resources": {
+      "police": 1,
+      "barricades": 2,
+      "crew": "BWSSB Drainage Team",
+      "tow": 0,
+      "diversion": true
+    }
+  },
+  "construction": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Unit",
+          "Barricading"
+        ]
+      },
+      {
+        "phase": "Ongoing",
+        "actions": [
+          "BBMP Oversight",
+          "Traffic Diversion"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "12.0h",
+      "range": "4.0h\u201348.0h"
+    },
+    "resources": {
+      "police": 1,
+      "barricades": 5,
+      "crew": "BBMP Oversight",
+      "tow": 0,
+      "diversion": true
+    }
+  },
+  "pot_holes": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Barricading"
+        ]
+      },
+      {
+        "phase": "15-60 min",
+        "actions": [
+          "BBMP Road Crew"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "2.0h",
+      "range": "1.0h\u20134.0h"
+    },
+    "resources": {
+      "police": 0,
+      "barricades": 2,
+      "crew": "BBMP Road Crew",
+      "tow": 0,
+      "diversion": false
+    }
+  },
+  "public_event": {
+    "timeline": [
+      {
+        "phase": "Pre-event",
+        "actions": [
+          "Police Units (4)",
+          "Barricading (8)"
+        ]
+      },
+      {
+        "phase": "During",
+        "actions": [
+          "Traffic Diversion",
+          "Crowd Control"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "6.0h",
+      "range": "4.0h\u201312.0h"
+    },
+    "resources": {
+      "police": 4,
+      "barricades": 8,
+      "crew": "Event Management",
+      "tow": 0,
+      "diversion": true
+    }
+  },
+  "procession": {
+    "timeline": [
+      {
+        "phase": "Pre-event",
+        "actions": [
+          "Police Units (3)",
+          "Route Barricading"
+        ]
+      },
+      {
+        "phase": "During",
+        "actions": [
+          "Escort",
+          "Traffic Diversion"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "3.0h",
+      "range": "2.0h\u20136.0h"
+    },
+    "resources": {
+      "police": 3,
+      "barricades": 5,
+      "crew": "None",
+      "tow": 0,
+      "diversion": true
+    }
+  },
+  "vip_movement": {
+    "timeline": [
+      {
+        "phase": "Pre-event",
+        "actions": [
+          "Police Units (5)",
+          "Route Clearance"
+        ]
+      },
+      {
+        "phase": "During",
+        "actions": [
+          "Escort",
+          "Full Diversion"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "2.0h",
+      "range": "1.0h\u20134.0h"
+    },
+    "resources": {
+      "police": 5,
+      "barricades": 8,
+      "crew": "None",
+      "tow": 0,
+      "diversion": true
+    }
+  },
+  "protest": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Units (6)",
+          "Barricading"
+        ]
+      },
+      {
+        "phase": "During",
+        "actions": [
+          "Crowd Control",
+          "Full Diversion"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "5.0h",
+      "range": "2.0h\u201312.0h"
+    },
+    "resources": {
+      "police": 6,
+      "barricades": 8,
+      "crew": "None",
+      "tow": 0,
+      "diversion": true
+    }
+  },
+  "road_conditions": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Unit",
+          "Barricading"
+        ]
+      },
+      {
+        "phase": "15-60 min",
+        "actions": [
+          "BBMP Road Crew"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "3.0h",
+      "range": "2.0h\u20138.0h"
+    },
+    "resources": {
+      "police": 1,
+      "barricades": 2,
+      "crew": "BBMP Road Crew",
+      "tow": 0,
+      "diversion": false
+    }
+  },
+  "congestion": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Unit"
+        ]
+      },
+      {
+        "phase": "15-30 min",
+        "actions": [
+          "Signal Override / Manual Control"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "1.5h",
+      "range": "1.0h\u20133.0h"
+    },
+    "resources": {
+      "police": 1,
+      "barricades": 0,
+      "crew": "None",
+      "tow": 0,
+      "diversion": false
+    }
+  },
+  "Debris": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Unit",
+          "Barricading"
+        ]
+      },
+      {
+        "phase": "15-30 min",
+        "actions": [
+          "BBMP Cleanup Crew"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "1.0h",
+      "range": "0.5h\u20132.0h"
+    },
+    "resources": {
+      "police": 1,
+      "barricades": 2,
+      "crew": "BBMP Cleanup Crew",
+      "tow": 0,
+      "diversion": false
+    }
+  },
+  "others": {
+    "timeline": [
+      {
+        "phase": "0-15 min",
+        "actions": [
+          "Police Unit"
+        ]
+      },
+      {
+        "phase": "15-30 min",
+        "actions": [
+          "Assessment & Dispatch"
+        ]
+      }
+    ],
+    "resolution": {
+      "median": "2.0h",
+      "range": "1.0h\u20134.0h"
+    },
+    "resources": {
+      "police": 1,
+      "barricades": 1,
+      "crew": "Standard",
+      "tow": 0,
+      "diversion": false
+    }
+  }
+}

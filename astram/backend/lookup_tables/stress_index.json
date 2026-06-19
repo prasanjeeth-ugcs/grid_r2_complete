@@ -1,0 +1,149 @@
+{
+  "Airport New South Road": {
+    "corridor": "Airport New South Road",
+    "stress_index": 45.3,
+    "frequency": 67,
+    "avg_impact": 22.7,
+    "closure_rate": 10.4
+  },
+  "Bannerghata Road": {
+    "corridor": "Bannerghata Road",
+    "stress_index": 36.0,
+    "frequency": 209,
+    "avg_impact": 18.2,
+    "closure_rate": 3.3
+  },
+  "Bellary Road 1": {
+    "corridor": "Bellary Road 1",
+    "stress_index": 79.1,
+    "frequency": 610,
+    "avg_impact": 35.3,
+    "closure_rate": 5.4
+  },
+  "Bellary Road 2": {
+    "corridor": "Bellary Road 2",
+    "stress_index": 61.8,
+    "frequency": 379,
+    "avg_impact": 34.3,
+    "closure_rate": 3.2
+  },
+  "CBD 1": {
+    "corridor": "CBD 1",
+    "stress_index": 46.2,
+    "frequency": 26,
+    "avg_impact": 23.9,
+    "closure_rate": 11.5
+  },
+  "CBD 2": {
+    "corridor": "CBD 2",
+    "stress_index": 40.5,
+    "frequency": 103,
+    "avg_impact": 22.2,
+    "closure_rate": 6.8
+  },
+  "Hennur Main Road": {
+    "corridor": "Hennur Main Road",
+    "stress_index": 37.7,
+    "frequency": 96,
+    "avg_impact": 20.8,
+    "closure_rate": 6.2
+  },
+  "Hosur Road": {
+    "corridor": "Hosur Road",
+    "stress_index": 63.3,
+    "frequency": 298,
+    "avg_impact": 35.7,
+    "closure_rate": 5.7
+  },
+  "IRR(Thanisandra road)": {
+    "corridor": "IRR(Thanisandra road)",
+    "stress_index": 35.5,
+    "frequency": 95,
+    "avg_impact": 18.7,
+    "closure_rate": 6.3
+  },
+  "Magadi Road": {
+    "corridor": "Magadi Road",
+    "stress_index": 48.7,
+    "frequency": 245,
+    "avg_impact": 27.2,
+    "closure_rate": 4.1
+  },
+  "Mysore Road": {
+    "corridor": "Mysore Road",
+    "stress_index": 98.9,
+    "frequency": 743,
+    "avg_impact": 38.2,
+    "closure_rate": 11.0
+  },
+  "ORR East 1": {
+    "corridor": "ORR East 1",
+    "stress_index": 55.7,
+    "frequency": 244,
+    "avg_impact": 28.6,
+    "closure_rate": 7.4
+  },
+  "ORR East 2": {
+    "corridor": "ORR East 2",
+    "stress_index": 38.2,
+    "frequency": 187,
+    "avg_impact": 24.2,
+    "closure_rate": 1.6
+  },
+  "ORR North 1": {
+    "corridor": "ORR North 1",
+    "stress_index": 58.2,
+    "frequency": 275,
+    "avg_impact": 28.4,
+    "closure_rate": 8.0
+  },
+  "ORR North 2": {
+    "corridor": "ORR North 2",
+    "stress_index": 47.6,
+    "frequency": 235,
+    "avg_impact": 26.4,
+    "closure_rate": 4.3
+  },
+  "ORR West 1": {
+    "corridor": "ORR West 1",
+    "stress_index": 34.2,
+    "frequency": 168,
+    "avg_impact": 19.1,
+    "closure_rate": 3.0
+  },
+  "Old Airport Road": {
+    "corridor": "Old Airport Road",
+    "stress_index": 40.9,
+    "frequency": 76,
+    "avg_impact": 22.2,
+    "closure_rate": 7.9
+  },
+  "Old Madras Road": {
+    "corridor": "Old Madras Road",
+    "stress_index": 49.0,
+    "frequency": 263,
+    "avg_impact": 25.8,
+    "closure_rate": 4.6
+  },
+  "Tumkur Road": {
+    "corridor": "Tumkur Road",
+    "stress_index": 64.1,
+    "frequency": 458,
+    "avg_impact": 33.3,
+    "closure_rate": 2.6
+  },
+  "Varthur Road": {
+    "corridor": "Varthur Road",
+    "stress_index": 48.5,
+    "frequency": 77,
+    "avg_impact": 23.3,
+    "closure_rate": 11.7
+  },
+  "West of Chord Road": {
+    "corridor": "West of Chord Road",
+    "stress_index": 49.2,
+    "frequency": 174,
+    "avg_impact": 27.6,
+    "closure_rate": 6.3
+  }
+}

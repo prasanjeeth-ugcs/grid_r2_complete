@@ -1,0 +1,1686 @@
+{
+  "Adugodi": {
+    "station": "Adugodi",
+    "event_count": 120,
+    "critical_count": 3,
+    "critical_rate": 2.5,
+    "avg_impact": 18.0,
+    "closure_rate": 9.2,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 54
+      },
+      {
+        "cause": "pot_holes",
+        "count": 31
+      },
+      {
+        "cause": "water_logging",
+        "count": 8
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 54
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 17
+      },
+      {
+        "corridor": "Bannerghata Road",
+        "count": 1
+      }
+    ]
+  },
+  "Ashok Nagar": {
+    "station": "Ashok Nagar",
+    "event_count": 171,
+    "critical_count": 13,
+    "critical_rate": 7.6,
+    "avg_impact": 31.1,
+    "closure_rate": 9.9,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 83
+      },
+      {
+        "cause": "others",
+        "count": 23
+      },
+      {
+        "cause": "water_logging",
+        "count": 20
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 75
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 34
+      },
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 12
+      }
+    ]
+  },
+  "Banashankari": {
+    "station": "Banashankari",
+    "event_count": 102,
+    "critical_count": 1,
+    "critical_rate": 1.0,
+    "avg_impact": 14.1,
+    "closure_rate": 2.9,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 73
+      },
+      {
+        "cause": "road_conditions",
+        "count": 9
+      },
+      {
+        "cause": "others",
+        "count": 6
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR West 1",
+        "count": 69
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      }
+    ]
+  },
+  "Banaswadi": {
+    "station": "Banaswadi",
+    "event_count": 245,
+    "critical_count": 2,
+    "critical_rate": 0.8,
+    "avg_impact": 23.2,
+    "closure_rate": 9.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 168
+      },
+      {
+        "cause": "construction",
+        "count": 21
+      },
+      {
+        "cause": "others",
+        "count": 13
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR North 1",
+        "count": 103
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 72
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 11
+      }
+    ]
+  },
+  "Basavanagudi": {
+    "station": "Basavanagudi",
+    "event_count": 47,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 14.7,
+    "closure_rate": 21.3,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 13
+      },
+      {
+        "cause": "tree_fall",
+        "count": 11
+      },
+      {
+        "cause": "pot_holes",
+        "count": 9
+      }
+    ],
+    "top_corridors": []
+  },
+  "Bellandur": {
+    "station": "Bellandur",
+    "event_count": 98,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 22.2,
+    "closure_rate": 9.2,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 64
+      },
+      {
+        "cause": "others",
+        "count": 7
+      },
+      {
+        "cause": "accident",
+        "count": 7
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR East 1",
+        "count": 65
+      }
+    ]
+  },
+  "Byatarayanapura": {
+    "station": "Byatarayanapura",
+    "event_count": 297,
+    "critical_count": 8,
+    "critical_rate": 2.7,
+    "avg_impact": 29.9,
+    "closure_rate": 4.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 238
+      },
+      {
+        "cause": "others",
+        "count": 35
+      },
+      {
+        "cause": "accident",
+        "count": 7
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 208
+      },
+      {
+        "corridor": "West of Chord Road",
+        "count": 36
+      },
+      {
+        "corridor": "ORR West 1",
+        "count": 28
+      }
+    ]
+  },
+  "Chamarajpet": {
+    "station": "Chamarajpet",
+    "event_count": 192,
+    "critical_count": 15,
+    "critical_rate": 7.8,
+    "avg_impact": 31.3,
+    "closure_rate": 13.5,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 119
+      },
+      {
+        "cause": "water_logging",
+        "count": 20
+      },
+      {
+        "cause": "others",
+        "count": 19
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 125
+      }
+    ]
+  },
+  "Chikkabanavara": {
+    "station": "Chikkabanavara",
+    "event_count": 118,
+    "critical_count": 2,
+    "critical_rate": 1.7,
+    "avg_impact": 18.4,
+    "closure_rate": 3.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 96
+      },
+      {
+        "cause": "others",
+        "count": 9
+      },
+      {
+        "cause": "accident",
+        "count": 4
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 64
+      }
+    ]
+  },
+  "Chikkajala": {
+    "station": "Chikkajala",
+    "event_count": 74,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 24.0,
+    "closure_rate": 1.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 39
+      },
+      {
+        "cause": "accident",
+        "count": 11
+      },
+      {
+        "cause": "construction",
+        "count": 8
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 49
+      },
+      {
+        "corridor": "Hennur Main Road",
+        "count": 4
+      }
+    ]
+  },
+  "City Market": {
+    "station": "City Market",
+    "event_count": 27,
+    "critical_count": 6,
+    "critical_rate": 22.2,
+    "avg_impact": 28.9,
+    "closure_rate": 22.2,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 16
+      },
+      {
+        "cause": "water_logging",
+        "count": 4
+      },
+      {
+        "cause": "construction",
+        "count": 3
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 14
+      }
+    ]
+  },
+  "Cubbon Park": {
+    "station": "Cubbon Park",
+    "event_count": 211,
+    "critical_count": 5,
+    "critical_rate": 2.4,
+    "avg_impact": 23.2,
+    "closure_rate": 7.6,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 112
+      },
+      {
+        "cause": "water_logging",
+        "count": 35
+      },
+      {
+        "cause": "others",
+        "count": 22
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "CBD 2",
+        "count": 79
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 44
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 31
+      }
+    ]
+  },
+  "Devanahalli Airport": {
+    "station": "Devanahalli Airport",
+    "event_count": 37,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 2.6,
+    "closure_rate": 2.7,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 28
+      },
+      {
+        "cause": "accident",
+        "count": 5
+      },
+      {
+        "cause": "others",
+        "count": 3
+      }
+    ],
+    "top_corridors": []
+  },
+  "Electronic City": {
+    "station": "Electronic City",
+    "event_count": 124,
+    "critical_count": 2,
+    "critical_rate": 1.6,
+    "avg_impact": 13.8,
+    "closure_rate": 4.8,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 86
+      },
+      {
+        "cause": "accident",
+        "count": 18
+      },
+      {
+        "cause": "pot_holes",
+        "count": 9
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 37
+      }
+    ]
+  },
+  "HAL Old Airport": {
+    "station": "HAL Old Airport",
+    "event_count": 361,
+    "critical_count": 2,
+    "critical_rate": 0.6,
+    "avg_impact": 23.3,
+    "closure_rate": 5.0,
+    "top_causes": [
+      {
+        "cause": "construction",
+        "count": 136
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 136
+      },
+      {
+        "cause": "pot_holes",
+        "count": 27
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR East 2",
+        "count": 139
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 118
+      },
+      {
+        "corridor": "Varthur Road",
+        "count": 40
+      }
+    ]
+  },
+  "HSR Layout": {
+    "station": "HSR Layout",
+    "event_count": 115,
+    "critical_count": 1,
+    "critical_rate": 0.9,
+    "avg_impact": 32.2,
+    "closure_rate": 8.7,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 80
+      },
+      {
+        "cause": "water_logging",
+        "count": 11
+      },
+      {
+        "cause": "accident",
+        "count": 7
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 74
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 39
+      }
+    ]
+  },
+  "Halasur": {
+    "station": "Halasur",
+    "event_count": 118,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 20.9,
+    "closure_rate": 8.5,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 75
+      },
+      {
+        "cause": "water_logging",
+        "count": 18
+      },
+      {
+        "cause": "pot_holes",
+        "count": 11
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Old Madras Road",
+        "count": 56
+      },
+      {
+        "corridor": "Old Airport Road",
+        "count": 12
+      }
+    ]
+  },
+  "Halasuru Gate": {
+    "station": "Halasuru Gate",
+    "event_count": 297,
+    "critical_count": 32,
+    "critical_rate": 10.8,
+    "avg_impact": 31.6,
+    "closure_rate": 15.2,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 234
+      },
+      {
+        "cause": "water_logging",
+        "count": 16
+      },
+      {
+        "cause": "others",
+        "count": 16
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 214
+      }
+    ]
+  },
+  "Hebbala": {
+    "station": "Hebbala",
+    "event_count": 135,
+    "critical_count": 8,
+    "critical_rate": 5.9,
+    "avg_impact": 31.5,
+    "closure_rate": 7.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 75
+      },
+      {
+        "cause": "accident",
+        "count": 17
+      },
+      {
+        "cause": "construction",
+        "count": 16
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 75
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 41
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 11
+      }
+    ]
+  },
+  "Hennuru": {
+    "station": "Hennuru",
+    "event_count": 276,
+    "critical_count": 1,
+    "critical_rate": 0.4,
+    "avg_impact": 20.8,
+    "closure_rate": 8.3,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 104
+      },
+      {
+        "cause": "construction",
+        "count": 65
+      },
+      {
+        "cause": "others",
+        "count": 32
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR North 1",
+        "count": 85
+      },
+      {
+        "corridor": "Hennur Main Road",
+        "count": 76
+      },
+      {
+        "corridor": "Airport New South Road",
+        "count": 39
+      }
+    ]
+  },
+  "High ground": {
+    "station": "High ground",
+    "event_count": 185,
+    "critical_count": 9,
+    "critical_rate": 4.9,
+    "avg_impact": 26.0,
+    "closure_rate": 10.8,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 127
+      },
+      {
+        "cause": "water_logging",
+        "count": 18
+      },
+      {
+        "cause": "tree_fall",
+        "count": 12
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 105
+      },
+      {
+        "corridor": "CBD 2",
+        "count": 1
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      }
+    ]
+  },
+  "Hulimavu": {
+    "station": "Hulimavu",
+    "event_count": 117,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 11.3,
+    "closure_rate": 0.9,
+    "top_causes": [
+      {
+        "cause": "pot_holes",
+        "count": 72
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 28
+      },
+      {
+        "cause": "others",
+        "count": 5
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 57
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 9
+      }
+    ]
+  },
+  "J.P. Nagar": {
+    "station": "J.P. Nagar",
+    "event_count": 124,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 18.0,
+    "closure_rate": 8.9,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 45
+      },
+      {
+        "cause": "water_logging",
+        "count": 21
+      },
+      {
+        "cause": "tree_fall",
+        "count": 17
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 52
+      },
+      {
+        "corridor": "ORR West 1",
+        "count": 40
+      }
+    ]
+  },
+  "Jalahalli": {
+    "station": "Jalahalli",
+    "event_count": 197,
+    "critical_count": 2,
+    "critical_rate": 1.0,
+    "avg_impact": 22.9,
+    "closure_rate": 7.1,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 146
+      },
+      {
+        "cause": "others",
+        "count": 20
+      },
+      {
+        "cause": "tree_fall",
+        "count": 10
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR North 2",
+        "count": 149
+      }
+    ]
+  },
+  "Jayanagara": {
+    "station": "Jayanagara",
+    "event_count": 178,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 10.2,
+    "closure_rate": 11.2,
+    "top_causes": [
+      {
+        "cause": "accident",
+        "count": 54
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 53
+      },
+      {
+        "cause": "tree_fall",
+        "count": 23
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 22
+      }
+    ]
+  },
+  "Jeevanbheemanagar": {
+    "station": "Jeevanbheemanagar",
+    "event_count": 127,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 22.6,
+    "closure_rate": 9.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 70
+      },
+      {
+        "cause": "pot_holes",
+        "count": 20
+      },
+      {
+        "cause": "tree_fall",
+        "count": 9
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Old Madras Road",
+        "count": 56
+      },
+      {
+        "corridor": "Old Airport Road",
+        "count": 38
+      },
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 17
+      }
+    ]
+  },
+  "Jnanabharathi": {
+    "station": "Jnanabharathi",
+    "event_count": 134,
+    "critical_count": 2,
+    "critical_rate": 1.5,
+    "avg_impact": 10.6,
+    "closure_rate": 7.5,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 94
+      },
+      {
+        "cause": "others",
+        "count": 20
+      },
+      {
+        "cause": "accident",
+        "count": 9
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 16
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ]
+  },
+  "K.G. Halli": {
+    "station": "K.G. Halli",
+    "event_count": 74,
+    "critical_count": 2,
+    "critical_rate": 2.7,
+    "avg_impact": 29.5,
+    "closure_rate": 27.0,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 33
+      },
+      {
+        "cause": "construction",
+        "count": 16
+      },
+      {
+        "cause": "others",
+        "count": 7
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR North 1",
+        "count": 28
+      },
+      {
+        "corridor": "Hennur Main Road",
+        "count": 13
+      },
+      {
+        "corridor": "Airport New South Road",
+        "count": 9
+      }
+    ]
+  },
+  "K.R. Pura": {
+    "station": "K.R. Pura",
+    "event_count": 228,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 12.0,
+    "closure_rate": 12.7,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 164
+      },
+      {
+        "cause": "others",
+        "count": 19
+      },
+      {
+        "cause": "water_logging",
+        "count": 16
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR East 2",
+        "count": 16
+      }
+    ]
+  },
+  "K.S. Layout": {
+    "station": "K.S. Layout",
+    "event_count": 89,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 12.6,
+    "closure_rate": 4.5,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 43
+      },
+      {
+        "cause": "pot_holes",
+        "count": 11
+      },
+      {
+        "cause": "road_conditions",
+        "count": 8
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR West 1",
+        "count": 31
+      }
+    ]
+  },
+  "Kamakshipalya": {
+    "station": "Kamakshipalya",
+    "event_count": 224,
+    "critical_count": 5,
+    "critical_rate": 2.2,
+    "avg_impact": 25.4,
+    "closure_rate": 7.6,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 149
+      },
+      {
+        "cause": "others",
+        "count": 24
+      },
+      {
+        "cause": "pot_holes",
+        "count": 10
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Magadi Road",
+        "count": 185
+      }
+    ]
+  },
+  "Kengeri": {
+    "station": "Kengeri",
+    "event_count": 44,
+    "critical_count": 9,
+    "critical_rate": 20.5,
+    "avg_impact": 36.4,
+    "closure_rate": 36.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 20
+      },
+      {
+        "cause": "others",
+        "count": 9
+      },
+      {
+        "cause": "congestion",
+        "count": 4
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 24
+      }
+    ]
+  },
+  "Kodigehalli": {
+    "station": "Kodigehalli",
+    "event_count": 272,
+    "critical_count": 11,
+    "critical_rate": 4.0,
+    "avg_impact": 29.2,
+    "closure_rate": 5.9,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 139
+      },
+      {
+        "cause": "congestion",
+        "count": 38
+      },
+      {
+        "cause": "construction",
+        "count": 24
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 130
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 72
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 35
+      }
+    ]
+  },
+  "Madiwala": {
+    "station": "Madiwala",
+    "event_count": 184,
+    "critical_count": 4,
+    "critical_rate": 2.2,
+    "avg_impact": 28.0,
+    "closure_rate": 4.3,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 81
+      },
+      {
+        "cause": "pot_holes",
+        "count": 75
+      },
+      {
+        "cause": "water_logging",
+        "count": 10
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 124
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 17
+      },
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 12
+      }
+    ]
+  },
+  "Magadi Road": {
+    "station": "Magadi Road",
+    "event_count": 142,
+    "critical_count": 1,
+    "critical_rate": 0.7,
+    "avg_impact": 22.6,
+    "closure_rate": 5.6,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 100
+      },
+      {
+        "cause": "others",
+        "count": 15
+      },
+      {
+        "cause": "pot_holes",
+        "count": 7
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Magadi Road",
+        "count": 58
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 28
+      },
+      {
+        "corridor": "West of Chord Road",
+        "count": 23
+      }
+    ]
+  },
+  "Mahadevapura": {
+    "station": "Mahadevapura",
+    "event_count": 120,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 13.1,
+    "closure_rate": 5.0,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 64
+      },
+      {
+        "cause": "water_logging",
+        "count": 17
+      },
+      {
+        "cause": "others",
+        "count": 11
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "ORR East 2",
+        "count": 21
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 18
+      }
+    ]
+  },
+  "Malleshwaram": {
+    "station": "Malleshwaram",
+    "event_count": 80,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 18.9,
+    "closure_rate": 10.0,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 41
+      },
+      {
+        "cause": "tree_fall",
+        "count": 13
+      },
+      {
+        "cause": "others",
+        "count": 6
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "West of Chord Road",
+        "count": 34
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ]
+  },
+  "Mico Layout": {
+    "station": "Mico Layout",
+    "event_count": 116,
+    "critical_count": 2,
+    "critical_rate": 1.7,
+    "avg_impact": 17.9,
+    "closure_rate": 6.9,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 69
+      },
+      {
+        "cause": "water_logging",
+        "count": 16
+      },
+      {
+        "cause": "construction",
+        "count": 9
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 69
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 5
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 3
+      }
+    ]
+  },
+  "No Police Station": {
+    "station": "No Police Station",
+    "event_count": 219,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 3.9,
+    "closure_rate": 7.8,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 132
+      },
+      {
+        "cause": "accident",
+        "count": 30
+      },
+      {
+        "cause": "others",
+        "count": 27
+      }
+    ],
+    "top_corridors": []
+  },
+  "Peenya": {
+    "station": "Peenya",
+    "event_count": 178,
+    "critical_count": 2,
+    "critical_rate": 1.1,
+    "avg_impact": 26.4,
+    "closure_rate": 3.9,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 137
+      },
+      {
+        "cause": "others",
+        "count": 17
+      },
+      {
+        "cause": "accident",
+        "count": 11
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 130
+      }
+    ]
+  },
+  "Pulikeshinagar(F.Town)": {
+    "station": "Pulikeshinagar(F.Town)",
+    "event_count": 74,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 17.5,
+    "closure_rate": 21.6,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 28
+      },
+      {
+        "cause": "pot_holes",
+        "count": 15
+      },
+      {
+        "cause": "tree_fall",
+        "count": 13
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Airport New South Road",
+        "count": 10
+      }
+    ]
+  },
+  "R.T. Nagar": {
+    "station": "R.T. Nagar",
+    "event_count": 127,
+    "critical_count": 3,
+    "critical_rate": 2.4,
+    "avg_impact": 24.3,
+    "closure_rate": 11.0,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 79
+      },
+      {
+        "cause": "others",
+        "count": 15
+      },
+      {
+        "cause": "water_logging",
+        "count": 12
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 69
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ]
+  },
+  "Rajajinagar": {
+    "station": "Rajajinagar",
+    "event_count": 103,
+    "critical_count": 1,
+    "critical_rate": 1.0,
+    "avg_impact": 14.0,
+    "closure_rate": 8.7,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 64
+      },
+      {
+        "cause": "others",
+        "count": 9
+      },
+      {
+        "cause": "tree_fall",
+        "count": 8
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "West of Chord Road",
+        "count": 37
+      }
+    ]
+  },
+  "Sadashivanagar": {
+    "station": "Sadashivanagar",
+    "event_count": 302,
+    "critical_count": 6,
+    "critical_rate": 2.0,
+    "avg_impact": 30.4,
+    "closure_rate": 7.3,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 216
+      },
+      {
+        "cause": "others",
+        "count": 26
+      },
+      {
+        "cause": "tree_fall",
+        "count": 22
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 215
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 21
+      }
+    ]
+  },
+  "Sheshadripuram": {
+    "station": "Sheshadripuram",
+    "event_count": 123,
+    "critical_count": 2,
+    "critical_rate": 1.6,
+    "avg_impact": 11.1,
+    "closure_rate": 15.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 90
+      },
+      {
+        "cause": "others",
+        "count": 12
+      },
+      {
+        "cause": "water_logging",
+        "count": 7
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 8
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ]
+  },
+  "Shivajinagar": {
+    "station": "Shivajinagar",
+    "event_count": 93,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 19.2,
+    "closure_rate": 8.6,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 48
+      },
+      {
+        "cause": "pot_holes",
+        "count": 22
+      },
+      {
+        "cause": "others",
+        "count": 11
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "CBD 1",
+        "count": 26
+      },
+      {
+        "corridor": "CBD 2",
+        "count": 23
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 23
+      }
+    ]
+  },
+  "Thalagattapura": {
+    "station": "Thalagattapura",
+    "event_count": 50,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 9.6,
+    "closure_rate": 14.0,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 21
+      },
+      {
+        "cause": "pot_holes",
+        "count": 9
+      },
+      {
+        "cause": "accident",
+        "count": 5
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 6
+      }
+    ]
+  },
+  "Upparpet": {
+    "station": "Upparpet",
+    "event_count": 63,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 9.7,
+    "closure_rate": 14.3,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 33
+      },
+      {
+        "cause": "others",
+        "count": 15
+      },
+      {
+        "cause": "pot_holes",
+        "count": 6
+      }
+    ],
+    "top_corridors": []
+  },
+  "V.V.Puram (C.Pet)": {
+    "station": "V.V.Puram (C.Pet)",
+    "event_count": 37,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 10.4,
+    "closure_rate": 8.1,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 23
+      },
+      {
+        "cause": "tree_fall",
+        "count": 3
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      }
+    ]
+  },
+  "Vijayanagara": {
+    "station": "Vijayanagara",
+    "event_count": 58,
+    "critical_count": 1,
+    "critical_rate": 1.7,
+    "avg_impact": 23.3,
+    "closure_rate": 8.6,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 28
+      },
+      {
+        "cause": "others",
+        "count": 10
+      },
+      {
+        "cause": "pot_holes",
+        "count": 8
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "West of Chord Road",
+        "count": 43
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 2
+      }
+    ]
+  },
+  "Whitefield": {
+    "station": "Whitefield",
+    "event_count": 181,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 8.0,
+    "closure_rate": 4.4,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 89
+      },
+      {
+        "cause": "pot_holes",
+        "count": 23
+      },
+      {
+        "cause": "congestion",
+        "count": 22
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Varthur Road",
+        "count": 37
+      }
+    ]
+  },
+  "Wilson Garden": {
+    "station": "Wilson Garden",
+    "event_count": 105,
+    "critical_count": 0,
+    "critical_rate": 0.0,
+    "avg_impact": 13.1,
+    "closure_rate": 17.1,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 70
+      },
+      {
+        "cause": "water_logging",
+        "count": 13
+      },
+      {
+        "cause": "others",
+        "count": 9
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 2
+      }
+    ]
+  },
+  "Yelahanka": {
+    "station": "Yelahanka",
+    "event_count": 377,
+    "critical_count": 9,
+    "critical_rate": 2.4,
+    "avg_impact": 28.5,
+    "closure_rate": 3.7,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 251
+      },
+      {
+        "cause": "accident",
+        "count": 32
+      },
+      {
+        "cause": "others",
+        "count": 25
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 284
+      },
+      {
+        "corridor": "Hennur Main Road",
+        "count": 3
+      }
+    ]
+  },
+  "Yeshwanthpura": {
+    "station": "Yeshwanthpura",
+    "event_count": 280,
+    "critical_count": 6,
+    "critical_rate": 2.1,
+    "avg_impact": 31.2,
+    "closure_rate": 3.6,
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 228
+      },
+      {
+        "cause": "others",
+        "count": 11
+      },
+      {
+        "cause": "tree_fall",
+        "count": 11
+      }
+    ],
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 239
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 14
+      },
+      {
+        "corridor": "West of Chord Road",
+        "count": 1
+      }
+    ]
+  }
+}

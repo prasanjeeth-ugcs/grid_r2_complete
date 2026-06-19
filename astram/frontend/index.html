@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTRAM AI — Bengaluru Traffic Operational Intelligence</title>
+    <meta name="description" content="AI-powered traffic incident management, impact prediction, and operational intelligence for Bengaluru">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" stroke="url(#grad1)" stroke-width="2.5" fill="none"/>
+                    <path d="M16 6 L16 26 M6 16 L26 16" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="16" cy="16" r="4" fill="url(#grad1)"/>
+                    <defs><linearGradient id="grad1" x1="0" y1="0" x2="32" y2="32">
+                        <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#8b5cf6"/>
+                    </linearGradient></defs>
+                </svg>
+            </div>
+            <div class="brand-text">
+                <span class="brand-name">ASTRAM</span>
+                <span class="brand-sub">Traffic Intelligence</span>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-page="overview" id="nav-overview">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span>Command Center</span>
+            </a>
+            <a href="#" class="nav-link" data-page="copilot" id="nav-copilot">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <span>Response Copilot</span>
+            </a>
+            <a href="#" class="nav-link" data-page="intelligence" id="nav-intelligence">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>Corridor Intelligence</span>
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="model-badge">
+                <span class="badge-dot"></span>
+                <span>CatBoost V1.0 Online</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- ═══ PAGE 1: COMMAND CENTER ═══ -->
+        <section id="page-overview" class="page active">
+            <div class="page-header">
+                <h1>Command Center</h1>
+                <p class="page-subtitle">City-wide Operational Overview &mdash; Bengaluru Traffic Intelligence</p>
+            </div>
+
+            <!-- Section 1: KPI Strip -->
+            <div class="stats-grid" id="overview-cards">
+                <div class="stat-card">
+                    <div class="stat-icon" style="--accent:#6366f1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="stat-total">—</span>
+                        <span class="stat-label">Total Incidents</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="--accent:#ef4444">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="stat-critical">—</span>
+                        <span class="stat-label">Critical Incidents</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="--accent:#f59e0b">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="stat-closures">—</span>
+                        <span class="stat-label">Road Closures</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="--accent:#22c55e">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="stat-avg-impact">—</span>
+                        <span class="stat-label">Avg Impact Score</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Corridor Stress Bar -->
+            <div class="overview-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Corridor Stress Index</h3>
+                        <span class="card-subtitle">Signature operational metric</span>
+                    </div>
+                    <div class="stress-bar-container" id="stress-bar-container"></div>
+                </div>
+
+                <!-- Section 4: Shift Briefing -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Shift Briefing</h3>
+                        <span class="card-subtitle">Current operational brief</span>
+                    </div>
+                    <div class="shift-panel" id="shift-panel"></div>
+                </div>
+            </div>
+
+            <!-- Section 3: Risk Window -->
+            <div class="card" style="margin-bottom: 16px;">
+                <div class="card-header">
+                    <h3>Operational Risk Window</h3>
+                    <span class="card-subtitle">168-slot heatmap (weekday &times; hour)</span>
+                </div>
+                <div class="risk-heatmap" id="risk-heatmap"></div>
+            </div>
+
+            <!-- Section 5 & 6: Feed + Map -->
+            <div class="overview-grid" style="grid-template-columns: 2fr 1fr;">
+                <div class="card map-card">
+                    <div class="card-header">
+                        <h3>Bengaluru Incident Map</h3>
+                    </div>
+                    <div id="overview-map" class="map-container"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Historical Feed</h3>
+                        <span class="card-subtitle">Click to analyze</span>
+                    </div>
+                    <div id="live-feed" class="incident-feed"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ PAGE 2: INCIDENT RESPONSE COPILOT ═══ -->
+        <section id="page-copilot" class="page">
+            <div class="page-header">
+                <h1>Incident Response Copilot</h1>
+                <p class="page-subtitle">Analyze incidents, estimate operational impact, and recommend actions</p>
+            </div>
+            <div class="simulator-layout">
+                <!-- Input Panel -->
+                <div class="card simulator-form">
+                    <div class="card-header"><h3>Incident Parameters</h3></div>
+                    <div class="form-group" style="padding-top:12px;">
+                        <label>Event Cause</label>
+                        <select id="sim-cause" class="input"></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Corridor</label>
+                        <select id="sim-corridor" class="input"></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Type</label>
+                        <select id="sim-veh" class="input"></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Hour of Day: <span id="sim-hour-label">05:30 AM</span></label>
+                        <input type="range" id="sim-hour" min="0" max="23" value="5" class="slider">
+                    </div>
+                    <div class="form-group">
+                        <label>Weekday</label>
+                        <select id="sim-weekday" class="input">
+                            <option value="0">Monday</option>
+                            <option value="1">Tuesday</option>
+                            <option value="2">Wednesday</option>
+                            <option value="3" selected>Thursday</option>
+                            <option value="4">Friday</option>
+                            <option value="5">Saturday</option>
+                            <option value="6">Sunday</option>
+                        </select>
+                    </div>
+                    <div class="form-group toggle-group">
+                        <label>Road Closure Required</label>
+                        <label class="toggle">
+                            <input type="checkbox" id="sim-closure" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <button class="btn btn-primary btn-lg" id="sim-analyze">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        Analyze Incident
+                    </button>
+
+                    <!-- Panel H: What-If Toggle -->
+                    <div class="whatif-panel">
+                        <h3>What-If Analysis</h3>
+                        <div class="form-group toggle-group" style="padding:0;">
+                            <label>Toggle Closure OFF</label>
+                            <label class="toggle">
+                                <input type="checkbox" id="sim-whatif-closure">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <p id="whatif-result" style="font-size:0.82rem;color:var(--text-tertiary);margin-top:8px;"></p>
+                    </div>
+                </div>
+
+                <!-- Results Panels -->
+                <div class="simulator-results" id="sim-results">
+                    <!-- Panel A: Impact Assessment -->
+                    <div class="card result-hero" id="sim-hero">
+                        <div class="hero-score">
+                            <div class="score-ring">
+                                <svg viewBox="0 0 160 160">
+                                    <circle class="ring-bg" cx="80" cy="80" r="70"/>
+                                    <circle class="ring-fg" cx="80" cy="80" r="70" id="sim-ring-circle"/>
+                                </svg>
+                                <div class="score-value" id="sim-score">&mdash;</div>
+                            </div>
+                            <div class="score-meta">
+                                <span class="impact-badge" id="sim-class">&mdash;</span>
+                                <div class="confidence-indicator">
+                                    <span class="conf-label">Confidence:</span>
+                                    <span class="conf-value" id="sim-confidence">&mdash;</span>
+                                    <span style="font-size:0.75rem;color:var(--text-muted)" id="sim-conf-count"></span>
+                                </div>
+                                <div class="similar-incidents" id="sim-hist-count">0 Similar Incidents</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel B: Resolution Estimate -->
+                    <div class="resolution-bar" id="resolution-bar">
+                        <div class="resolution-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <div class="resolution-text">
+                            <div class="resolution-label">Expected Resolution</div>
+                            <div>
+                                <span class="resolution-value" id="res-median">&mdash;</span>
+                                <span class="resolution-range" id="res-range"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <!-- Panel C: Resource Timeline -->
+                        <div class="card">
+                            <div class="card-header"><h3>Resource Timeline</h3></div>
+                            <div class="timeline-container" id="resource-timeline">
+                                <p class="placeholder-text">Run analysis to see resource timeline</p>
+                            </div>
+                        </div>
+
+                        <!-- Panel D: Historical Evidence -->
+                        <div class="card">
+                            <div class="card-header"><h3>Historical Evidence</h3></div>
+                            <div class="historical-grid" id="historical-evidence">
+                                <p class="placeholder-text">Run analysis to see historical evidence</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel E: Formula vs AI -->
+                    <div class="card">
+                        <div class="card-header"><h3>Formula vs AI Intelligence</h3></div>
+                        <div class="formula-ai-grid" id="formula-vs-ai">
+                            <div class="formula-section">
+                                <div class="section-title"><span class="icon-formula">&#9638;</span> Operational Baseline</div>
+                                <p class="placeholder-text" style="padding:10px 0;">Run analysis</p>
+                            </div>
+                            <div class="ai-section">
+                                <div class="section-title"><span class="icon-ai">&#10047;</span> Historical Pattern Intelligence</div>
+                                <p class="placeholder-text" style="padding:10px 0;">Run analysis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel F: Corridor DNA -->
+                    <div class="card" id="corridor-dna-panel" style="display:none;">
+                        <div class="card-header"><h3>Corridor DNA</h3><span class="card-subtitle" id="dna-corridor-name"></span></div>
+                        <div class="corridor-dna-grid" id="corridor-dna-grid"></div>
+                    </div>
+
+                    <!-- Panel G: Transit Chain Flag (conditional) -->
+                    <div class="card" id="transit-chain-panel" style="display:none;">
+                        <div class="transit-flag" id="transit-flag-content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ PAGE 3: CORRIDOR INTELLIGENCE ═══ -->
+        <section id="page-intelligence" class="page">
+            <div class="page-header">
+                <h1>Corridor Intelligence</h1>
+                <p class="page-subtitle">Operational planning, resource allocation, and pattern analysis</p>
+            </div>
+
+            <div class="overview-grid">
+                <!-- Q1: Resource Positioning -->
+                <div class="card full-width">
+                    <div class="card-header">
+                        <h3>Where should resources be pre-positioned?</h3>
+                        <span class="card-subtitle">Incident Density (Corridor &times; Hour)</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="intel-heatmap"></canvas>
+                    </div>
+                </div>
+
+                <!-- Q2: Closure Causes -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Which causes create closures?</h3>
+                        <span class="card-subtitle">Closure Rate by Cause</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="intel-closure"></canvas>
+                    </div>
+                </div>
+
+                <!-- Q3: Stress Index Leaderboard -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Which corridors create the most burden?</h3>
+                        <span class="card-subtitle">Stress Index Leaderboard</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="intel-stress"></canvas>
+                    </div>
+                </div>
+
+                <!-- Q4: Station Scatter -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Which stations are overloaded?</h3>
+                        <span class="card-subtitle">Station Load vs Avg Impact</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="intel-station"></canvas>
+                    </div>
+                </div>
+
+                <!-- Q5: Fleet Demand -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Fleet Demand Intelligence</h3>
+                        <span class="card-subtitle">Tow Trucks / Officers per day per corridor</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="intel-fleet"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

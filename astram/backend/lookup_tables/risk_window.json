@@ -1,0 +1,5709 @@
+[
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 0,
+    "event_count": 52,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.2,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 34
+      },
+      {
+        "cause": "procession",
+        "count": 4
+      },
+      {
+        "cause": "road_conditions",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 1,
+    "event_count": 43,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.7,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 3
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 26
+      },
+      {
+        "cause": "others",
+        "count": 6
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 2,
+    "event_count": 39,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 20.4,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 27
+      },
+      {
+        "cause": "others",
+        "count": 6
+      },
+      {
+        "cause": "congestion",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 3,
+    "event_count": 47,
+    "critical_rate": 4.3,
+    "critical_count": 2,
+    "avg_impact": 25.2,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 35
+      },
+      {
+        "cause": "others",
+        "count": 3
+      },
+      {
+        "cause": "procession",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 4,
+    "event_count": 34,
+    "critical_rate": 2.9,
+    "critical_count": 1,
+    "avg_impact": 23.8,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 4
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 24
+      },
+      {
+        "cause": "procession",
+        "count": 4
+      },
+      {
+        "cause": "others",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 5,
+    "event_count": 33,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.4,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 6
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "West of Chord Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 14
+      },
+      {
+        "cause": "procession",
+        "count": 7
+      },
+      {
+        "cause": "others",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 6,
+    "event_count": 34,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 20.3,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 25
+      },
+      {
+        "cause": "others",
+        "count": 5
+      },
+      {
+        "cause": "public_event",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 7,
+    "event_count": 35,
+    "critical_rate": 2.9,
+    "critical_count": 1,
+    "avg_impact": 21.4,
+    "top_corridors": [
+      {
+        "corridor": "Magadi Road",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 3
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 23
+      },
+      {
+        "cause": "pot_holes",
+        "count": 4
+      },
+      {
+        "cause": "water_logging",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 8,
+    "event_count": 25,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.0,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 2
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 15
+      },
+      {
+        "cause": "accident",
+        "count": 4
+      },
+      {
+        "cause": "others",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 9,
+    "event_count": 14,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 20.9,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 2
+      },
+      {
+        "corridor": "West of Chord Road",
+        "count": 2
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 8
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 10,
+    "event_count": 3,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.3,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 2
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 11,
+    "event_count": 7,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 24.0,
+    "top_corridors": [
+      {
+        "corridor": "Varthur Road",
+        "count": 1
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 5
+      },
+      {
+        "cause": "construction",
+        "count": 1
+      },
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 12,
+    "event_count": 6,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 30.2,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 3
+      },
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 3
+      },
+      {
+        "cause": "congestion",
+        "count": 1
+      },
+      {
+        "cause": "construction",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 13,
+    "event_count": 2,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 37.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "accident",
+        "count": 1
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 14,
+    "event_count": 3,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 17.3,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 2
+      },
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 15,
+    "event_count": 2,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 15.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 16,
+    "event_count": 1,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.0,
+    "top_corridors": [
+      {
+        "corridor": "Old Madras Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 17,
+    "event_count": 6,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.2,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 1
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 18,
+    "event_count": 29,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 25.4,
+    "top_corridors": [
+      {
+        "corridor": "Old Madras Road",
+        "count": 4
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 22
+      },
+      {
+        "cause": "others",
+        "count": 4
+      },
+      {
+        "cause": "tree_fall",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 19,
+    "event_count": 87,
+    "critical_rate": 3.4,
+    "critical_count": 3,
+    "avg_impact": 23.0,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 10
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 6
+      },
+      {
+        "corridor": "Varthur Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 61
+      },
+      {
+        "cause": "water_logging",
+        "count": 7
+      },
+      {
+        "cause": "others",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 20,
+    "event_count": 117,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.6,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 10
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 80
+      },
+      {
+        "cause": "water_logging",
+        "count": 9
+      },
+      {
+        "cause": "others",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 21,
+    "event_count": 157,
+    "critical_rate": 1.3,
+    "critical_count": 2,
+    "avg_impact": 18.9,
+    "top_corridors": [
+      {
+        "corridor": "ORR East 2",
+        "count": 16
+      },
+      {
+        "corridor": "ORR West 1",
+        "count": 9
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 9
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 82
+      },
+      {
+        "cause": "pot_holes",
+        "count": 31
+      },
+      {
+        "cause": "construction",
+        "count": 21
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 22,
+    "event_count": 70,
+    "critical_rate": 1.4,
+    "critical_count": 1,
+    "avg_impact": 22.3,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 42
+      },
+      {
+        "cause": "pot_holes",
+        "count": 9
+      },
+      {
+        "cause": "others",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 0,
+    "weekday_name": "Monday",
+    "hour": 23,
+    "event_count": 63,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.9,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 38
+      },
+      {
+        "cause": "construction",
+        "count": 7
+      },
+      {
+        "cause": "others",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 0,
+    "event_count": 53,
+    "critical_rate": 1.9,
+    "critical_count": 1,
+    "avg_impact": 18.8,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 7
+      },
+      {
+        "corridor": "Old Airport Road",
+        "count": 3
+      },
+      {
+        "corridor": "West of Chord Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 37
+      },
+      {
+        "cause": "pot_holes",
+        "count": 5
+      },
+      {
+        "cause": "accident",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 1,
+    "event_count": 59,
+    "critical_rate": 1.7,
+    "critical_count": 1,
+    "avg_impact": 18.3,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 44
+      },
+      {
+        "cause": "others",
+        "count": 5
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 2,
+    "event_count": 63,
+    "critical_rate": 1.6,
+    "critical_count": 1,
+    "avg_impact": 20.5,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 6
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 51
+      },
+      {
+        "cause": "others",
+        "count": 3
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 3,
+    "event_count": 56,
+    "critical_rate": 3.6,
+    "critical_count": 2,
+    "avg_impact": 20.8,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 4
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 39
+      },
+      {
+        "cause": "accident",
+        "count": 5
+      },
+      {
+        "cause": "public_event",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 4,
+    "event_count": 113,
+    "critical_rate": 3.5,
+    "critical_count": 4,
+    "avg_impact": 20.6,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 14
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 11
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 51
+      },
+      {
+        "cause": "water_logging",
+        "count": 22
+      },
+      {
+        "cause": "construction",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 5,
+    "event_count": 112,
+    "critical_rate": 2.7,
+    "critical_count": 3,
+    "avg_impact": 23.7,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 10
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 9
+      },
+      {
+        "corridor": "Bannerghata Road",
+        "count": 7
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 57
+      },
+      {
+        "cause": "water_logging",
+        "count": 21
+      },
+      {
+        "cause": "tree_fall",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 6,
+    "event_count": 97,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 19.6,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 65
+      },
+      {
+        "cause": "water_logging",
+        "count": 11
+      },
+      {
+        "cause": "others",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 7,
+    "event_count": 52,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.5,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 4
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 34
+      },
+      {
+        "cause": "others",
+        "count": 8
+      },
+      {
+        "cause": "procession",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 8,
+    "event_count": 45,
+    "critical_rate": 2.2,
+    "critical_count": 1,
+    "avg_impact": 17.8,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 3
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 29
+      },
+      {
+        "cause": "pot_holes",
+        "count": 7
+      },
+      {
+        "cause": "accident",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 9,
+    "event_count": 15,
+    "critical_rate": 6.7,
+    "critical_count": 1,
+    "avg_impact": 24.2,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 2
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 2
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 12
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      },
+      {
+        "cause": "procession",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 10,
+    "event_count": 6,
+    "critical_rate": 16.7,
+    "critical_count": 1,
+    "avg_impact": 31.8,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 2
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 5
+      },
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 11,
+    "event_count": 11,
+    "critical_rate": 9.1,
+    "critical_count": 1,
+    "avg_impact": 34.7,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 2
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 1
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 5
+      },
+      {
+        "cause": "construction",
+        "count": 3
+      },
+      {
+        "cause": "others",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 12,
+    "event_count": 2,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 18.5,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 13,
+    "event_count": 0,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 0.0,
+    "top_corridors": [],
+    "top_causes": []
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 14,
+    "event_count": 0,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 0.0,
+    "top_corridors": [],
+    "top_causes": []
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 15,
+    "event_count": 2,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 7.0,
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      },
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 16,
+    "event_count": 1,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 37.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 17,
+    "event_count": 7,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 15.4,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 2",
+        "count": 1
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 6
+      },
+      {
+        "cause": "construction",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 18,
+    "event_count": 37,
+    "critical_rate": 2.7,
+    "critical_count": 1,
+    "avg_impact": 22.2,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 7
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 5
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 31
+      },
+      {
+        "cause": "accident",
+        "count": 4
+      },
+      {
+        "cause": "construction",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 19,
+    "event_count": 76,
+    "critical_rate": 2.6,
+    "critical_count": 2,
+    "avg_impact": 26.2,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 10
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 9
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 8
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 48
+      },
+      {
+        "cause": "others",
+        "count": 15
+      },
+      {
+        "cause": "construction",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 20,
+    "event_count": 118,
+    "critical_rate": 1.7,
+    "critical_count": 2,
+    "avg_impact": 23.3,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 13
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 8
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 78
+      },
+      {
+        "cause": "construction",
+        "count": 17
+      },
+      {
+        "cause": "others",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 21,
+    "event_count": 123,
+    "critical_rate": 0.8,
+    "critical_count": 1,
+    "avg_impact": 21.7,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 13
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 11
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 10
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 64
+      },
+      {
+        "cause": "construction",
+        "count": 20
+      },
+      {
+        "cause": "pot_holes",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 22,
+    "event_count": 76,
+    "critical_rate": 2.6,
+    "critical_count": 2,
+    "avg_impact": 17.3,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 4
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 47
+      },
+      {
+        "cause": "pot_holes",
+        "count": 10
+      },
+      {
+        "cause": "water_logging",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 1,
+    "weekday_name": "Tuesday",
+    "hour": 23,
+    "event_count": 120,
+    "critical_rate": 2.5,
+    "critical_count": 3,
+    "avg_impact": 11.0,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 9
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 5
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "accident",
+        "count": 57
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 51
+      },
+      {
+        "cause": "others",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 0,
+    "event_count": 54,
+    "critical_rate": 3.7,
+    "critical_count": 2,
+    "avg_impact": 22.6,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 6
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 42
+      },
+      {
+        "cause": "others",
+        "count": 6
+      },
+      {
+        "cause": "tree_fall",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 1,
+    "event_count": 47,
+    "critical_rate": 4.3,
+    "critical_count": 2,
+    "avg_impact": 20.7,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 10
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 4
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 33
+      },
+      {
+        "cause": "others",
+        "count": 4
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 2,
+    "event_count": 41,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 23.4,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 26
+      },
+      {
+        "cause": "construction",
+        "count": 5
+      },
+      {
+        "cause": "pot_holes",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 3,
+    "event_count": 52,
+    "critical_rate": 1.9,
+    "critical_count": 1,
+    "avg_impact": 21.5,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 43
+      },
+      {
+        "cause": "others",
+        "count": 5
+      },
+      {
+        "cause": "water_logging",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 4,
+    "event_count": 81,
+    "critical_rate": 3.7,
+    "critical_count": 3,
+    "avg_impact": 25.7,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 13
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 51
+      },
+      {
+        "cause": "congestion",
+        "count": 10
+      },
+      {
+        "cause": "others",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 5,
+    "event_count": 87,
+    "critical_rate": 4.6,
+    "critical_count": 4,
+    "avg_impact": 24.4,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 56
+      },
+      {
+        "cause": "others",
+        "count": 9
+      },
+      {
+        "cause": "pot_holes",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 6,
+    "event_count": 87,
+    "critical_rate": 2.3,
+    "critical_count": 2,
+    "avg_impact": 22.0,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 11
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 51
+      },
+      {
+        "cause": "water_logging",
+        "count": 9
+      },
+      {
+        "cause": "others",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 7,
+    "event_count": 82,
+    "critical_rate": 3.7,
+    "critical_count": 3,
+    "avg_impact": 23.0,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 5
+      },
+      {
+        "corridor": "CBD 2",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 36
+      },
+      {
+        "cause": "water_logging",
+        "count": 19
+      },
+      {
+        "cause": "others",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 8,
+    "event_count": 43,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.3,
+    "top_corridors": [
+      {
+        "corridor": "Magadi Road",
+        "count": 4
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 29
+      },
+      {
+        "cause": "tree_fall",
+        "count": 9
+      },
+      {
+        "cause": "water_logging",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 9,
+    "event_count": 23,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 25.2,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 6
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 2
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 17
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      },
+      {
+        "cause": "pot_holes",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 10,
+    "event_count": 9,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 27.8,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 3
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 1
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 6
+      },
+      {
+        "cause": "public_event",
+        "count": 1
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 11,
+    "event_count": 9,
+    "critical_rate": 11.1,
+    "critical_count": 1,
+    "avg_impact": 23.1,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 1",
+        "count": 2
+      },
+      {
+        "corridor": "Varthur Road",
+        "count": 1
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "construction",
+        "count": 5
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 12,
+    "event_count": 9,
+    "critical_rate": 11.1,
+    "critical_count": 1,
+    "avg_impact": 20.2,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 3
+      },
+      {
+        "cause": "construction",
+        "count": 2
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 13,
+    "event_count": 4,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 16.5,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 2",
+        "count": 2
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 14,
+    "event_count": 3,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 14.7,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 2",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 15,
+    "event_count": 1,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 50.0,
+    "top_corridors": [],
+    "top_causes": [
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 16,
+    "event_count": 2,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 15.0,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "accident",
+        "count": 1
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 17,
+    "event_count": 2,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 0.0,
+    "top_corridors": [],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 18,
+    "event_count": 31,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.7,
+    "top_corridors": [
+      {
+        "corridor": "ORR East 1",
+        "count": 5
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 3
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 26
+      },
+      {
+        "cause": "others",
+        "count": 3
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 19,
+    "event_count": 95,
+    "critical_rate": 1.1,
+    "critical_count": 1,
+    "avg_impact": 23.5,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 9
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 7
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 70
+      },
+      {
+        "cause": "others",
+        "count": 10
+      },
+      {
+        "cause": "pot_holes",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 20,
+    "event_count": 112,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.6,
+    "top_corridors": [
+      {
+        "corridor": "ORR East 2",
+        "count": 11
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 10
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 9
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 77
+      },
+      {
+        "cause": "construction",
+        "count": 16
+      },
+      {
+        "cause": "others",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 21,
+    "event_count": 149,
+    "critical_rate": 1.3,
+    "critical_count": 2,
+    "avg_impact": 18.6,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 21
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 9
+      },
+      {
+        "corridor": "Bannerghata Road",
+        "count": 9
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 78
+      },
+      {
+        "cause": "construction",
+        "count": 13
+      },
+      {
+        "cause": "pot_holes",
+        "count": 13
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 22,
+    "event_count": 77,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 18.5,
+    "top_corridors": [
+      {
+        "corridor": "West of Chord Road",
+        "count": 6
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 5
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 46
+      },
+      {
+        "cause": "others",
+        "count": 8
+      },
+      {
+        "cause": "tree_fall",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 2,
+    "weekday_name": "Wednesday",
+    "hour": 23,
+    "event_count": 62,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 20.8,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 42
+      },
+      {
+        "cause": "others",
+        "count": 8
+      },
+      {
+        "cause": "construction",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 0,
+    "event_count": 59,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 19.8,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 7
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 4
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 38
+      },
+      {
+        "cause": "others",
+        "count": 10
+      },
+      {
+        "cause": "construction",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 1,
+    "event_count": 57,
+    "critical_rate": 1.8,
+    "critical_count": 1,
+    "avg_impact": 20.4,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 44
+      },
+      {
+        "cause": "others",
+        "count": 5
+      },
+      {
+        "cause": "water_logging",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 2,
+    "event_count": 56,
+    "critical_rate": 3.6,
+    "critical_count": 2,
+    "avg_impact": 23.4,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 6
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 39
+      },
+      {
+        "cause": "others",
+        "count": 5
+      },
+      {
+        "cause": "construction",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 3,
+    "event_count": 48,
+    "critical_rate": 2.1,
+    "critical_count": 1,
+    "avg_impact": 24.1,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 36
+      },
+      {
+        "cause": "others",
+        "count": 3
+      },
+      {
+        "cause": "congestion",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 4,
+    "event_count": 106,
+    "critical_rate": 1.9,
+    "critical_count": 2,
+    "avg_impact": 20.9,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 12
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 9
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 9
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 75
+      },
+      {
+        "cause": "congestion",
+        "count": 12
+      },
+      {
+        "cause": "construction",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 5,
+    "event_count": 123,
+    "critical_rate": 3.3,
+    "critical_count": 4,
+    "avg_impact": 25.4,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 61
+      },
+      {
+        "cause": "water_logging",
+        "count": 22
+      },
+      {
+        "cause": "tree_fall",
+        "count": 16
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 6,
+    "event_count": 164,
+    "critical_rate": 4.3,
+    "critical_count": 7,
+    "avg_impact": 25.2,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 16
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 9
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 8
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 69
+      },
+      {
+        "cause": "water_logging",
+        "count": 45
+      },
+      {
+        "cause": "tree_fall",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 7,
+    "event_count": 74,
+    "critical_rate": 4.1,
+    "critical_count": 3,
+    "avg_impact": 24.3,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 8
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 39
+      },
+      {
+        "cause": "water_logging",
+        "count": 14
+      },
+      {
+        "cause": "others",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 8,
+    "event_count": 51,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 29
+      },
+      {
+        "cause": "water_logging",
+        "count": 9
+      },
+      {
+        "cause": "tree_fall",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 9,
+    "event_count": 23,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.7,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 3
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 16
+      },
+      {
+        "cause": "water_logging",
+        "count": 4
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 10,
+    "event_count": 16,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 26.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 3
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 2
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 11
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 11,
+    "event_count": 12,
+    "critical_rate": 8.3,
+    "critical_count": 1,
+    "avg_impact": 28.2,
+    "top_corridors": [
+      {
+        "corridor": "ORR East 2",
+        "count": 3
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 5
+      },
+      {
+        "cause": "water_logging",
+        "count": 2
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 12,
+    "event_count": 14,
+    "critical_rate": 7.1,
+    "critical_count": 1,
+    "avg_impact": 29.0,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 3
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 2
+      },
+      {
+        "corridor": "Old Airport Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 5
+      },
+      {
+        "cause": "accident",
+        "count": 4
+      },
+      {
+        "cause": "construction",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 13,
+    "event_count": 7,
+    "critical_rate": 14.3,
+    "critical_count": 1,
+    "avg_impact": 37.1,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 2
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 3
+      },
+      {
+        "cause": "construction",
+        "count": 2
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 14,
+    "event_count": 0,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 0.0,
+    "top_corridors": [],
+    "top_causes": []
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 15,
+    "event_count": 4,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 2
+      },
+      {
+        "corridor": "ORR West 1",
+        "count": 1
+      },
+      {
+        "corridor": "Varthur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 2
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 16,
+    "event_count": 0,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 0.0,
+    "top_corridors": [],
+    "top_causes": []
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 17,
+    "event_count": 5,
+    "critical_rate": 40.0,
+    "critical_count": 2,
+    "avg_impact": 57.8,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 2
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 2
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 18,
+    "event_count": 37,
+    "critical_rate": 5.4,
+    "critical_count": 2,
+    "avg_impact": 29.5,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 7
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 4
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 20
+      },
+      {
+        "cause": "accident",
+        "count": 7
+      },
+      {
+        "cause": "others",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 19,
+    "event_count": 96,
+    "critical_rate": 2.1,
+    "critical_count": 2,
+    "avg_impact": 19.6,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 6
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 57
+      },
+      {
+        "cause": "others",
+        "count": 13
+      },
+      {
+        "cause": "construction",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 20,
+    "event_count": 96,
+    "critical_rate": 1.0,
+    "critical_count": 1,
+    "avg_impact": 24.5,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 13
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 10
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 9
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 53
+      },
+      {
+        "cause": "construction",
+        "count": 14
+      },
+      {
+        "cause": "others",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 21,
+    "event_count": 126,
+    "critical_rate": 2.4,
+    "critical_count": 3,
+    "avg_impact": 20.5,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 11
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 7
+      },
+      {
+        "corridor": "ORR West 1",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 68
+      },
+      {
+        "cause": "others",
+        "count": 10
+      },
+      {
+        "cause": "pot_holes",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 22,
+    "event_count": 103,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 16.1,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 10
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 55
+      },
+      {
+        "cause": "pot_holes",
+        "count": 22
+      },
+      {
+        "cause": "others",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "weekday": 3,
+    "weekday_name": "Thursday",
+    "hour": 23,
+    "event_count": 66,
+    "critical_rate": 7.6,
+    "critical_count": 5,
+    "avg_impact": 24.1,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 10
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 6
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 41
+      },
+      {
+        "cause": "others",
+        "count": 7
+      },
+      {
+        "cause": "pot_holes",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 0,
+    "event_count": 68,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 20.7,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 41
+      },
+      {
+        "cause": "others",
+        "count": 7
+      },
+      {
+        "cause": "construction",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 1,
+    "event_count": 58,
+    "critical_rate": 3.4,
+    "critical_count": 2,
+    "avg_impact": 24.3,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 10
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 39
+      },
+      {
+        "cause": "others",
+        "count": 8
+      },
+      {
+        "cause": "pot_holes",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 2,
+    "event_count": 39,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 24.8,
+    "top_corridors": [
+      {
+        "corridor": "Old Madras Road",
+        "count": 5
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 4
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 25
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      },
+      {
+        "cause": "water_logging",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 3,
+    "event_count": 49,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 16.4,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 7
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 40
+      },
+      {
+        "cause": "others",
+        "count": 4
+      },
+      {
+        "cause": "road_conditions",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 4,
+    "event_count": 65,
+    "critical_rate": 3.1,
+    "critical_count": 2,
+    "avg_impact": 23.3,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 11
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 49
+      },
+      {
+        "cause": "congestion",
+        "count": 5
+      },
+      {
+        "cause": "construction",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 5,
+    "event_count": 100,
+    "critical_rate": 1.0,
+    "critical_count": 1,
+    "avg_impact": 18.8,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 2",
+        "count": 8
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 68
+      },
+      {
+        "cause": "pot_holes",
+        "count": 8
+      },
+      {
+        "cause": "construction",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 6,
+    "event_count": 84,
+    "critical_rate": 3.6,
+    "critical_count": 3,
+    "avg_impact": 21.3,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 10
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 9
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 49
+      },
+      {
+        "cause": "water_logging",
+        "count": 13
+      },
+      {
+        "cause": "others",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 7,
+    "event_count": 88,
+    "critical_rate": 2.3,
+    "critical_count": 2,
+    "avg_impact": 21.6,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 10
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 7
+      },
+      {
+        "corridor": "Bannerghata Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 41
+      },
+      {
+        "cause": "water_logging",
+        "count": 19
+      },
+      {
+        "cause": "tree_fall",
+        "count": 14
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 8,
+    "event_count": 70,
+    "critical_rate": 1.4,
+    "critical_count": 1,
+    "avg_impact": 23.2,
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 10
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 8
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 35
+      },
+      {
+        "cause": "tree_fall",
+        "count": 13
+      },
+      {
+        "cause": "water_logging",
+        "count": 13
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 9,
+    "event_count": 38,
+    "critical_rate": 5.3,
+    "critical_count": 2,
+    "avg_impact": 27.2,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 9
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 8
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 16
+      },
+      {
+        "cause": "water_logging",
+        "count": 8
+      },
+      {
+        "cause": "tree_fall",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 10,
+    "event_count": 10,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 35.5,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 2",
+        "count": 2
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      },
+      {
+        "corridor": "Bannerghata Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "tree_fall",
+        "count": 4
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 3
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 11,
+    "event_count": 12,
+    "critical_rate": 8.3,
+    "critical_count": 1,
+    "avg_impact": 19.2,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      },
+      {
+        "corridor": "Bannerghata Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 4
+      },
+      {
+        "cause": "others",
+        "count": 3
+      },
+      {
+        "cause": "construction",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 12,
+    "event_count": 9,
+    "critical_rate": 11.1,
+    "critical_count": 1,
+    "avg_impact": 36.4,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      },
+      {
+        "corridor": "Old Airport Road",
+        "count": 1
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "tree_fall",
+        "count": 4
+      },
+      {
+        "cause": "construction",
+        "count": 2
+      },
+      {
+        "cause": "others",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 13,
+    "event_count": 4,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 28.5,
+    "top_corridors": [
+      {
+        "corridor": "Old Airport Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "accident",
+        "count": 2
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      },
+      {
+        "cause": "construction",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 14,
+    "event_count": 4,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 7.5,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 2
+      },
+      {
+        "cause": "others",
+        "count": 1
+      },
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 15,
+    "event_count": 0,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 0.0,
+    "top_corridors": [],
+    "top_causes": []
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 16,
+    "event_count": 1,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 7.0,
+    "top_corridors": [],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 17,
+    "event_count": 4,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.2,
+    "top_corridors": [
+      {
+        "corridor": "Old Madras Road",
+        "count": 1
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 3
+      },
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 18,
+    "event_count": 39,
+    "critical_rate": 5.1,
+    "critical_count": 2,
+    "avg_impact": 25.5,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 6
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 29
+      },
+      {
+        "cause": "accident",
+        "count": 4
+      },
+      {
+        "cause": "water_logging",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 19,
+    "event_count": 93,
+    "critical_rate": 3.2,
+    "critical_count": 3,
+    "avg_impact": 22.3,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 10
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 7
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 64
+      },
+      {
+        "cause": "construction",
+        "count": 8
+      },
+      {
+        "cause": "others",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 20,
+    "event_count": 112,
+    "critical_rate": 2.7,
+    "critical_count": 3,
+    "avg_impact": 21.2,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 11
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 10
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 70
+      },
+      {
+        "cause": "construction",
+        "count": 11
+      },
+      {
+        "cause": "others",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 21,
+    "event_count": 110,
+    "critical_rate": 1.8,
+    "critical_count": 2,
+    "avg_impact": 21.4,
+    "top_corridors": [
+      {
+        "corridor": "ORR East 2",
+        "count": 12
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 10
+      },
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 59
+      },
+      {
+        "cause": "pot_holes",
+        "count": 16
+      },
+      {
+        "cause": "construction",
+        "count": 13
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 22,
+    "event_count": 123,
+    "critical_rate": 1.6,
+    "critical_count": 2,
+    "avg_impact": 21.0,
+    "top_corridors": [
+      {
+        "corridor": "Bannerghata Road",
+        "count": 32
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 9
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "pot_holes",
+        "count": 51
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 42
+      },
+      {
+        "cause": "road_conditions",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 4,
+    "weekday_name": "Friday",
+    "hour": 23,
+    "event_count": 65,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 23.6,
+    "top_corridors": [
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 8
+      },
+      {
+        "corridor": "Bannerghata Road",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 32
+      },
+      {
+        "cause": "pot_holes",
+        "count": 14
+      },
+      {
+        "cause": "construction",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 0,
+    "event_count": 61,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 24.5,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "West of Chord Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 36
+      },
+      {
+        "cause": "construction",
+        "count": 8
+      },
+      {
+        "cause": "others",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 1,
+    "event_count": 62,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 15.0,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 6
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      },
+      {
+        "corridor": "IRR(Thanisandra road)",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 30
+      },
+      {
+        "cause": "pot_holes",
+        "count": 19
+      },
+      {
+        "cause": "others",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 2,
+    "event_count": 73,
+    "critical_rate": 5.5,
+    "critical_count": 4,
+    "avg_impact": 27.6,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 14
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 9
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 42
+      },
+      {
+        "cause": "pot_holes",
+        "count": 16
+      },
+      {
+        "cause": "others",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 3,
+    "event_count": 58,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 14.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 3
+      },
+      {
+        "corridor": "ORR West 1",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 27
+      },
+      {
+        "cause": "accident",
+        "count": 11
+      },
+      {
+        "cause": "pot_holes",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 4,
+    "event_count": 91,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 15.6,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 6
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 5
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 56
+      },
+      {
+        "cause": "pot_holes",
+        "count": 14
+      },
+      {
+        "cause": "accident",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 5,
+    "event_count": 122,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.4,
+    "top_corridors": [
+      {
+        "corridor": "Hosur Road",
+        "count": 28
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 9
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 8
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 66
+      },
+      {
+        "cause": "pot_holes",
+        "count": 33
+      },
+      {
+        "cause": "others",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 6,
+    "event_count": 117,
+    "critical_rate": 6.8,
+    "critical_count": 8,
+    "avg_impact": 23.2,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 16
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 6
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 55
+      },
+      {
+        "cause": "water_logging",
+        "count": 35
+      },
+      {
+        "cause": "tree_fall",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 7,
+    "event_count": 96,
+    "critical_rate": 1.0,
+    "critical_count": 1,
+    "avg_impact": 22.9,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 7
+      },
+      {
+        "corridor": "ORR West 1",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 35
+      },
+      {
+        "cause": "water_logging",
+        "count": 33
+      },
+      {
+        "cause": "tree_fall",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 8,
+    "event_count": 39,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 23.1,
+    "top_corridors": [
+      {
+        "corridor": "ORR East 1",
+        "count": 14
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 3
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 15
+      },
+      {
+        "cause": "pot_holes",
+        "count": 14
+      },
+      {
+        "cause": "water_logging",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 9,
+    "event_count": 20,
+    "critical_rate": 5.0,
+    "critical_count": 1,
+    "avg_impact": 17.4,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 3
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 2
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 14
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      },
+      {
+        "cause": "pot_holes",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 10,
+    "event_count": 8,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 13.4,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 6
+      },
+      {
+        "cause": "others",
+        "count": 1
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 11,
+    "event_count": 10,
+    "critical_rate": 10.0,
+    "critical_count": 1,
+    "avg_impact": 38.8,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 3
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 2
+      },
+      {
+        "corridor": "Varthur Road",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 4
+      },
+      {
+        "cause": "construction",
+        "count": 3
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 12,
+    "event_count": 13,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 23.4,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 1",
+        "count": 4
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 2
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 7
+      },
+      {
+        "cause": "construction",
+        "count": 3
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 13,
+    "event_count": 7,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 29.7,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 1
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 5
+      },
+      {
+        "cause": "others",
+        "count": 1
+      },
+      {
+        "cause": "construction",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 14,
+    "event_count": 1,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 30.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 15,
+    "event_count": 0,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 0.0,
+    "top_corridors": [],
+    "top_causes": []
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 16,
+    "event_count": 3,
+    "critical_rate": 33.3,
+    "critical_count": 1,
+    "avg_impact": 78.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "construction",
+        "count": 2
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 17,
+    "event_count": 5,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 35.2,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 2
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 1
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 4
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 18,
+    "event_count": 35,
+    "critical_rate": 8.6,
+    "critical_count": 3,
+    "avg_impact": 25.9,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 3
+      },
+      {
+        "corridor": "ORR East 2",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 20
+      },
+      {
+        "cause": "tree_fall",
+        "count": 5
+      },
+      {
+        "cause": "others",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 19,
+    "event_count": 77,
+    "critical_rate": 2.6,
+    "critical_count": 2,
+    "avg_impact": 22.6,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 13
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 9
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 49
+      },
+      {
+        "cause": "pot_holes",
+        "count": 9
+      },
+      {
+        "cause": "others",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 20,
+    "event_count": 80,
+    "critical_rate": 1.2,
+    "critical_count": 1,
+    "avg_impact": 19.8,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 10
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 9
+      },
+      {
+        "corridor": "ORR West 1",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 56
+      },
+      {
+        "cause": "construction",
+        "count": 7
+      },
+      {
+        "cause": "others",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 21,
+    "event_count": 99,
+    "critical_rate": 2.0,
+    "critical_count": 2,
+    "avg_impact": 20.1,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 9
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 7
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 59
+      },
+      {
+        "cause": "construction",
+        "count": 9
+      },
+      {
+        "cause": "others",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 22,
+    "event_count": 69,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.5,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 6
+      },
+      {
+        "corridor": "CBD 2",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 40
+      },
+      {
+        "cause": "pot_holes",
+        "count": 11
+      },
+      {
+        "cause": "others",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "weekday": 5,
+    "weekday_name": "Saturday",
+    "hour": 23,
+    "event_count": 76,
+    "critical_rate": 1.3,
+    "critical_count": 1,
+    "avg_impact": 20.5,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      },
+      {
+        "corridor": "West of Chord Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 50
+      },
+      {
+        "cause": "others",
+        "count": 8
+      },
+      {
+        "cause": "pot_holes",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 0,
+    "event_count": 71,
+    "critical_rate": 2.8,
+    "critical_count": 2,
+    "avg_impact": 23.4,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 13
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 44
+      },
+      {
+        "cause": "others",
+        "count": 7
+      },
+      {
+        "cause": "accident",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 1,
+    "event_count": 54,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 22.0,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 11
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 42
+      },
+      {
+        "cause": "accident",
+        "count": 3
+      },
+      {
+        "cause": "pot_holes",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 2,
+    "event_count": 76,
+    "critical_rate": 2.6,
+    "critical_count": 2,
+    "avg_impact": 20.4,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 9
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 57
+      },
+      {
+        "cause": "others",
+        "count": 9
+      },
+      {
+        "cause": "construction",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 3,
+    "event_count": 62,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 24.2,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 9
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 7
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 46
+      },
+      {
+        "cause": "others",
+        "count": 4
+      },
+      {
+        "cause": "pot_holes",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 4,
+    "event_count": 68,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.1,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 12
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 8
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 51
+      },
+      {
+        "cause": "others",
+        "count": 7
+      },
+      {
+        "cause": "pot_holes",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 5,
+    "event_count": 84,
+    "critical_rate": 3.6,
+    "critical_count": 3,
+    "avg_impact": 23.7,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 11
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 60
+      },
+      {
+        "cause": "others",
+        "count": 6
+      },
+      {
+        "cause": "pot_holes",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 6,
+    "event_count": 77,
+    "critical_rate": 3.9,
+    "critical_count": 3,
+    "avg_impact": 22.4,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 8
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      },
+      {
+        "corridor": "Magadi Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 54
+      },
+      {
+        "cause": "others",
+        "count": 10
+      },
+      {
+        "cause": "pot_holes",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 7,
+    "event_count": 52,
+    "critical_rate": 1.9,
+    "critical_count": 1,
+    "avg_impact": 22.1,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 2",
+        "count": 6
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 37
+      },
+      {
+        "cause": "others",
+        "count": 5
+      },
+      {
+        "cause": "water_logging",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 8,
+    "event_count": 54,
+    "critical_rate": 1.9,
+    "critical_count": 1,
+    "avg_impact": 18.1,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 40
+      },
+      {
+        "cause": "procession",
+        "count": 5
+      },
+      {
+        "cause": "others",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 9,
+    "event_count": 27,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 16.9,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "Old Madras Road",
+        "count": 2
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 23
+      },
+      {
+        "cause": "others",
+        "count": 2
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 10,
+    "event_count": 16,
+    "critical_rate": 6.2,
+    "critical_count": 1,
+    "avg_impact": 20.9,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 2",
+        "count": 2
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 2
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 2
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 7
+      },
+      {
+        "cause": "accident",
+        "count": 4
+      },
+      {
+        "cause": "public_event",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 11,
+    "event_count": 7,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 31.9,
+    "top_corridors": [
+      {
+        "corridor": "Varthur Road",
+        "count": 1
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      },
+      {
+        "corridor": "ORR East 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "construction",
+        "count": 3
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 3
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 12,
+    "event_count": 10,
+    "critical_rate": 10.0,
+    "critical_count": 1,
+    "avg_impact": 31.8,
+    "top_corridors": [
+      {
+        "corridor": "ORR East 1",
+        "count": 2
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 5
+      },
+      {
+        "cause": "construction",
+        "count": 3
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 13,
+    "event_count": 9,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 21.6,
+    "top_corridors": [
+      {
+        "corridor": "Old Airport Road",
+        "count": 6
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "public_event",
+        "count": 5
+      },
+      {
+        "cause": "others",
+        "count": 2
+      },
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 14,
+    "event_count": 2,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 25.0,
+    "top_corridors": [
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 15,
+    "event_count": 0,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 0.0,
+    "top_corridors": [],
+    "top_causes": []
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 16,
+    "event_count": 1,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 29.0,
+    "top_corridors": [
+      {
+        "corridor": "West of Chord Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 17,
+    "event_count": 5,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 30.8,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 2",
+        "count": 2
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 1
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 4
+      },
+      {
+        "cause": "accident",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 18,
+    "event_count": 20,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 24.1,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 3
+      },
+      {
+        "corridor": "ORR North 2",
+        "count": 1
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 16
+      },
+      {
+        "cause": "tree_fall",
+        "count": 1
+      },
+      {
+        "cause": "others",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 19,
+    "event_count": 54,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 23.0,
+    "top_corridors": [
+      {
+        "corridor": "ORR North 1",
+        "count": 5
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 42
+      },
+      {
+        "cause": "others",
+        "count": 6
+      },
+      {
+        "cause": "accident",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 20,
+    "event_count": 46,
+    "critical_rate": 4.3,
+    "critical_count": 2,
+    "avg_impact": 24.6,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 7
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 6
+      },
+      {
+        "corridor": "Hosur Road",
+        "count": 5
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 37
+      },
+      {
+        "cause": "others",
+        "count": 3
+      },
+      {
+        "cause": "road_conditions",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 21,
+    "event_count": 45,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 20.1,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 9
+      },
+      {
+        "corridor": "Bellary Road 1",
+        "count": 5
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 4
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 30
+      },
+      {
+        "cause": "others",
+        "count": 4
+      },
+      {
+        "cause": "procession",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 22,
+    "event_count": 46,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 18.0,
+    "top_corridors": [
+      {
+        "corridor": "Mysore Road",
+        "count": 6
+      },
+      {
+        "corridor": "ORR North 1",
+        "count": 4
+      },
+      {
+        "corridor": "Bellary Road 2",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 30
+      },
+      {
+        "cause": "pot_holes",
+        "count": 5
+      },
+      {
+        "cause": "congestion",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "weekday": 6,
+    "weekday_name": "Sunday",
+    "hour": 23,
+    "event_count": 43,
+    "critical_rate": 0.0,
+    "critical_count": 0,
+    "avg_impact": 17.6,
+    "top_corridors": [
+      {
+        "corridor": "Bellary Road 1",
+        "count": 4
+      },
+      {
+        "corridor": "Mysore Road",
+        "count": 4
+      },
+      {
+        "corridor": "Tumkur Road",
+        "count": 3
+      }
+    ],
+    "top_causes": [
+      {
+        "cause": "vehicle_breakdown",
+        "count": 20
+      },
+      {
+        "cause": "congestion",
+        "count": 6
+      },
+      {
+        "cause": "pot_holes",
+        "count": 5
+      }
+    ]
+  }
+]

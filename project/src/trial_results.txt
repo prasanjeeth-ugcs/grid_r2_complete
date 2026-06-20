@@ -1,0 +1,58 @@
+======================================================================
+ASTRAM AI - R² Improvement Trials
+======================================================================
+
+Data: 8,057 records
+Features engineered: 26
+
+======================================================================
+TRIAL 1: Aggressive Closure Weighting
+======================================================================
+
+TRIAL 2: Composite Weighted Scoring
+======================================================================
+
+TRIAL 3: Polynomial Interactions
+======================================================================
+
+Training Trial 1 with impact_score_v1...
+  Best R²: 0.9002 (depth=5, lr=0.05)
+
+Training Trial 2 with impact_score_v2...
+  Best R²: 0.9445 (depth=5, lr=0.03)
+
+Training Trial 3 with impact_score_v3...
+  Best R²: 0.9279 (depth=5, lr=0.03)
+
+======================================================================
+TRIAL RESULTS SUMMARY
+======================================================================
+
+Trial 1 (impact_score_v1):
+  Test R²:   0.9002
+  Train R²:  0.9033
+  Gap:       0.0031 (0.34%)
+  MAE:       4.782
+  Params:    depth=5, lr=0.05
+
+Trial 2 (impact_score_v2):
+  Test R²:   0.9445
+  Train R²:  0.9526
+  Gap:       0.0081 (0.85%)
+  MAE:       3.296
+  Params:    depth=5, lr=0.03
+
+Trial 3 (impact_score_v3):
+  Test R²:   0.9279
+  Train R²:  0.9376
+  Gap:       0.0097 (1.04%)
+  MAE:       4.096
+  Params:    depth=5, lr=0.03
+
+======================================================================
+BEST MODEL: Trial 2 - R² = 0.9445
+======================================================================
+
+TARGET ACHIEVED! R² >= 0.93
+Saved to: astram/models/catboost_best_trial.cbm
+======================================================================

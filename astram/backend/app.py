@@ -26,6 +26,9 @@ Endpoints:
   POST /api/realtime/incidents/generate - Generate new realistic incident
   GET  /api/realtime/traffic/{corridor} - Current traffic conditions
   GET  /api/realtime/system-pulse - Overall system metrics
+
+  DIVERSION (V2.0):
+  POST /api/diversion/plan - Generate alternate routes and barricade placement
 """
 
 import os
@@ -60,6 +63,7 @@ _corridor = None
 _forecast = None
 _weather = None
 _simulator = None
+_diversion = None
 _df = None
 
 
@@ -128,6 +132,14 @@ def get_simulator():
     return _simulator
 
 
+def get_diversion():
+    global _diversion
+    if _diversion is None:
+        from backend.diversion_engine import get_diversion_engine
+        _diversion = get_diversion_engine()
+    return _diversion
+
+
 def get_corridor():
     global _corridor
     if _corridor is None:
@@ -171,6 +183,12 @@ class SimilarRequest(BaseModel):
     cause: str
     corridor_tier: int = 0
     closure: bool = False
+
+
+class DiversionRequest(BaseModel):
+    corridor: str
+    closure_coords: dict
+    k_routes: int = 3
 
 
 # --- Static Files ---
@@ -558,6 +576,28 @@ async def api_system_pulse():
     simulator = get_simulator()
     pulse = simulator.get_system_pulse()
     return pulse
+
+
+@app.post("/api/diversion/plan")
+async def api_diversion_plan(req: DiversionRequest):
+    """
+    Generate diversion routes and barricade placement for a corridor closure.
+
+    Args:
+        req: DiversionRequest with corridor, closure_coords, and k_routes
+
+    Returns:
+        Diversion plan with alternate routes, barricade locations, and impact estimates
+    """
+    diversion_engine = get_diversion()
+
+    plan = diversion_engine.plan_diversion(
+        corridor=req.corridor,
+        closure_coords=req.closure_coords,
+        k_routes=req.k_routes
+    )
+
+    return plan
 
 
 # --- Startup ---

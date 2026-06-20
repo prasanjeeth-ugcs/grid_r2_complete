@@ -61,7 +61,7 @@ The system is **not** a forecasting tool — it does not predict future incident
 | Vehicle types | 10 |
 | Risk window slots | 168 (7 days × 24 hours) |
 | Incident Model R² | 0.9522 |
-| Forecast Model R² | 0.9721 |
+| Model Features | 36 (enhanced) |
 | API Endpoints | 32 |
 
 ---
@@ -104,11 +104,10 @@ The system searches for **similar historical incidents** and provides confidence
 │  Data Layer │          │  ML Model Layer  │        │  Real-Time Layer│
 └─────────────┘          └──────────────────┘        └─────────────────┘
         │                           │                           │
-        ├─ 8,173 Incidents          ├─ CatBoost Model 1         ├─ Weather API
-        ├─ 21 Corridors             │  (Impact: R²=0.95)        ├─ Incident Sim
-        ├─ 20 Planned Events        ├─ CatBoost Model 2         └─ System Pulse
-        └─ 62 Features              │  (Forecast: R²=0.97)
-                                    └─ Precomputed Lookups
+        ├─ 8,173 Incidents          ├─ CatBoost Model           ├─ Weather API
+        ├─ 21 Corridors             │  (36 features)            ├─ Incident Sim
+        ├─ Enhanced Features        │  (R²=0.95)                └─ System Pulse
+        └─ 76 Total Columns         └─ Precomputed Lookups
                 │                           │                           │
                 └───────────────┬───────────┴───────────────┬───────────┘
                                 │                           │
@@ -262,10 +261,10 @@ Planned Event Database
             │
             ▼
 ┌───────────────────────────┐
-│ Forecast Model (216KB)    │
+│ Impact Model (141KB)      │
 │ ─────────────────────     │
-│ Trained on 1,006 samples  │
-│ (1,000 synthetic)         │
+│ Trained on 8,057 samples  │
+│ (Method 6 - Best)         │
 │ R² = 0.9522               │
 └───────────────────────────┘
             │
@@ -897,13 +896,13 @@ Navigate to Page 3:
 | Parameter | Value |
 |-----------|-------|
 | Model type | CatBoostRegressor |
-| File | `models/catboost_best.cbm` (240 KB) |
-| Status | **Frozen** — no retraining |
-| Features | 26 numeric features |
+| File | `models/catboost_final_best.cbm` (141 KB) |
+| Status | **Production Ready** — Method 6 |
+| Features | 36 numeric features |
 | Target | `impact_score` (continuous, 0–100) |
 | R² Score | 0.9522 |
-| MAE | 3.404 |
-| Macro F1 (classification) | 0.8546 |
+| MAE | 3.241 |
+| Train-Test Gap | 0.39% (excellent) |
 
 ### Feature Importance (Training)
 

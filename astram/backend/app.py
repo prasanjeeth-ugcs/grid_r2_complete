@@ -1,5 +1,5 @@
 """
-ASTRAM AI — FastAPI Backend V1.0
+ASTRAM AI — FastAPI Backend V2.0
 =================================
 Bengaluru Traffic Operational Intelligence Platform
 
@@ -11,7 +11,14 @@ Endpoints:
   GET  /api/corridor/{name}  - Single corridor DNA
   POST /api/similar-incidents - Historical similarity search
   GET  /api/station-intelligence - All 54 stations
+  GET  /api/corridor-intelligence - Corridor intelligence charts
   GET  /api/metadata         - Available options for frontend
+
+  FORECASTING (V2.0):
+  GET  /api/forecast/upcoming - Get upcoming planned events with forecasts
+  GET  /api/forecast/event/{event_id} - Detailed forecast for specific event
+  GET  /api/forecast/briefing - Daily event briefing
+  GET  /api/forecast/high-risk-periods - High-risk time periods
 """
 
 import os
@@ -43,6 +50,7 @@ _model = None
 _historical = None
 _resource = None
 _corridor = None
+_forecast = None
 _df = None
 
 
@@ -85,6 +93,14 @@ def get_resource():
         from backend.resource_engine import recommend
         _resource = {"recommend": recommend}
     return _resource
+
+
+def get_forecast():
+    global _forecast
+    if _forecast is None:
+        from backend.forecast_engine import get_forecast_engine
+        _forecast = get_forecast_engine()
+    return _forecast
 
 
 def get_corridor():
@@ -421,6 +437,37 @@ async def api_corridor_intelligence():
         "station_scatter": station_list,
         "fleet_demand": fleet_demand[:15],
     }
+
+
+@app.get("/api/forecast/upcoming")
+async def api_forecast_upcoming(days: int = Query(7, ge=1, le=30)):
+    """Get forecasts for upcoming planned events."""
+    forecast_engine = get_forecast()
+    return forecast_engine.get_upcoming_events(days_ahead=days)
+
+
+@app.get("/api/forecast/event/{event_id}")
+async def api_forecast_event(event_id: int):
+    """Get detailed forecast for a specific planned event."""
+    forecast_engine = get_forecast()
+    forecast = forecast_engine.predict_event_impact(event_id)
+    if forecast is None:
+        return {"error": f"Event ID {event_id} not found"}
+    return forecast
+
+
+@app.get("/api/forecast/briefing")
+async def api_forecast_briefing(date: str = Query(..., description="Date in YYYY-MM-DD format")):
+    """Get daily briefing for planned events on a specific date."""
+    forecast_engine = get_forecast()
+    return forecast_engine.generate_event_briefing(date)
+
+
+@app.get("/api/forecast/high-risk-periods")
+async def api_high_risk_periods(corridor: Optional[str] = None):
+    """Identify high-risk time periods based on upcoming planned events."""
+    forecast_engine = get_forecast()
+    return forecast_engine.get_high_risk_periods(corridor=corridor)
 
 
 # --- Startup ---

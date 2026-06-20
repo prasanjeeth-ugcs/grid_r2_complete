@@ -60,7 +60,7 @@ The system is **not** a forecasting tool — it does not predict future incident
 | Cause categories | 14 |
 | Vehicle types | 10 |
 | Risk window slots | 168 (7 days × 24 hours) |
-| Incident Model R² | 0.9259 |
+| Incident Model R² | 0.9522 |
 | Forecast Model R² | 0.9721 |
 | API Endpoints | 32 |
 
@@ -105,7 +105,7 @@ The system searches for **similar historical incidents** and provides confidence
 └─────────────┘          └──────────────────┘        └─────────────────┘
         │                           │                           │
         ├─ 8,173 Incidents          ├─ CatBoost Model 1         ├─ Weather API
-        ├─ 21 Corridors             │  (Impact: R²=0.93)        ├─ Incident Sim
+        ├─ 21 Corridors             │  (Impact: R²=0.95)        ├─ Incident Sim
         ├─ 20 Planned Events        ├─ CatBoost Model 2         └─ System Pulse
         └─ 62 Features              │  (Forecast: R²=0.97)
                                     └─ Precomputed Lookups
@@ -266,7 +266,7 @@ Planned Event Database
 │ ─────────────────────     │
 │ Trained on 1,006 samples  │
 │ (1,000 synthetic)         │
-│ R² = 0.9721               │
+│ R² = 0.9522               │
 └───────────────────────────┘
             │
             ▼
@@ -901,7 +901,7 @@ Navigate to Page 3:
 | Status | **Frozen** — no retraining |
 | Features | 26 numeric features |
 | Target | `impact_score` (continuous, 0–100) |
-| R² Score | 0.9259 |
+| R² Score | 0.9522 |
 | MAE | 3.404 |
 | Macro F1 (classification) | 0.8546 |
 

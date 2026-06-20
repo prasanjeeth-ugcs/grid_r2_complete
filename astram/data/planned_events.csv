@@ -1,0 +1,21 @@
+event_id,event_name,event_type,date,start_time,end_time,corridor,location,latitude,longitude,expected_crowd,closure_required,tier_affected
+1,Diwali Festival Celebration,festival,2024-11-01,18:00:00,23:00:00,Mysore Road,Jayanagar 4th Block,12.9250,77.5937,50000,TRUE,1
+2,IPL Cricket Match,sports,2024-11-05,19:30:00,23:30:00,West of Chord Road,M Chinnaswamy Stadium,12.9789,77.5993,35000,FALSE,2
+3,Political Rally,rally,2024-11-10,10:00:00,16:00:00,Bellary Road 1,Town Hall,12.9800,77.5900,80000,TRUE,1
+4,Ganesh Chaturthi Procession,procession,2024-09-08,15:00:00,22:00:00,Magadi Road,Vijayanagar,12.9716,77.5396,40000,TRUE,2
+5,Independence Day Parade,public_event,2024-08-15,07:00:00,12:00:00,CBD 2,Cubbon Park,12.9762,77.5929,60000,TRUE,1
+6,Marathon Event,sports,2024-11-17,05:30:00,10:00:00,Hosur Road,Silk Board Junction,12.9178,77.6226,25000,TRUE,1
+7,New Year Celebration,festival,2024-12-31,20:00:00,02:00:00,Old Madras Road,Indiranagar,12.9716,77.6412,45000,FALSE,2
+8,Tech Summit,public_event,2024-11-20,09:00:00,18:00:00,ORR East 1,Whitefield,12.9698,77.7499,15000,FALSE,2
+9,Music Concert,public_event,2024-11-22,18:00:00,23:00:00,Bannerghata Road,JP Nagar,12.9072,77.5931,30000,FALSE,2
+10,Dasara Festival,festival,2024-10-12,16:00:00,22:00:00,Tumkur Road,Yeshwanthpur,13.0262,77.5442,55000,TRUE,1
+11,Republic Day Parade,public_event,2025-01-26,08:00:00,13:00:00,Bellary Road 2,Hebbal,13.0467,77.5971,50000,TRUE,1
+12,Holi Festival,festival,2025-03-14,10:00:00,18:00:00,Kanakapura Road,Girinagar,12.9400,77.5500,35000,FALSE,3
+13,Eid Celebration,festival,2024-04-11,06:00:00,12:00:00,Non-corridor,Shivajinagar,12.9813,77.6066,40000,FALSE,0
+14,International Yoga Day,public_event,2024-06-21,06:00:00,08:00:00,ORR North 1,Manyata Tech Park,13.0403,77.6186,20000,FALSE,2
+15,Car-Free Day,public_event,2024-11-25,08:00:00,20:00:00,Bellary Road 1,Sadashivanagar,13.0061,77.5794,0,TRUE,1
+16,Bengaluru Tech Summit Opening,public_event,2024-11-19,14:00:00,20:00:00,ORR North 2,BIEC,13.0524,77.5428,25000,FALSE,2
+17,Football Match,sports,2024-11-28,18:00:00,21:00:00,ORR West 1,Kanteerava Stadium,12.9786,77.5632,18000,FALSE,3
+18,Durga Puja Procession,procession,2024-10-10,17:00:00,21:00:00,Airport New South Road,Kalyan Nagar,13.0284,77.6400,30000,TRUE,3
+19,Christmas Mass,public_event,2024-12-25,19:00:00,22:00:00,Non-corridor,St. Mary's Basilica,12.9601,77.5941,15000,FALSE,0
+20,Auto Expo,public_event,2025-01-15,10:00:00,19:00:00,Hosur Road,Electronic City,12.8456,77.6603,35000,FALSE,1

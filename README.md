@@ -11,6 +11,7 @@
 
 ## Table of Contents
 
+- [Quick Start](#quick-start)
 - [Overview](#overview)
 - [The Three Questions](#the-three-questions)
 - [System Architecture](#system-architecture)
@@ -40,6 +41,38 @@
 - [Model Details](#model-details)
 - [Precomputed Lookup Tables](#precomputed-lookup-tables)
 - [Design Decisions](#design-decisions)
+
+---
+
+## Quick Start
+
+### Run ASTRAM AI in 3 Steps
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Start the backend server
+cd astram
+python -m uvicorn backend.app:app --host 0.0.0.0 --port 5000
+
+# 3. Open the web interface
+# Navigate to: http://localhost:5000
+```
+
+**First Time Setup**:
+- Python 3.8+ required
+- Takes ~30 seconds to load model (240KB)
+- All data is preloaded (no external APIs needed)
+
+**Demo Scenario**: Try predicting impact for:
+- Cause: Water Logging
+- Corridor: Mysore Road
+- Hour: 8 (morning rush)
+- Road Closure: Yes
+- Expected Result: Impact = 87.5 (Critical)
+
+For detailed demo walkthroughs, see [DEMO_SCENARIOS.md](DEMO_SCENARIOS.md:1)
 
 ---
 

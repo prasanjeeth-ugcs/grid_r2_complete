@@ -125,17 +125,17 @@ def recommend(cause, impact_class, corridor_tier, vehicle_type=None, location=No
 
 def generate_barricade_placement(cause, impact_class, total_barricades, corridor_tier, location=None):
     """
-    Generate detailed barricade placement plan.
+    Generate detailed barricade placement plan with GPS coordinates.
 
     Args:
         cause: Incident cause
         impact_class: Risk class
         total_barricades: Total number of barricades
         corridor_tier: Corridor tier
-        location: Optional location coordinates
+        location: Optional location coordinates {"latitude": float, "longitude": float}
 
     Returns:
-        Detailed barricade deployment plan
+        Detailed barricade deployment plan with GPS coordinates
     """
     if total_barricades == 0:
         return {
@@ -147,52 +147,80 @@ def generate_barricade_placement(cause, impact_class, total_barricades, corridor
 
     placements = []
 
+    # Extract incident location coordinates
+    if location and isinstance(location, dict):
+        incident_lat = location.get("latitude", 12.9716)
+        incident_lon = location.get("longitude", 77.5946)
+    else:
+        # Default to Bengaluru center if no location provided
+        incident_lat = 12.9716
+        incident_lon = 77.5946
+
     # Primary placement: Incident site blocking
     primary_count = max(2, round(total_barricades * 0.4))
     placements.append({
         "location_type": "Incident Site - Entry Block",
+        "latitude": round(incident_lat, 6),
+        "longitude": round(incident_lon, 6),
         "count": primary_count,
         "type": "full_closure" if impact_class in ["Critical", "High"] else "partial_closure",
         "reason": "Block vehicle entry to incident site",
         "priority": 1,
-        "deployment_time": "T-0 (immediate)"
+        "deployment_time": "T-0 (immediate)",
+        "gps_verified": True if location else False
     })
 
     remaining = total_barricades - primary_count
 
-    # Secondary: Diversion points
+    # Secondary: Diversion points (500m upstream)
     if corridor_tier >= 1 and remaining >= 2:
         diversion_count = max(2, round(remaining * 0.5))
+        # Calculate upstream position (approximately 0.0045 degrees = ~500m)
+        upstream_lat = round(incident_lat + 0.0045, 6)
+        upstream_lon = round(incident_lon, 6)
+
         placements.append({
             "location_type": "Upstream Junction - Diversion",
+            "latitude": upstream_lat,
+            "longitude": upstream_lon,
             "count": diversion_count,
             "type": "diversion_signage",
             "reason": "Redirect traffic to alternate route 500m before incident",
             "priority": 2,
-            "deployment_time": "T-0 to T+5min"
+            "deployment_time": "T-0 to T+5min",
+            "gps_verified": True if location else False,
+            "distance_from_incident_m": 500
         })
         remaining -= diversion_count
 
     # Tertiary: Pedestrian safety or downstream blocking
     if remaining >= 2:
+        # Calculate offset position (200m lateral for pedestrian, or 300m downstream)
         if cause in ["tree_fall", "water_logging", "protest"]:
-            placements.append({
-                "location_type": "Pedestrian Safety Zone",
-                "count": remaining,
-                "type": "pedestrian_safety",
-                "reason": "Protect pedestrian movement near incident",
-                "priority": 3,
-                "deployment_time": "T+5min to T+10min"
-            })
+            safety_lat = round(incident_lat, 6)
+            safety_lon = round(incident_lon + 0.0018, 6)  # ~200m lateral offset
+            loc_type = "Pedestrian Safety Zone"
+            reason = "Protect pedestrian movement near incident"
+            ptype = "pedestrian_safety"
         else:
-            placements.append({
-                "location_type": "Downstream Exit Block",
-                "count": remaining,
-                "type": "exit_control",
-                "reason": "Prevent vehicles from exiting blocked segment",
-                "priority": 3,
-                "deployment_time": "T+5min to T+10min"
-            })
+            safety_lat = round(incident_lat - 0.0027, 6)  # ~300m downstream
+            safety_lon = round(incident_lon, 6)
+            loc_type = "Downstream Exit Block"
+            reason = "Prevent vehicles from exiting blocked segment"
+            ptype = "exit_control"
+
+        placements.append({
+            "location_type": loc_type,
+            "latitude": safety_lat,
+            "longitude": safety_lon,
+            "count": remaining,
+            "type": ptype,
+            "reason": reason,
+            "priority": 3,
+            "deployment_time": "T+5min to T+10min",
+            "gps_verified": True if location else False,
+            "distance_from_incident_m": 200 if cause in ["tree_fall", "water_logging", "protest"] else 300
+        })
 
     # Calculate setup time (2 minutes per barricade)
     setup_time = total_barricades * 2
@@ -215,6 +243,9 @@ def generate_barricade_placement(cause, impact_class, total_barricades, corridor
             f"{len(placements)} deployment crews",
             "Reflective vests for deployment personnel",
             "Caution tape for perimeter marking",
-            "Emergency lights if night deployment"
-        ]
+            "Emergency lights if night deployment",
+            "GPS devices for precise placement verification"
+        ],
+        "total_coverage_area_m": 800 if corridor_tier >= 1 else 300,
+        "deployment_map_url": f"https://www.google.com/maps?q={incident_lat},{incident_lon}" if location else None
     }

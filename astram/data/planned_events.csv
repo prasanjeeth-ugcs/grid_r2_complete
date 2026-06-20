@@ -19,3 +19,38 @@ event_id,event_name,event_type,date,start_time,end_time,corridor,location,latitu
 18,Durga Puja Procession,procession,2024-10-10,17:00:00,21:00:00,Airport New South Road,Kalyan Nagar,13.0284,77.6400,30000,TRUE,3
 19,Christmas Mass,public_event,2024-12-25,19:00:00,22:00:00,Non-corridor,St. Mary's Basilica,12.9601,77.5941,15000,FALSE,0
 20,Auto Expo,public_event,2025-01-15,10:00:00,19:00:00,Hosur Road,Electronic City,12.8456,77.6603,35000,FALSE,1
+21,Ugadi Festival,festival,2025-03-30,08:00:00,14:00:00,Mysore Road,Nandini Layout,12.9750,77.5150,42000,FALSE,1
+22,Karaga Festival,procession,2025-04-08,22:00:00,05:00:00,CBD 1,Dharmaraya Temple,12.9640,77.5730,38000,TRUE,1
+23,Book Fair,public_event,2024-12-08,10:00:00,20:00:00,ORR North 1,Palace Grounds,13.0100,77.5600,22000,FALSE,2
+24,Bengaluru Marathon,sports,2024-11-24,06:00:00,12:00:00,Hosur Road,Cubbon Park,12.9762,77.5929,50000,TRUE,1
+25,Food Festival,public_event,2024-12-15,11:00:00,22:00:00,Bannerghata Road,Forum Mall,12.9265,77.6101,28000,FALSE,2
+26,Kannada Rajyotsava,public_event,2024-11-01,09:00:00,18:00:00,Tumkur Road,Malleshwaram,13.0017,77.5703,45000,TRUE,1
+27,VIP Movement - PM Visit,rally,2024-12-20,14:00:00,18:00:00,Airport Road,Palace Grounds,13.0100,77.5600,0,TRUE,1
+28,College Fest,public_event,2024-10-25,16:00:00,23:00:00,ORR East 1,Christ University,12.9344,77.6057,18000,FALSE,2
+29,Trade Fair,public_event,2025-01-28,10:00:00,19:00:00,Tumkur Road,Trade Center,13.0262,77.5442,32000,FALSE,1
+30,Midnight Bike Rally,sports,2024-12-31,23:00:00,03:00:00,ORR South 2,Silk Board,12.9178,77.6226,12000,TRUE,2
+31,Flower Show,public_event,2024-08-17,09:00:00,18:00:00,Mysore Road,Lalbagh,12.9507,77.5848,38000,FALSE,1
+32,Street Theatre Festival,public_event,2024-11-30,17:00:00,22:00:00,MG Road,Brigade Road,12.9716,77.6216,25000,FALSE,1
+33,Temple Fair - Karaga,festival,2025-04-15,06:00:00,14:00:00,Non-corridor,Tigeramma Temple,12.9900,77.5800,35000,FALSE,0
+34,Startup Expo,public_event,2024-11-12,10:00:00,19:00:00,ORR East 1,Manyata Tech Park,13.0403,77.6186,20000,FALSE,2
+35,Election Rally,rally,2024-04-18,15:00:00,21:00:00,Bellary Road 1,Freedom Park,12.9800,77.5900,65000,TRUE,1
+36,Mahashivratri Procession,procession,2025-02-26,18:00:00,02:00:00,Magadi Road,Basavanagudi,12.9428,77.5742,42000,TRUE,2
+37,Kite Festival,festival,2025-01-14,14:00:00,18:00:00,Non-corridor,Yelahanka,13.1007,77.5963,15000,FALSE,0
+38,Art Exhibition,public_event,2024-12-05,11:00:00,20:00:00,CBD 2,Venkatappa Art Gallery,12.9762,77.5929,12000,FALSE,1
+39,Car Rally,sports,2024-11-16,07:00:00,15:00:00,Kanakapura Road,Nice Road,12.8500,77.5000,8000,TRUE,3
+40,Fashion Week,public_event,2024-10-18,18:00:00,23:00:00,MG Road,UB City,12.9716,77.5946,22000,FALSE,1
+41,Religious Procession,procession,2024-09-15,16:00:00,21:00:00,Old Madras Road,Ulsoor,12.9814,77.6180,28000,TRUE,2
+42,Educational Expo,public_event,2025-01-10,10:00:00,18:00:00,Hosur Road,Koramangala,12.9279,77.6271,18000,FALSE,1
+43,Blood Donation Camp,public_event,2024-11-08,09:00:00,17:00:00,ORR North 1,Hebbal,13.0467,77.5971,5000,FALSE,2
+44,Cycle Day Rally,sports,2024-11-03,06:00:00,10:00:00,Bellary Road 1,Sadashivanagar,13.0061,77.5794,15000,TRUE,1
+45,Comedy Festival,public_event,2024-12-22,19:00:00,23:00:00,Bannerghata Road,Koramangala,12.9279,77.6271,12000,FALSE,2
+46,Environmental Rally,rally,2024-06-05,08:00:00,13:00:00,Mysore Road,Jayanagar,12.9250,77.5937,20000,FALSE,1
+47,Gaming Convention,public_event,2024-11-29,11:00:00,21:00:00,ORR East 1,Whitefield,12.9698,77.7499,16000,FALSE,2
+48,Dahi Handi,festival,2024-08-27,16:00:00,22:00:00,Non-corridor,Shivajinagar,12.9813,77.6066,30000,FALSE,0
+49,Literature Festival,public_event,2025-02-08,10:00:00,19:00:00,CBD 2,Town Hall,12.9800,77.5900,14000,FALSE,1
+50,Heritage Walk,public_event,2024-10-15,07:00:00,11:00:00,CBD 1,Bangalore Fort,12.9591,77.5742,8000,FALSE,1
+51,Photography Exhibition,public_event,2024-12-12,11:00:00,20:00:00,MG Road,Rangoli Metro Art Center,12.9756,77.6066,10000,FALSE,1
+52,Protest March,rally,2024-09-25,10:00:00,15:00:00,Bellary Road 1,Vidhana Soudha,12.9800,77.5900,55000,TRUE,1
+53,Cultural Night,festival,2024-10-28,18:00:00,23:00:00,Old Madras Road,Indiranagar,12.9716,77.6412,20000,FALSE,2
+54,Job Fair,public_event,2025-01-20,09:00:00,18:00:00,ORR North 2,BIEC,13.0524,77.5428,25000,FALSE,2
+55,Vintage Car Rally,sports,2024-11-09,08:00:00,13:00:00,Tumkur Road,Yeshwanthpur,13.0262,77.5442,10000,FALSE,1

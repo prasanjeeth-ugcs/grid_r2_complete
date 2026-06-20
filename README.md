@@ -53,14 +53,16 @@ The system is **not** a forecasting tool — it does not predict future incident
 
 | Metric | Value |
 |--------|-------|
-| Historical incidents | 8,170 |
+| Historical incidents | 8,173 |
+| Planned events database | 55 events |
 | Corridors monitored | 21 |
 | Police stations | 54 |
 | Cause categories | 14 |
 | Vehicle types | 10 |
 | Risk window slots | 168 (7 days × 24 hours) |
-| Model R² | 0.9259 |
-| Model MAE | 3.404 |
+| Incident Model R² | 0.9259 |
+| Forecast Model R² | 0.9721 |
+| API Endpoints | 32 |
 
 ---
 

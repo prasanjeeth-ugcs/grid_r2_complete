@@ -418,6 +418,132 @@ class ForecastEngine:
 
         return result
 
+    def detect_event_conflicts(self, date=None, days_ahead=7):
+        """
+        Detect conflicts when multiple events occur on the same day or in nearby corridors.
+
+        Args:
+            date: Specific date to check (YYYY-MM-DD), or None for upcoming period
+            days_ahead: Number of days to look ahead if no date specified
+
+        Returns:
+            List of conflict reports with severity and recommendations
+        """
+        if date:
+            target_date = pd.to_datetime(date)
+            events_to_check = self.planned_events[
+                pd.to_datetime(self.planned_events['date']).dt.date == target_date.date()
+            ]
+        else:
+            # Check upcoming events
+            today = pd.Timestamp.now().normalize()
+            future = today + pd.Timedelta(days=days_ahead)
+            events_to_check = self.planned_events[
+                (pd.to_datetime(self.planned_events['date']) >= today) &
+                (pd.to_datetime(self.planned_events['date']) <= future)
+            ]
+
+        # Group events by date
+        conflicts = []
+
+        for event_date in events_to_check['date'].unique():
+            day_events = events_to_check[events_to_check['date'] == event_date]
+
+            if len(day_events) <= 1:
+                continue  # No conflict if only one event
+
+            # Forecast impact for each event
+            forecasts = []
+            for _, event in day_events.iterrows():
+                forecast = self.predict_event_impact(event['event_id'])
+                forecasts.append({
+                    'event_id': event['event_id'],
+                    'event_name': event['event_name'],
+                    'corridor': event['corridor'],
+                    'time': event['start_time'],
+                    'predicted_impact': forecast['predicted_impact_score'],
+                    'risk_class': forecast['predicted_risk_class'],
+                    'expected_crowd': event['expected_crowd'],
+                    'closure_required': event['closure_required']
+                })
+
+            # Analyze conflicts
+            conflict_details = {
+                'date': event_date,
+                'event_count': len(day_events),
+                'events': forecasts,
+                'total_expected_crowd': sum(f['expected_crowd'] for f in forecasts),
+                'conflicts': []
+            }
+
+            # Check for same corridor conflicts
+            corridors = [f['corridor'] for f in forecasts]
+            if len(corridors) != len(set(corridors)):
+                conflict_details['conflicts'].append({
+                    'type': 'Same Corridor Conflict',
+                    'severity': 'Critical',
+                    'description': 'Multiple events on the same corridor will cause severe congestion',
+                    'recommendation': 'Reschedule one event or prepare extensive diversion routes'
+                })
+
+            # Check for overlapping high-risk events
+            high_risk_events = [f for f in forecasts if f['risk_class'] in ['High', 'Critical']]
+            if len(high_risk_events) >= 2:
+                conflict_details['conflicts'].append({
+                    'type': 'Multiple High-Risk Events',
+                    'severity': 'High',
+                    'description': f"{len(high_risk_events)} high-risk events on same day will strain resources",
+                    'recommendation': f"Pre-position {len(high_risk_events) * 15} additional officers and {len(high_risk_events) * 25} barricades"
+                })
+
+            # Check for closure conflicts
+            closure_events = [f for f in forecasts if f['closure_required']]
+            if len(closure_events) >= 2:
+                conflict_details['conflicts'].append({
+                    'type': 'Multiple Road Closures',
+                    'severity': 'Critical',
+                    'description': f"{len(closure_events)} road closures will significantly disrupt city traffic",
+                    'recommendation': 'Coordinate closure timings to avoid overlap if possible'
+                })
+
+            # Check for crowd accumulation
+            if conflict_details['total_expected_crowd'] > 100000:
+                conflict_details['conflicts'].append({
+                    'type': 'Excessive Crowd Accumulation',
+                    'severity': 'High',
+                    'description': f"Total {conflict_details['total_expected_crowd']:,} people expected across events",
+                    'recommendation': 'Deploy crowd control units and setup emergency medical facilities'
+                })
+
+            # Check for time proximity (events within 2 hours)
+            event_times = sorted([pd.to_datetime(f['time']).hour for f in forecasts])
+            for i in range(len(event_times) - 1):
+                if event_times[i+1] - event_times[i] <= 2:
+                    conflict_details['conflicts'].append({
+                        'type': 'Time Proximity Conflict',
+                        'severity': 'Medium',
+                        'description': 'Events occurring within 2 hours of each other',
+                        'recommendation': 'Ensure rapid resource redeployment between events'
+                    })
+                    break
+
+            # Add conflict severity score
+            severity_scores = {'Critical': 3, 'High': 2, 'Medium': 1}
+            total_severity = sum(severity_scores[c['severity']] for c in conflict_details['conflicts'])
+            conflict_details['conflict_severity_score'] = total_severity
+            conflict_details['overall_severity'] = (
+                'Critical' if total_severity >= 6 else
+                'High' if total_severity >= 3 else
+                'Medium' if total_severity >= 1 else 'Low'
+            )
+
+            conflicts.append(conflict_details)
+
+        # Sort by severity score
+        conflicts.sort(key=lambda x: x['conflict_severity_score'], reverse=True)
+
+        return conflicts
+
 
 # Global instance (singleton pattern)
 _forecast_engine = None

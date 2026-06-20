@@ -19,6 +19,13 @@ Endpoints:
   GET  /api/forecast/event/{event_id} - Detailed forecast for specific event
   GET  /api/forecast/briefing - Daily event briefing
   GET  /api/forecast/high-risk-periods - High-risk time periods
+
+  REAL-TIME (V2.0):
+  GET  /api/realtime/weather/{corridor} - Current weather and water logging risk
+  GET  /api/realtime/incidents/active - Currently active simulated incidents
+  POST /api/realtime/incidents/generate - Generate new realistic incident
+  GET  /api/realtime/traffic/{corridor} - Current traffic conditions
+  GET  /api/realtime/system-pulse - Overall system metrics
 """
 
 import os
@@ -51,6 +58,8 @@ _historical = None
 _resource = None
 _corridor = None
 _forecast = None
+_weather = None
+_simulator = None
 _df = None
 
 
@@ -101,6 +110,22 @@ def get_forecast():
         from backend.forecast_engine import get_forecast_engine
         _forecast = get_forecast_engine()
     return _forecast
+
+
+def get_weather():
+    global _weather
+    if _weather is None:
+        from backend.weather_engine import get_weather_engine
+        _weather = get_weather_engine()
+    return _weather
+
+
+def get_simulator():
+    global _simulator
+    if _simulator is None:
+        from backend.realtime_simulator import get_simulator as create_simulator
+        _simulator = create_simulator()
+    return _simulator
 
 
 def get_corridor():
@@ -468,6 +493,71 @@ async def api_high_risk_periods(corridor: Optional[str] = None):
     """Identify high-risk time periods based on upcoming planned events."""
     forecast_engine = get_forecast()
     return forecast_engine.get_high_risk_periods(corridor=corridor)
+
+
+@app.get("/api/realtime/weather/{corridor}")
+async def api_weather(corridor: str):
+    """Get current weather and water logging risk for a corridor."""
+    weather_engine = get_weather()
+    from backend.weather_engine import CORRIDOR_CENTERS
+
+    coords = CORRIDOR_CENTERS.get(corridor)
+    if not coords:
+        return {"error": f"Corridor '{corridor}' not found"}
+
+    current = weather_engine.get_current_weather(coords["lat"], coords["lon"])
+    risk = weather_engine.check_water_logging_risk(corridor)
+
+    return {
+        "corridor": corridor,
+        "current_weather": current,
+        "water_logging_risk": risk
+    }
+
+
+@app.get("/api/realtime/incidents/active")
+async def api_active_incidents(max_age_hours: int = Query(2, ge=1, le=24)):
+    """Get currently active simulated incidents."""
+    simulator = get_simulator()
+    incidents = simulator.get_active_incidents(max_age_hours=max_age_hours)
+    return {
+        "count": len(incidents),
+        "incidents": incidents,
+        "timestamp": datetime.datetime.now().isoformat()
+    }
+
+
+@app.post("/api/realtime/incidents/generate")
+async def api_generate_incident():
+    """Generate a new realistic incident based on current time."""
+    simulator = get_simulator()
+    incident = simulator.generate_realistic_incident()
+    if incident:
+        return {
+            "status": "success",
+            "incident": incident
+        }
+    else:
+        return {
+            "status": "error",
+            "message": "Failed to generate incident"
+        }
+
+
+@app.get("/api/realtime/traffic/{corridor}")
+async def api_traffic_conditions(corridor: str):
+    """Get current traffic conditions for a corridor."""
+    simulator = get_simulator()
+    conditions = simulator.simulate_traffic_conditions(corridor)
+    return conditions
+
+
+@app.get("/api/realtime/system-pulse")
+async def api_system_pulse():
+    """Get overall system pulse metrics."""
+    simulator = get_simulator()
+    pulse = simulator.get_system_pulse()
+    return pulse
 
 
 # --- Startup ---

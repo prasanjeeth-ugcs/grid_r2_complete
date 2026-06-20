@@ -29,6 +29,12 @@ Endpoints:
 
   DIVERSION (V2.0):
   POST /api/diversion/plan - Generate alternate routes and barricade placement
+
+  FEEDBACK (V2.0):
+  POST /api/feedback/log - Log prediction for post-event learning
+  PUT  /api/feedback/update/{prediction_id} - Update with actual outcome
+  GET  /api/feedback/drift - Model drift analysis
+  GET  /api/feedback/report - Comprehensive learning report
 """
 
 import os
@@ -64,6 +70,7 @@ _forecast = None
 _weather = None
 _simulator = None
 _diversion = None
+_feedback = None
 _df = None
 
 
@@ -138,6 +145,14 @@ def get_diversion():
         from backend.diversion_engine import get_diversion_engine
         _diversion = get_diversion_engine()
     return _diversion
+
+
+def get_feedback():
+    global _feedback
+    if _feedback is None:
+        from backend.feedback_engine import get_feedback_engine
+        _feedback = get_feedback_engine()
+    return _feedback
 
 
 def get_corridor():
@@ -598,6 +613,71 @@ async def api_diversion_plan(req: DiversionRequest):
     )
 
     return plan
+
+
+@app.post("/api/feedback/log")
+async def api_log_prediction(prediction: dict, actual: dict = None):
+    """
+    Log a prediction for post-event learning.
+
+    Args:
+        prediction: Prediction data from /api/predict
+        actual: Actual outcome (optional, can be added later)
+
+    Returns:
+        prediction_id for future reference
+    """
+    feedback_engine = get_feedback()
+    prediction_id = feedback_engine.log_prediction(prediction, actual)
+
+    return {
+        "status": "logged",
+        "prediction_id": prediction_id,
+        "message": "Prediction logged successfully"
+    }
+
+
+@app.put("/api/feedback/update/{prediction_id}")
+async def api_update_actual(prediction_id: str, actual: dict):
+    """
+    Update a logged prediction with actual outcome.
+
+    Args:
+        prediction_id: ID from log_prediction
+        actual: Actual outcome data
+
+    Returns:
+        Status message
+    """
+    feedback_engine = get_feedback()
+    success = feedback_engine.update_actual_outcome(prediction_id, actual)
+
+    if success:
+        return {
+            "status": "updated",
+            "prediction_id": prediction_id,
+            "message": "Actual outcome recorded"
+        }
+    else:
+        return {
+            "status": "not_found",
+            "prediction_id": prediction_id,
+            "message": "Prediction ID not found"
+        }
+
+
+@app.get("/api/feedback/drift")
+async def api_model_drift(window_days: int = Query(30, ge=7, le=90)):
+    """Get model drift analysis for specified window."""
+    feedback_engine = get_feedback()
+    return feedback_engine.calculate_model_drift(window_days=window_days)
+
+
+@app.get("/api/feedback/report")
+async def api_feedback_report():
+    """Get comprehensive post-event learning report."""
+    feedback_engine = get_feedback()
+    return feedback_engine.generate_feedback_report()
 
 
 # --- Startup ---

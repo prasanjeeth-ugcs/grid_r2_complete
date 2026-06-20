@@ -1,8 +1,11 @@
 # ASTRAM AI — Bengaluru Traffic Operational Intelligence Platform
 
-> **Version 1.0 — Final Frozen Architecture**
+> **Version 2.0 — Proactive Event Forecasting & Management**
 >
-> An AI-powered traffic incident management system that predicts impact severity, recommends resource deployment, and provides historical operational intelligence for Bengaluru's traffic police.
+> An AI-powered traffic intelligence platform that forecasts planned event impact 24-72h in advance, provides real-time weather-based risk alerts, generates diversion routes, and continuously learns from post-event outcomes for Bengaluru's traffic management authorities.
+
+**Flipkart Grid 2.0, Round 2 Submission**
+**Problem Statement**: Event-Driven Congestion (Planned & Unplanned) Operational Challenge
 
 ---
 

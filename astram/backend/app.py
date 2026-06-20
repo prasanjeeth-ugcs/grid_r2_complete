@@ -1,5 +1,5 @@
 """
-ASTRAM AI — FastAPI Backend V1.0
+ASTRAM AI — FastAPI Backend V2.0
 =================================
 Bengaluru Traffic Operational Intelligence Platform
 
@@ -11,7 +11,30 @@ Endpoints:
   GET  /api/corridor/{name}  - Single corridor DNA
   POST /api/similar-incidents - Historical similarity search
   GET  /api/station-intelligence - All 54 stations
+  GET  /api/corridor-intelligence - Corridor intelligence charts
   GET  /api/metadata         - Available options for frontend
+
+  FORECASTING (V2.0):
+  GET  /api/forecast/upcoming - Get upcoming planned events with forecasts
+  GET  /api/forecast/event/{event_id} - Detailed forecast for specific event
+  GET  /api/forecast/briefing - Daily event briefing
+  GET  /api/forecast/high-risk-periods - High-risk time periods
+
+  REAL-TIME (V2.0):
+  GET  /api/realtime/weather/{corridor} - Current weather and water logging risk
+  GET  /api/realtime/incidents/active - Currently active simulated incidents
+  POST /api/realtime/incidents/generate - Generate new realistic incident
+  GET  /api/realtime/traffic/{corridor} - Current traffic conditions
+  GET  /api/realtime/system-pulse - Overall system metrics
+
+  DIVERSION (V2.0):
+  POST /api/diversion/plan - Generate alternate routes and barricade placement
+
+  FEEDBACK (V2.0):
+  POST /api/feedback/log - Log prediction for post-event learning
+  PUT  /api/feedback/update/{prediction_id} - Update with actual outcome
+  GET  /api/feedback/drift - Model drift analysis
+  GET  /api/feedback/report - Comprehensive learning report
 """
 
 import os
@@ -43,6 +66,11 @@ _model = None
 _historical = None
 _resource = None
 _corridor = None
+_forecast = None
+_weather = None
+_simulator = None
+_diversion = None
+_feedback = None
 _df = None
 
 
@@ -85,6 +113,46 @@ def get_resource():
         from backend.resource_engine import recommend
         _resource = {"recommend": recommend}
     return _resource
+
+
+def get_forecast():
+    global _forecast
+    if _forecast is None:
+        from backend.forecast_engine import get_forecast_engine
+        _forecast = get_forecast_engine()
+    return _forecast
+
+
+def get_weather():
+    global _weather
+    if _weather is None:
+        from backend.weather_engine import get_weather_engine
+        _weather = get_weather_engine()
+    return _weather
+
+
+def get_simulator():
+    global _simulator
+    if _simulator is None:
+        from backend.realtime_simulator import get_simulator as create_simulator
+        _simulator = create_simulator()
+    return _simulator
+
+
+def get_diversion():
+    global _diversion
+    if _diversion is None:
+        from backend.diversion_engine import get_diversion_engine
+        _diversion = get_diversion_engine()
+    return _diversion
+
+
+def get_feedback():
+    global _feedback
+    if _feedback is None:
+        from backend.feedback_engine import get_feedback_engine
+        _feedback = get_feedback_engine()
+    return _feedback
 
 
 def get_corridor():
@@ -130,6 +198,12 @@ class SimilarRequest(BaseModel):
     cause: str
     corridor_tier: int = 0
     closure: bool = False
+
+
+class DiversionRequest(BaseModel):
+    corridor: str
+    closure_coords: dict
+    k_routes: int = 3
 
 
 # --- Static Files ---
@@ -421,6 +495,189 @@ async def api_corridor_intelligence():
         "station_scatter": station_list,
         "fleet_demand": fleet_demand[:15],
     }
+
+
+@app.get("/api/forecast/upcoming")
+async def api_forecast_upcoming(days: int = Query(7, ge=1, le=30)):
+    """Get forecasts for upcoming planned events."""
+    forecast_engine = get_forecast()
+    return forecast_engine.get_upcoming_events(days_ahead=days)
+
+
+@app.get("/api/forecast/event/{event_id}")
+async def api_forecast_event(event_id: int):
+    """Get detailed forecast for a specific planned event."""
+    forecast_engine = get_forecast()
+    forecast = forecast_engine.predict_event_impact(event_id)
+    if forecast is None:
+        return {"error": f"Event ID {event_id} not found"}
+    return forecast
+
+
+@app.get("/api/forecast/briefing")
+async def api_forecast_briefing(date: str = Query(..., description="Date in YYYY-MM-DD format")):
+    """Get daily briefing for planned events on a specific date."""
+    forecast_engine = get_forecast()
+    return forecast_engine.generate_event_briefing(date)
+
+
+@app.get("/api/forecast/high-risk-periods")
+async def api_high_risk_periods(corridor: Optional[str] = None):
+    """Identify high-risk time periods based on upcoming planned events."""
+    forecast_engine = get_forecast()
+    return forecast_engine.get_high_risk_periods(corridor=corridor)
+
+
+@app.get("/api/realtime/weather/{corridor}")
+async def api_weather(corridor: str):
+    """Get current weather and water logging risk for a corridor."""
+    weather_engine = get_weather()
+    from backend.weather_engine import CORRIDOR_CENTERS
+
+    coords = CORRIDOR_CENTERS.get(corridor)
+    if not coords:
+        return {"error": f"Corridor '{corridor}' not found"}
+
+    current = weather_engine.get_current_weather(coords["lat"], coords["lon"])
+    risk = weather_engine.check_water_logging_risk(corridor)
+
+    return {
+        "corridor": corridor,
+        "current_weather": current,
+        "water_logging_risk": risk
+    }
+
+
+@app.get("/api/realtime/incidents/active")
+async def api_active_incidents(max_age_hours: int = Query(2, ge=1, le=24)):
+    """Get currently active simulated incidents."""
+    simulator = get_simulator()
+    incidents = simulator.get_active_incidents(max_age_hours=max_age_hours)
+    return {
+        "count": len(incidents),
+        "incidents": incidents,
+        "timestamp": datetime.datetime.now().isoformat()
+    }
+
+
+@app.post("/api/realtime/incidents/generate")
+async def api_generate_incident():
+    """Generate a new realistic incident based on current time."""
+    simulator = get_simulator()
+    incident = simulator.generate_realistic_incident()
+    if incident:
+        return {
+            "status": "success",
+            "incident": incident
+        }
+    else:
+        return {
+            "status": "error",
+            "message": "Failed to generate incident"
+        }
+
+
+@app.get("/api/realtime/traffic/{corridor}")
+async def api_traffic_conditions(corridor: str):
+    """Get current traffic conditions for a corridor."""
+    simulator = get_simulator()
+    conditions = simulator.simulate_traffic_conditions(corridor)
+    return conditions
+
+
+@app.get("/api/realtime/system-pulse")
+async def api_system_pulse():
+    """Get overall system pulse metrics."""
+    simulator = get_simulator()
+    pulse = simulator.get_system_pulse()
+    return pulse
+
+
+@app.post("/api/diversion/plan")
+async def api_diversion_plan(req: DiversionRequest):
+    """
+    Generate diversion routes and barricade placement for a corridor closure.
+
+    Args:
+        req: DiversionRequest with corridor, closure_coords, and k_routes
+
+    Returns:
+        Diversion plan with alternate routes, barricade locations, and impact estimates
+    """
+    diversion_engine = get_diversion()
+
+    plan = diversion_engine.plan_diversion(
+        corridor=req.corridor,
+        closure_coords=req.closure_coords,
+        k_routes=req.k_routes
+    )
+
+    return plan
+
+
+@app.post("/api/feedback/log")
+async def api_log_prediction(prediction: dict, actual: dict = None):
+    """
+    Log a prediction for post-event learning.
+
+    Args:
+        prediction: Prediction data from /api/predict
+        actual: Actual outcome (optional, can be added later)
+
+    Returns:
+        prediction_id for future reference
+    """
+    feedback_engine = get_feedback()
+    prediction_id = feedback_engine.log_prediction(prediction, actual)
+
+    return {
+        "status": "logged",
+        "prediction_id": prediction_id,
+        "message": "Prediction logged successfully"
+    }
+
+
+@app.put("/api/feedback/update/{prediction_id}")
+async def api_update_actual(prediction_id: str, actual: dict):
+    """
+    Update a logged prediction with actual outcome.
+
+    Args:
+        prediction_id: ID from log_prediction
+        actual: Actual outcome data
+
+    Returns:
+        Status message
+    """
+    feedback_engine = get_feedback()
+    success = feedback_engine.update_actual_outcome(prediction_id, actual)
+
+    if success:
+        return {
+            "status": "updated",
+            "prediction_id": prediction_id,
+            "message": "Actual outcome recorded"
+        }
+    else:
+        return {
+            "status": "not_found",
+            "prediction_id": prediction_id,
+            "message": "Prediction ID not found"
+        }
+
+
+@app.get("/api/feedback/drift")
+async def api_model_drift(window_days: int = Query(30, ge=7, le=90)):
+    """Get model drift analysis for specified window."""
+    feedback_engine = get_feedback()
+    return feedback_engine.calculate_model_drift(window_days=window_days)
+
+
+@app.get("/api/feedback/report")
+async def api_feedback_report():
+    """Get comprehensive post-event learning report."""
+    feedback_engine = get_feedback()
+    return feedback_engine.generate_feedback_report()
 
 
 # --- Startup ---

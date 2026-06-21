@@ -14,19 +14,22 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy application code and preprocessing script
 COPY astram/ ./astram/
 COPY ["Astram event data_anonymized - Astram event data_anonymizedb40ac87.csv", "./"]
+COPY preprocess_data.py ./
 
-# Create data directory if it doesn't exist
-RUN mkdir -p astram/data astram/models
+# Create data directory and run preprocessing pipeline
+RUN mkdir -p astram/data astram/models && \
+    python preprocess_data.py && \
+    python astram/backend/precompute_lookups.py
 
 # Expose port 5000 for FastAPI
 EXPOSE 5000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:5000/api/metadata')" || exit 1
+    CMD python -c "import requests; requests.get('http://localhost:5000/api/health')" || exit 1
 
-# Run the FastAPI server
+# Run the FULL application with all engines
 CMD ["python", "-m", "uvicorn", "astram.backend.app:app", "--host", "0.0.0.0", "--port", "5000"]

@@ -48,3 +48,7 @@ catboost_info/
 *.tmp
 *.temp
 .cache/
+
+# Data files (will be generated during build)
+astram/data/*.parquet
+astram/data/*.csv

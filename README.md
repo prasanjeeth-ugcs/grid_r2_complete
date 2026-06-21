@@ -1,10 +1,13 @@
 # ASTRAM AI — Bengaluru Traffic Operational Intelligence Platform
 
-![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![R² Score](https://img.shields.io/badge/R²-0.9522-success)
 ![Model](https://img.shields.io/badge/model-CatBoost-orange)
 ![Status](https://img.shields.io/badge/status-production--ready-green)
 ![Docker](https://img.shields.io/badge/docker-supported-2496ED?logo=docker&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.108-009688?logo=fastapi&logoColor=white)
+![Incidents](https://img.shields.io/badge/incidents-8,173-blue)
+![Corridors](https://img.shields.io/badge/corridors-21-orange)
 
 > Traffic incident severity prediction with **95.22% accuracy** (R² = 0.9522) using 8,173 real Bengaluru incidents, Kannada text detection, and 3-way interaction features.
 
@@ -55,53 +58,79 @@
 
 ### Option 1: Docker (Recommended - Zero Setup)
 
+**For Users (Pull Pre-built Image):**
 ```bash
-# 1. Build and start container
-docker-compose up
+# Pull the image from Docker Hub
+docker pull shivapreetham/astram-ai:latest
 
-# 2. Open browser
-# Navigate to: http://localhost:5000
+# Run the container
+docker run -d -p 5000:5000 --name astram-ai shivapreetham/astram-ai:latest
+
+# Open browser: http://localhost:5000
 ```
 
-That's it! No Python installation, no dependencies, no platform issues.
+**For Developers (Build Locally):**
+```bash
+# Clone the repository
+git clone <repository-url>
+cd grid_r2_complete
 
-See [DOCKER_GUIDE.md](DOCKER_GUIDE.md:1) for detailed instructions.
+# Build and start container
+docker-compose up -d
 
-### Option 2: Manual Setup
+# Check logs
+docker-compose logs -f
+
+# Open browser: http://localhost:5000
+```
+
+That's it! No Python installation, no dependencies, no platform issues. The container includes:
+- ✅ Pre-trained CatBoost model (R² = 0.9522)
+- ✅ All 8,173 incidents preprocessed
+- ✅ 6 precomputed lookup tables
+- ✅ 27 REST API endpoints
+- ✅ 3-page web interface
+
+See [DOCKER_GUIDE.md](DOCKER_GUIDE.md) for detailed deployment instructions.
+
+### Option 2: Manual Setup (Development)
 
 ```bash
-# 1. Install dependencies
+# 1. Install dependencies (Python 3.9+ required)
 pip install -r requirements.txt
 
-# 2. Start the backend server
-cd astram
-python -m uvicorn backend.app:app --host 0.0.0.0 --port 5000
+# 2. Preprocess data and generate lookup tables
+python astram/scripts/preprocess_data.py
+python astram/backend/precompute_lookups.py
 
-# 3. Open the web interface
-# Navigate to: http://localhost:5000
+# 3. Start the backend server
+python -m uvicorn astram.backend.app:app --host 0.0.0.0 --port 5000
+
+# 4. Open browser: http://localhost:5000
 ```
 
-**First Time Setup**:
-- Python 3.8+ required
-- Takes ~30 seconds to load model (240KB)
-- All data is preloaded (no external APIs needed)
-
 **Demo Scenario**: Try predicting impact for:
-- Cause: Water Logging
-- Corridor: Mysore Road
-- Hour: 8 (morning rush)
-- Road Closure: Yes
-- Expected Result: Impact = 87.5 (Critical)
+- **Cause**: Water Logging
+- **Corridor**: Mysore Road
+- **Hour**: 8 (morning rush)
+- **Road Closure**: Yes
+- **Expected Result**: Impact Score ~28.2 (Medium Risk)
+- **Similar Incidents**: ~1,775 historical matches
 
-For detailed demo walkthroughs, see [DEMO_SCENARIOS.md](DEMO_SCENARIOS.md:1)
+For detailed demo walkthroughs, see [VIDEO_DEMO_SCRIPT.md](VIDEO_DEMO_SCRIPT.md)
 
 ---
 
 ## Overview
 
-ASTRAM (Advanced Smart Traffic Response And Management) is a **traffic operational intelligence platform** built for Bengaluru's traffic management authorities. It processes **8,170 historical traffic incidents** collected across Bengaluru's 21 major corridors and 54 police station jurisdictions to deliver real-time incident impact assessment, resource recommendations, and operational pattern intelligence.
+ASTRAM (Advanced Smart Traffic Response And Management) is a **traffic operational intelligence platform** built for Bengaluru's traffic management authorities. It processes **8,173 historical traffic incidents** collected across Bengaluru's 21 major corridors and 54 police station jurisdictions to deliver real-time incident impact assessment, resource recommendations, and operational pattern intelligence.
 
-The system is **not** a forecasting tool — it does not predict future incidents. Instead, it answers operational questions: *"How bad is this incident?"*, *"What resources do we need?"*, and *"What has historically happened in similar situations?"*.
+The system answers three critical operational questions:
+1. **"How bad is this incident?"** - ML-powered impact prediction (R² = 0.9522)
+2. **"What resources do we need?"** - Automated resource planning with timeline
+3. **"What has historically happened?"** - Pattern analysis from 8,173+ incidents
+
+Additionally, the platform includes forecasting capabilities for high-risk periods and potential conflicts, though the primary focus is real-time incident response.
 
 ### Key Numbers
 

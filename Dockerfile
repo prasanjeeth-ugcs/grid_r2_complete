@@ -14,14 +14,13 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code and preprocessing script
+# Copy application code (includes scripts)
 COPY astram/ ./astram/
 COPY ["Astram event data_anonymized - Astram event data_anonymizedb40ac87.csv", "./"]
-COPY preprocess_data.py ./
 
 # Create data directory and run preprocessing pipeline
 RUN mkdir -p astram/data astram/models && \
-    python preprocess_data.py && \
+    python astram/scripts/preprocess_data.py && \
     python astram/backend/precompute_lookups.py
 
 # Expose port 5000 for FastAPI

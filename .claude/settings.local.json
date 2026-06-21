@@ -12,7 +12,12 @@
       "Bash(ls:*)",
       "Bash(git checkout:*)",
       "Bash(timeout 600 python:*)",
-      "Bash(tee:*)"
+      "Bash(tee:*)",
+      "Bash(docker-compose build:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker-compose ps:*)",
+      "Bash(docker-compose logs:*)",
+      "Bash(curl:*)"
     ]
   }
 }

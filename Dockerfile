@@ -1,6 +1,6 @@
 # ASTRAM AI - Production Docker Container
-# Python 3.8+ base image
-FROM python:3.8-slim
+# Python 3.9 base image (required for pandas 2.1.4)
+FROM python:3.9-slim
 
 # Set working directory
 WORKDIR /app
@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY astram/ ./astram/
-COPY "Astram event data_anonymized - Astram event data_anonymizedb40ac87.csv" ./
+COPY ["Astram event data_anonymized - Astram event data_anonymizedb40ac87.csv", "./"]
 
 # Create data directory if it doesn't exist
 RUN mkdir -p astram/data astram/models

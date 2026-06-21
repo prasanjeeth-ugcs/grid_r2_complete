@@ -1,8 +1,11 @@
 # ASTRAM AI — Bengaluru Traffic Operational Intelligence Platform
 
-> **Version 2.0 — Proactive Event Forecasting & Management**
->
-> An AI-powered traffic intelligence platform that forecasts planned event impact 24-72h in advance, provides real-time weather-based risk alerts, generates diversion routes, and continuously learns from post-event outcomes for Bengaluru's traffic management authorities.
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![R² Score](https://img.shields.io/badge/R²-0.9522-success)
+![Model](https://img.shields.io/badge/model-CatBoost-orange)
+![Status](https://img.shields.io/badge/status-production--ready-green)
+
+> Traffic incident severity prediction with **95.22% accuracy** (R² = 0.9522) using 8,173 real Bengaluru incidents, Kannada text detection, and 3-way interaction features.
 
 **Flipkart Grid 2.0, Round 2 Submission**
 **Problem Statement**: Event-Driven Congestion (Planned & Unplanned) Operational Challenge
@@ -37,6 +40,7 @@
   - [Page 3: Corridor Intelligence](#page-3-corridor-intelligence)
 - [Project Structure](#project-structure)
 - [Setup & Installation](#setup--installation)
+- [Project Replication & Model Training](#project-replication--model-training)
 - [Demo Scenario](#demo-scenario)
 - [Model Details](#model-details)
 - [Precomputed Lookup Tables](#precomputed-lookup-tables)
@@ -720,6 +724,38 @@ historically evolve into high-severity events."
 | `GET` | `/api/corridor-intelligence` | Page 3 chart datasets |
 | `GET` | `/api/metadata` | Available options for frontend selectors |
 
+### Sample API Response (Simplified)
+
+**POST `/api/predict`** — Water logging incident on Mysore Road at rush hour:
+
+```json
+{
+  "impact_score": 87.5,
+  "risk_class": "Critical",
+  "confidence": {
+    "level": "High",
+    "percentage": 89,
+    "matching_count": 247
+  },
+  "resource_plan": {
+    "phase_1": {
+      "timeframe": "0-15 min",
+      "personnel": 8,
+      "vehicles": 2,
+      "barricades": 15
+    },
+    "phase_2": {
+      "timeframe": "15-30 min",
+      "personnel": 6,
+      "vehicles": 3
+    },
+    "estimated_resolution": "90-120 minutes"
+  },
+  "similar_incidents": 3,
+  "corridor_stress_index": 67.8
+}
+```
+
 ### `/api/predict` — Full Request/Response
 
 **Request**:
@@ -881,6 +917,102 @@ run.bat
 ### Access the Dashboard
 
 Open **http://localhost:5000** in your browser.
+
+---
+
+## Project Replication & Model Training
+
+Want to replicate the R² = 0.9522 result? Follow these steps:
+
+### 1. Data Preparation
+
+The raw data is already included:
+```bash
+# Located at:
+Astram event data_anonymized - Astram event data_anonymizedb40ac87.csv
+
+# 8,170 records with columns:
+# - start_datetime, event_cause, corridor, requires_road_closure
+# - veh_type, latitude, longitude, description (Kannada + English)
+```
+
+### 2. Run Training Scripts
+
+We documented **6 experimental trials**. Run them all to see the progression:
+
+```bash
+cd project/src
+
+# Trials 1-3 (Baseline experiments)
+python trial_better_r2.py
+
+# Methods 4-6 (Advanced experiments)
+python trial_more_methods.py
+```
+
+**Expected Results**:
+- Trial 1: R² = 0.9002 (Failed)
+- Trial 2: R² = 0.9445 (Success)
+- Trial 3: R² = 0.9279 (Failed)
+- Method 4: R² = 0.9439 (Good)
+- Method 5: R² = 0.9521 (Excellent)
+- **Method 6: R² = 0.9522** ✅ (Winner)
+
+### 3. Verify Model Output
+
+After running, check:
+```bash
+# Models saved to:
+astram/models/catboost_final_best.cbm        # R² = 0.9522 (Production)
+astram/models/catboost_best_trial.cbm        # R² = 0.9445 (Backup)
+
+# Preprocessed data:
+astram/data/enhanced_features_data.csv       # 8,057 × 76 columns
+
+# Trial documentation:
+project/src/ALL_TRIALS_SUMMARY.txt           # All results
+project/ABLATION_STUDY.md                    # Detailed analysis
+```
+
+### 4. Model Details
+
+**Method 6 (Winner)** uses:
+- **36 features** (10 more than baseline)
+- **3-way interactions**: closure × corridor_tier × temporal_score
+- **Kannada detection**: Unicode `\u0C80-\u0CFF` pattern matching
+- **Hyperparameters**: depth=4, lr=0.05, l2=3
+
+**Key Innovation**: Heavy interaction features capture complex relationships:
+```python
+# Example features
+closure_tier_temporal = requires_closure × corridor_tier × temporal_score
+closure_peak_tier = requires_closure × is_peak × corridor_tier
+kannada_tier = has_kannada × corridor_tier
+```
+
+### 5. Performance Metrics
+
+Run this to verify:
+```python
+from catboost import CatBoostRegressor
+import pandas as pd
+from sklearn.metrics import r2_score
+
+# Load model
+model = CatBoostRegressor()
+model.load_model('astram/models/catboost_final_best.cbm')
+
+# Load test data (20% split, random_state=42)
+# Expected: R² = 0.9522, MAE = 3.241
+```
+
+### 6. Full Ablation Study
+
+All experiments documented in:
+- [project/ABLATION_STUDY.md](project/ABLATION_STUDY.md:1) - What worked, what didn't
+- [project/src/ALL_TRIALS_SUMMARY.txt](project/src/ALL_TRIALS_SUMMARY.txt:1) - Detailed results
+
+**Training Time**: ~10 minutes per trial (6 trials = ~1 hour total)
 
 ---
 

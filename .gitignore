@@ -1,1 +1,55 @@
-.claude
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.bak
+
+# Project specific
+catboost_info/
+*.cbm.backup
+*.parquet.backup
+*.csv.backup
+
+# Logs
+*.log
+train_output.txt
+method_results.txt
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

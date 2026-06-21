@@ -4,6 +4,7 @@
 ![R² Score](https://img.shields.io/badge/R²-0.9522-success)
 ![Model](https://img.shields.io/badge/model-CatBoost-orange)
 ![Status](https://img.shields.io/badge/status-production--ready-green)
+![Docker](https://img.shields.io/badge/docker-supported-2496ED?logo=docker&logoColor=white)
 
 > Traffic incident severity prediction with **95.22% accuracy** (R² = 0.9522) using 8,173 real Bengaluru incidents, Kannada text detection, and 3-way interaction features.
 
@@ -15,6 +16,8 @@
 ## Table of Contents
 
 - [Quick Start](#quick-start)
+  - [Docker Deployment](#option-1-docker-recommended---zero-setup)
+  - [Manual Setup](#option-2-manual-setup)
 - [Overview](#overview)
 - [The Three Questions](#the-three-questions)
 - [System Architecture](#system-architecture)
@@ -50,7 +53,21 @@
 
 ## Quick Start
 
-### Run ASTRAM AI in 3 Steps
+### Option 1: Docker (Recommended - Zero Setup)
+
+```bash
+# 1. Build and start container
+docker-compose up
+
+# 2. Open browser
+# Navigate to: http://localhost:5000
+```
+
+That's it! No Python installation, no dependencies, no platform issues.
+
+See [DOCKER_GUIDE.md](DOCKER_GUIDE.md:1) for detailed instructions.
+
+### Option 2: Manual Setup
 
 ```bash
 # 1. Install dependencies

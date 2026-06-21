@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  astram-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: astram-ai-app
+    ports:
+      - "5000:5000"
+    volumes:
+      # Mount models directory for persistence
+      - ./astram/models:/app/astram/models
+      # Mount data directory for updates
+      - ./astram/data:/app/astram/data
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TZ=Asia/Kolkata
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/metadata"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  default:
+    name: astram-network

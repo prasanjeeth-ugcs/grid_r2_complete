@@ -227,5 +227,6 @@ def get_metadata():
         "corridors": CORRIDORS,
         "event_causes": EVENT_CAUSES,
         "veh_types": VEH_TYPES,
+        "vehicle_types": VEH_TYPES,
         "stations": POLICE_STATIONS,
     }

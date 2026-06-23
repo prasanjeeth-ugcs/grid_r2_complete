@@ -484,8 +484,9 @@ async function populatePredictorDropdowns() {
 
         // Populate Vehicle Type
         const vehicleSelect = document.getElementById('input-vehicle');
-        if (vehicleSelect && options.vehicle_types) {
-            vehicleSelect.innerHTML = options.vehicle_types.map(veh =>
+        const vehicleOptions = options.vehicle_types || options.veh_types || [];
+        if (vehicleSelect && vehicleOptions.length) {
+            vehicleSelect.innerHTML = vehicleOptions.map(veh =>
                 `<option value="${veh}">${veh.replace(/_/g, ' ')}</option>`
             ).join('');
         }
@@ -543,23 +544,42 @@ async function handlePrediction() {
 }
 
 function buildRecommendationList(result) {
-    // result.recommendations is a plain array (legacy)
-    // result.resource_plan is the backend's V2 structure: {units: [...], actions: [...], ...}
+    // Legacy: plain array
     if (result.recommendations && result.recommendations.length) {
-        return result.recommendations.map(r => `<li>• ${r}</li>`).join('');
+        return result.recommendations.map(r => `<li>${r}</li>`).join('');
     }
+
     const plan = result.resource_plan;
     if (!plan) return '<li>No recommendations available</li>';
 
     const lines = [];
-    if (plan.units && plan.units.length) {
-        plan.units.forEach(u => lines.push(`• Deploy ${u.count || ''} ${u.type || u} — ${u.location || ''}`));
+
+    // resource_plan.resources: {police_units, tow_trucks, ambulances, special_team, diversion_required}
+    const res = plan.resources || {};
+    if (res.police_units)   lines.push(`Deploy ${res.police_units} police unit${res.police_units > 1 ? 's' : ''}`);
+    if (res.tow_trucks)     lines.push(`${res.tow_trucks} tow truck${res.tow_trucks > 1 ? 's' : ''} on standby`);
+    if (res.ambulances)     lines.push(`${res.ambulances} ambulance${res.ambulances > 1 ? 's' : ''} on standby`);
+    if (res.special_team && res.special_team !== 'None') lines.push(`Special team: ${res.special_team}`);
+    if (res.diversion_required) lines.push('Activate diversion route');
+
+    // resource_plan.timeline: [{phase, actions}]
+    const timeline = plan.timeline || [];
+    timeline.forEach(phase => {
+        if (phase.actions && phase.actions.length) {
+            lines.push(`${phase.phase}: ${phase.actions[0]}`);
+        }
+    });
+
+    // resolution estimate — {median: "2.0h", range: "1.0h-4.0h"} or plain string
+    const res_time = plan.resolution;
+    if (res_time) {
+        if (typeof res_time === 'object' && res_time.median) {
+            const range = res_time.range ? ` (${res_time.range})` : '';
+            lines.push(`Expected resolution: ${res_time.median}${range}`);
+        } else if (typeof res_time === 'string') {
+            lines.push(`Expected resolution: ${res_time}`);
+        }
     }
-    if (plan.actions && plan.actions.length) {
-        plan.actions.forEach(a => lines.push(`• ${a}`));
-    }
-    if (plan.priority) lines.push(`• Priority: ${plan.priority}`);
-    if (plan.estimated_clearance_mins) lines.push(`• Est. clearance: ${plan.estimated_clearance_mins} min`);
 
     return lines.length ? lines.map(l => `<li>${l}</li>`).join('') : '<li>No recommendations available</li>';
 }
@@ -569,7 +589,13 @@ function renderPredictionResult(result) {
 
     const score       = result.impact_score || 0;
     const impactClass = (result.risk_class || result.impact_class || 'Unknown').toLowerCase();
-    const confidence  = result.confidence ? Math.round(result.confidence * 100) : null;
+
+    // confidence comes back as {level: "High", matching_count: 30} — show level + count
+    const conf = result.confidence || {};
+    const confLevel = conf.level || null;
+    const confCount = conf.matching_count != null ? conf.matching_count : null;
+    // Map level to a bar width percentage
+    const confPct = confLevel === 'High' ? 90 : confLevel === 'Medium' ? 60 : confLevel === 'Low' ? 30 : null;
 
     // Color per severity
     const colorMap = { critical: '#dc2626', high: '#ea580c', medium: '#f59e0b', low: '#16a34a' };
@@ -580,14 +606,14 @@ function renderPredictionResult(result) {
     const circumference = 2 * Math.PI * 50;
     const offset = circumference - (score / 100) * circumference;
 
-    const confidenceHTML = confidence !== null ? `
+    const confidenceHTML = confLevel ? `
         <div class="confidence-row">
             <div class="confidence-label">
                 <span>Model Confidence</span>
-                <span>${confidence}%</span>
+                <span>${confLevel}${confCount !== null ? ` (${confCount} similar cases)` : ''}</span>
             </div>
             <div class="confidence-track">
-                <div class="confidence-fill" style="width: ${confidence}%"></div>
+                <div class="confidence-fill" style="width: ${confPct}%"></div>
             </div>
         </div>` : '';
 

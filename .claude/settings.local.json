@@ -26,7 +26,10 @@
       "Bash(powershell.exe -Command \"Start-Process ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\Docker Desktop.exe''\")",
       "Bash(timeout 20 bash:*)",
       "Bash(timeout 30 bash -c 'while docker inspect grid_r2_complete-astram-ai 2>/dev/null | grep -q \"\"\\\\\"\"Status\\\\\"\": \\\\\"\"created\\\\\"\"\"\"; do sleep 2; done')",
-      "Bash(docker logs:*)"
+      "Bash(docker logs:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker ps:*)",
+      "Bash(docker inspect:*)"
     ]
   }
 }

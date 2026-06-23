@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASTRAM Test</title>
+</head>
+<body>
+    <h1>ASTRAM API Test</h1>
+    <div id="output"></div>
+    <script>
+        // Test API
+        fetch('/api/city-pulse')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('output').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(err => {
+                document.getElementById('output').innerHTML = '<p style="color:red">Error: ' + err + '</p>';
+            });
+    </script>
+</body>
+</html>

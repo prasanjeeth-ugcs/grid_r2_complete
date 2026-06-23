@@ -29,7 +29,10 @@
       "Bash(docker logs:*)",
       "Bash(docker exec:*)",
       "Bash(docker ps:*)",
-      "Bash(docker inspect:*)"
+      "Bash(docker inspect:*)",
+      "Bash(docker tag:*)",
+      "Bash(docker push:*)",
+      "Bash(docker rmi:*)"
     ]
   }
 }

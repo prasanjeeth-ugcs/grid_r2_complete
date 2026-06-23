@@ -7,22 +7,33 @@ services:
       dockerfile: Dockerfile
     container_name: astram-ai-app
     ports:
-      - "5000:5000"
+      - "8000:8000"
     volumes:
-      # Mount models directory for persistence
+      # ── Mutable data that should survive container restarts ──
+      # ML model weights (swap without rebuild)
       - ./astram/models:/app/astram/models
-      # Mount data directory for updates
+      # Training / inference data
       - ./astram/data:/app/astram/data
+      # Precomputed lookup tables (corridor DNA, stress index, risk window…)
+      - ./astram/backend/lookup_tables:/app/astram/backend/lookup_tables
+
+      # ── Frontend assets (CSS / JS) ──
+      # Mounting these lets you tweak the UI without rebuilding the image.
+      # Remove the two lines below in a fully immutable CI/CD pipeline.
+      - ./astram/frontend/css:/app/astram/frontend/css
+      - ./astram/frontend/js:/app/astram/frontend/js
     environment:
       - PYTHONUNBUFFERED=1
       - TZ=Asia/Kolkata
+      # Set to "production" to disable any debug behaviour in future code
+      - APP_ENV=production
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5000/api/metadata"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 10s
+      start_period: 60s   # model lazy-loads on first request; give it time
 
 networks:
   default:

@@ -259,7 +259,7 @@ Show the ablation study:
 
 ### Before Demo
 - ✅ Test all 3 pages load correctly
-- ✅ Verify API is running (port 5000)
+- ✅ Verify API is running (port 8000)
 - ✅ Have backup screenshots ready
 - ✅ Practice transitions between pages
 

@@ -356,7 +356,7 @@ python project/src/train_forecast.py
 ### 4. Start the Server
 ```bash
 cd astram
-python -m uvicorn backend.app:app --host 0.0.0.0 --port 5000
+python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000
 ```
 
 Or use the batch file:
@@ -366,7 +366,7 @@ astram/run.bat
 
 ### 5. Open Browser
 ```
-http://localhost:5000
+http://localhost:8000
 ```
 
 ---

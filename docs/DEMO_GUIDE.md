@@ -9,11 +9,11 @@
 ### Start the Server
 ```bash
 cd astram
-python -m uvicorn backend.app:app --host 0.0.0.0 --port 5000
+python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000
 ```
 
 ### Access the Dashboard
-Open browser: **http://localhost:5000**
+Open browser: **http://localhost:8000**
 
 ---
 
@@ -49,7 +49,7 @@ Inputs:
 
 **API Call**:
 ```bash
-curl -X POST http://localhost:5000/api/predict \
+curl -X POST http://localhost:8000/api/predict \
   -H "Content-Type: application/json" \
   -d '{
     "cause": "tree_fall",
@@ -170,7 +170,7 @@ Event: Diwali Festival (ID=1)
 
 **API Call**:
 ```bash
-curl http://localhost:5000/api/forecast/event/1
+curl http://localhost:8000/api/forecast/event/1
 ```
 
 **Expected Output**:
@@ -260,7 +260,7 @@ Simulated Condition: Heavy rain forecast
 
 **API Call**:
 ```bash
-curl http://localhost:5000/api/realtime/weather/Bellary%20Road%201
+curl http://localhost:8000/api/realtime/weather/Bellary%20Road%201
 ```
 
 **Expected Output**:
@@ -304,7 +304,7 @@ Scenario: Tree fall closes Bellary Road 1 segment
 
 **API Call**:
 ```bash
-curl -X POST http://localhost:5000/api/diversion/plan \
+curl -X POST http://localhost:8000/api/diversion/plan \
   -H "Content-Type: application/json" \
   -d '{
     "corridor": "Bellary Road 1",
@@ -415,7 +415,7 @@ Multiple events on same day
 
 **API Call**:
 ```bash
-curl http://localhost:5000/api/forecast/briefing?date=2024-11-05
+curl http://localhost:8000/api/forecast/briefing?date=2024-11-05
 ```
 
 **Expected Output**:
@@ -527,7 +527,7 @@ curl http://localhost:5000/api/forecast/briefing?date=2024-11-05
 **Solution**: System is in demo mode, returns simulated weather data (expected)
 
 ### Issue: Frontend not loading
-**Solution**: Check console for errors, ensure uvicorn started successfully on port 5000
+**Solution**: Check console for errors, ensure uvicorn started successfully on port 8000
 
 ---
 

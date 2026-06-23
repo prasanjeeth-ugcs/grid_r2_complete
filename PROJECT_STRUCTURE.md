@@ -143,7 +143,7 @@ astram/data/
 5. **Preprocess** - Run preprocessing pipeline:
    - `astram/scripts/preprocess_data.py` (generate features)
    - `astram/backend/precompute_lookups.py` (generate lookups)
-6. **Expose Port** - Port 5000
+6. **Expose Port** - Port 8000
 7. **Start Server** - Uvicorn FastAPI
 
 **Total build time:** ~8-10 minutes
@@ -191,7 +191,7 @@ astram/data/
 - `GET /api/analytics/prediction-breakdown`
 - `GET /api/analytics/risk-heatmap`
 
-**Interactive docs:** http://localhost:5000/docs
+**Interactive docs:** http://localhost:8000/docs
 
 ---
 
@@ -230,7 +230,7 @@ python astram/scripts/preprocess_data.py
 python astram/backend/precompute_lookups.py
 
 # Run server
-python -m uvicorn astram.backend.app:app --reload --port 5000
+python -m uvicorn astram.backend.app:app --reload --port 8000
 ```
 
 ### Docker Development

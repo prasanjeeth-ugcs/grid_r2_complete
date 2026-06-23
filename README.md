@@ -64,9 +64,9 @@
 docker pull shivapreetham/astram-ai:latest
 
 # Run the container
-docker run -d -p 5000:5000 --name astram-ai shivapreetham/astram-ai:latest
+docker run -d -p 8000:8000 --name astram-ai shivapreetham/astram-ai:latest
 
-# Open browser: http://localhost:5000
+# Open browser: http://localhost:8000
 ```
 
 **For Developers (Build Locally):**
@@ -81,7 +81,7 @@ docker-compose up -d
 # Check logs
 docker-compose logs -f
 
-# Open browser: http://localhost:5000
+# Open browser: http://localhost:8000
 ```
 
 That's it! No Python installation, no dependencies, no platform issues. The container includes:
@@ -104,9 +104,9 @@ python astram/scripts/preprocess_data.py
 python astram/backend/precompute_lookups.py
 
 # 3. Start the backend server
-python -m uvicorn astram.backend.app:app --host 0.0.0.0 --port 5000
+python -m uvicorn astram.backend.app:app --host 0.0.0.0 --port 8000
 
-# 4. Open browser: http://localhost:5000
+# 4. Open browser: http://localhost:8000
 ```
 
 **Demo Scenario**: Try predicting impact for:
@@ -954,7 +954,7 @@ This reads `data/model_ready.parquet` and generates 6 JSON lookup files + 1 parq
 ```bash
 # Option 1: Direct
 cd astram
-python -m uvicorn backend.app:app --host 0.0.0.0 --port 5000
+python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000
 
 # Option 2: Batch file (Windows)
 run.bat
@@ -962,7 +962,7 @@ run.bat
 
 ### Access the Dashboard
 
-Open **http://localhost:5000** in your browser.
+Open **http://localhost:8000** in your browser.
 
 ---
 

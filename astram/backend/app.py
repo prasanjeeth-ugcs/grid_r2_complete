@@ -221,6 +221,12 @@ if os.path.exists(os.path.join(FRONTEND_DIR, "assets")):
 
 # --- API Endpoints ---
 
+@app.get("/api/health")
+async def api_health():
+    """Lightweight health check for Docker/load-balancer probes."""
+    return {"status": "ok", "service": "astram-ai"}
+
+
 @app.get("/api/metadata")
 async def api_metadata():
     """Return available options for frontend selectors."""
@@ -488,10 +494,23 @@ async def api_corridor_intelligence():
         })
     fleet_demand.sort(key=lambda x: x["daily_incidents"], reverse=True)
 
+    # Cause distribution: {cause: count} for doughnut chart
+    cause_counts = df["event_cause"].value_counts().head(8)
+    cause_distribution = {str(k): int(v) for k, v in cause_counts.items()}
+
+    # Closure analysis: {cause: closure_rate_%} for bar chart
+    closure_analysis = {
+        row["event_cause"]: row["requires_road_closure"]
+        for row in closure_rate.to_dict("records")
+    }
+
     return {
         "heatmap": heatmap_data.to_dict("records"),
         "closure_rates": closure_rate.to_dict("records"),
         "stress_leaderboard": stress,
+        "stress_rankings": stress,           # alias — frontend compat
+        "cause_distribution": cause_distribution,
+        "closure_analysis": closure_analysis,
         "station_scatter": station_list,
         "fleet_demand": fleet_demand[:15],
     }

@@ -950,7 +950,7 @@ This creates 6 JSON lookup files in `backend/lookup_tables/`:
 **Option 1 - Direct**:
 ```bash
 cd astram
-python -m uvicorn backend.app:app --host 0.0.0.0 --port 5000
+python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000
 ```
 
 **Option 2 - Windows Batch File**:
@@ -960,7 +960,7 @@ astram/run.bat
 
 ### Access the Application
 
-Open browser: **http://localhost:5000**
+Open browser: **http://localhost:8000**
 
 **Pages**:
 1. Command Center - City-wide operations dashboard

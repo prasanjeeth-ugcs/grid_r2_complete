@@ -70,7 +70,7 @@ Complete guide to all documentation files in this project.
 | Understand the system | [README.md](README.md) |
 | Deploy with Docker | [DOCKER_GUIDE.md](DOCKER_GUIDE.md) |
 | Make a demo video | [VIDEO_DEMO_SCRIPT.md](VIDEO_DEMO_SCRIPT.md) |
-| Use the API | http://localhost:5000/docs (after starting) |
+| Use the API | http://localhost:8000/docs (after starting) |
 
 ---
 
@@ -99,11 +99,11 @@ Traffic incident severity prediction system for Bengaluru using ML.
 ### Step 1: Run the Application
 ```bash
 docker pull shivapreetham/astram-ai:latest
-docker run -d -p 5000:5000 shivapreetham/astram-ai:latest
+docker run -d -p 8000:8000 shivapreetham/astram-ai:latest
 ```
 
 ### Step 2: Open Browser
-Navigate to: http://localhost:5000
+Navigate to: http://localhost:8000
 
 ### Step 3: Try the Demo
 - Go to Page 2 (Response Copilot)
@@ -159,11 +159,11 @@ grid_r2_complete/
 **For issues:**
 1. Check [DOCKER_GUIDE.md](DOCKER_GUIDE.md#troubleshooting)
 2. View logs: `docker logs <container-id>`
-3. Test API: `curl http://localhost:5000/api/metadata`
+3. Test API: `curl http://localhost:8000/api/metadata`
 
 **For questions:**
 - Review [README.md](README.md) for technical details
-- Check API docs: http://localhost:5000/docs
+- Check API docs: http://localhost:8000/docs
 
 ---
 
@@ -171,9 +171,9 @@ grid_r2_complete/
 
 **Before Demo:**
 - [ ] Container running: `docker ps`
-- [ ] Port 5000 accessible: `curl http://localhost:5000/`
-- [ ] API responding: `curl http://localhost:5000/api/metadata`
-- [ ] Browser opens: http://localhost:5000
+- [ ] Port 8000 accessible: `curl http://localhost:8000/`
+- [ ] API responding: `curl http://localhost:8000/api/metadata`
+- [ ] Browser opens: http://localhost:8000
 - [ ] All 3 pages load (Command Center, Copilot, Intelligence)
 
 **For Video:**

@@ -6,7 +6,7 @@
 
 ## Opening (5 seconds)
 
-**Screen**: Homepage at http://localhost:5000
+**Screen**: Homepage at http://localhost:8000
 **Say**: "ASTRAM AI - Traffic intelligence for Bengaluru with 95% ML accuracy"
 
 ---
@@ -94,7 +94,7 @@
 ## Part 4: API & Technical (15 seconds)
 
 ### 4.1 Show Swagger Docs (7 sec)
-**Action**: Navigate to http://localhost:5000/docs
+**Action**: Navigate to http://localhost:8000/docs
 **Voiceover**: "27 REST API endpoints available for integration with existing traffic management systems"
 
 ### 4.2 Show Architecture (8 sec)

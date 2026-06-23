@@ -1,180 +1,252 @@
-/*
- * ASTRAM AI - Interactive Map-First Interface
- * Modern, Click-Driven UI
- */
+// ============================================
+// ASTRAM AI - Complete 3-Page Application
+// ============================================
 
-const API = '';
 let mainMap = null;
-let incidentMarkers = [];
-let corridorLayers = [];
-let currentOverlay = 'incidents';
-
-// Data storage
 let cityData = null;
 let corridorData = null;
+let riskData = null;
+let incidentMarkers = [];
+let corridorLayers = [];
 
-// Initialize on page load
+// ============================================
+// 1. INITIALIZATION
+// ============================================
+
 document.addEventListener('DOMContentLoaded', () => {
+    initializeSidebarNavigation();
     initializeMap();
     loadAllData();
-    setupEventHandlers();
+    initializeAIPredictor();
 });
 
-// ===== MAP INITIALIZATION =====
-function initializeMap() {
-    mainMap = L.map('main-map', {
-        zoomControl: false,
-        attributionControl: false
-    }).setView([12.9716, 77.5946], 12);
+// ============================================
+// 2. SIDEBAR NAVIGATION
+// ============================================
 
-    L.control.zoom({ position: 'topright' }).addTo(mainMap);
+function initializeSidebarNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    // Light theme tiles
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        maxZoom: 18
-    }).addTo(mainMap);
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetPage = link.dataset.page;
+            switchPage(targetPage);
 
-    setTimeout(() => mainMap.invalidateSize(), 200);
+            // Update active state
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
 }
 
-// ===== DATA LOADING =====
-async function loadAllData() {
-    try {
-        const [cityPulse, corridorIntel, riskWindow] = await Promise.all([
-            fetch('/api/city-pulse').then(r => r.json()),
-            fetch('/api/corridor-intelligence').then(r => r.json()).catch(() => null),
-            fetch('/api/risk-window').then(r => r.json())
-        ]);
+function switchPage(pageName) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
 
-        cityData = cityPulse;
-        corridorData = corridorIntel;
+    const targetPage = document.getElementById(`page-${pageName}`);
+    if (targetPage) {
+        targetPage.classList.add('active');
 
-        // Update nav stats
-        document.getElementById('nav-total').textContent = cityPulse.kpi.total_events.toLocaleString();
-        document.getElementById('nav-critical').textContent = cityPulse.kpi.critical_count;
-
-        // Update panel stats
-        document.getElementById('stat-total').textContent = cityPulse.kpi.total_events.toLocaleString();
-        document.getElementById('stat-critical').textContent = cityPulse.kpi.critical_count;
-        document.getElementById('stat-closures').textContent = cityPulse.kpi.closure_count;
-        document.getElementById('stat-avg-impact').textContent = cityPulse.kpi.avg_impact.toFixed(1);
-
-        // Render components
-        renderIncidents(cityPulse.map_events);
-        renderStressList(corridorIntel);
-        renderLiveFeed(cityPulse.live_feed);
-        renderRiskHeatmap(riskWindow.risk_window);
-
-    } catch (error) {
-        console.error('Data loading error:', error);
+        // Special handling for different pages
+        if (pageName === 'overview' && mainMap) {
+            setTimeout(() => mainMap.invalidateSize(), 100);
+        } else if (pageName === 'intelligence') {
+            renderIntelligenceCharts();
+        }
     }
 }
 
-// ===== RENDER INCIDENTS ON MAP =====
-function renderIncidents(events) {
+// ============================================
+// 3. MAP INITIALIZATION (PAGE 1)
+// ============================================
+
+function initializeMap() {
+    mainMap = L.map('main-map', {
+        zoomControl: true,
+        attributionControl: false
+    }).setView([12.9716, 77.5946], 12);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        subdomains: 'abcd'
+    }).addTo(mainMap);
+
+    // Map control buttons
+    const overlayButtons = document.querySelectorAll('.map-control-btn');
+    overlayButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const overlay = btn.dataset.overlay;
+
+            // Update active state
+            overlayButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Switch overlay
+            switchOverlay(overlay);
+        });
+    });
+}
+
+// ============================================
+// 4. DATA LOADING
+// ============================================
+
+async function loadAllData() {
+    showKPILoading();
+    try {
+        const [cityRes, corridorRes, riskRes] = await Promise.all([
+            fetch('/api/city-pulse'),
+            fetch('/api/corridor-intelligence'),
+            fetch('/api/risk-window'),
+        ]);
+
+        if (!cityRes.ok || !corridorRes.ok || !riskRes.ok) throw new Error('API error');
+
+        cityData     = await cityRes.json();
+        corridorData = await corridorRes.json();
+        const riskRaw = await riskRes.json();
+        riskData = riskRaw.risk_window || [];
+
+        renderCommandCenter();
+    } catch (error) {
+        console.error('Error loading data:', error);
+        showKPIError();
+    }
+}
+
+function showKPILoading() {
+    ['kpi-total','kpi-critical','kpi-closures','kpi-impact'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = '<span class="spinner" style="width:18px;height:18px;display:inline-block;vertical-align:middle;"></span>';
+    });
+}
+
+function showKPIError() {
+    ['kpi-total','kpi-critical','kpi-closures','kpi-impact'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) { el.textContent = '—'; el.style.color = 'var(--critical)'; }
+    });
+}
+
+// ============================================
+// 5. COMMAND CENTER RENDERING (PAGE 1)
+// ============================================
+
+function renderCommandCenter() {
+    if (!cityData) return;
+
+    // Render KPIs
+    renderKPIs();
+
+    // Render map incidents
+    renderMapIncidents();
+
+    // Render stress bars
+    renderStressBars();
+
+    // Render risk heatmap
+    renderRiskHeatmap();
+
+    // Render recent incidents feed
+    renderIncidentFeed();
+}
+
+function renderKPIs() {
+    const kpis = cityData.kpi || {};
+    document.getElementById('kpi-total').textContent = kpis.total_events || 0;
+    document.getElementById('kpi-critical').textContent = kpis.critical_count || 0;
+    document.getElementById('kpi-closures').textContent = kpis.closure_count || 0;
+    document.getElementById('kpi-impact').textContent = kpis.avg_impact ? kpis.avg_impact.toFixed(1) : '0';
+}
+
+function renderMapIncidents() {
     // Clear existing markers
-    incidentMarkers.forEach(m => mainMap.removeLayer(m));
+    incidentMarkers.forEach(marker => mainMap.removeLayer(marker));
     incidentMarkers = [];
 
-    const classColors = {
-        'Critical': '#dc2626',
-        'High': '#ea580c',
-        'Medium': '#f59e0b',
-        'Low': '#16a34a'
-    };
+    if (!cityData.map_events) return;
 
-    events.slice(0, 200).forEach(evt => {
-        if (!evt.latitude || !evt.longitude) return;
+    cityData.map_events.forEach(event => {
+        if (!event.latitude || !event.longitude) return;
 
-        const color = classColors[evt.impact_class] || '#64748b';
-        const marker = L.circleMarker([evt.latitude, evt.longitude], {
-            radius: evt.impact_class === 'Critical' ? 6 : evt.impact_class === 'High' ? 5 : 4,
+        // Determine color based on impact score
+        const impact = event.impact_score || 0;
+        let color = '#16a34a'; // low
+        if (impact >= 75) color = '#dc2626'; // critical
+        else if (impact >= 50) color = '#ea580c'; // high
+        else if (impact >= 25) color = '#f59e0b'; // medium
+
+        const marker = L.circleMarker([event.latitude, event.longitude], {
+            radius: 8,
             fillColor: color,
             color: '#fff',
-            fillOpacity: 0.7,
+            weight: 2,
             opacity: 1,
-            weight: 1
-        });
+            fillOpacity: 0.8
+        }).addTo(mainMap);
 
-        marker.bindPopup(`
-            <div style="font-family: 'DM Sans', sans-serif; font-size: 13px; min-width: 180px;">
-                <strong style="color: ${color};">${formatLabel(evt.event_cause)}</strong><br>
-                <div style="margin-top: 6px; color: #64748b; font-size: 12px;">
-                    <div>${evt.corridor || 'Non-corridor'}</div>
-                    <div style="margin-top: 4px;">
-                        <span style="color: ${color}; font-weight: 600;">Score: ${Math.round(evt.impact_score)}</span> ·
-                        <span>${evt.impact_class}</span>
-                    </div>
-                </div>
+        // Popup
+        const popupContent = `
+            <div style="font-family: 'DM Sans', sans-serif;">
+                <strong style="font-size: 14px; color: #0f172a;">${event.event_cause || 'Unknown'}</strong><br>
+                <span style="font-size: 12px; color: #64748b;">${event.corridor || 'Unknown corridor'}</span><br>
+                <span style="font-size: 13px; font-weight: 600; color: ${color};">Impact: ${impact.toFixed(0)}</span>
             </div>
-        `);
+        `;
+        marker.bindPopup(popupContent);
 
-        // Click handler to show incident details
-        marker.on('click', () => showIncidentDetails(evt));
-
-        marker.addTo(mainMap);
         incidentMarkers.push(marker);
     });
 }
 
-// ===== RENDER STRESS LIST =====
-function renderStressList(data) {
-    if (!data || !data.stress_rankings) return;
+function renderStressBars() {
+    const container = document.getElementById('stress-bars');
+    if (!container || !corridorData) return;
 
-    const container = document.getElementById('stress-list');
-    const top5 = data.stress_rankings.slice(0, 5);
+    container.innerHTML = '';
 
-    container.innerHTML = top5.map(corridor => `
-        <div class="stress-item" onclick="showCorridorDetails('${corridor.corridor}', ${corridor.stress_index})">
-            <span class="stress-label">${corridor.corridor}</span>
-            <span class="stress-value">${corridor.stress_index.toFixed(1)}</span>
-        </div>
-    `).join('');
-}
+    const topCorridors = (corridorData.stress_rankings || corridorData.stress_leaderboard || []).slice(0, 8);
 
-// ===== RENDER LIVE FEED =====
-function renderLiveFeed(feed) {
-    const container = document.getElementById('live-feed');
-    if (!feed || !feed.length) return;
+    topCorridors.forEach(corridor => {
+        const stress = corridor.stress_index || 0;
 
-    container.innerHTML = feed.slice(0, 10).map(item => {
-        const classColors = {
-            'Critical': '#dc2626',
-            'High': '#ea580c',
-            'Medium': '#f59e0b',
-            'Low': '#16a34a'
-        };
-        const color = classColors[item.impact_class] || '#64748b';
+        // Color based on stress
+        let color = '#16a34a';
+        if (stress >= 75) color = '#dc2626';
+        else if (stress >= 50) color = '#ea580c';
+        else if (stress >= 25) color = '#f59e0b';
 
-        return `
-            <div class="feed-item" style="border-left-color: ${color};" onclick='showIncidentFromFeed(${JSON.stringify(item)})'>
-                <span class="feed-time">${item.timestamp_ago}</span>
-                <span class="feed-cause">${formatLabel(item.event_cause)}</span>
-                <span class="feed-location">${item.corridor || 'Non-corridor'} · Score: ${Math.round(item.impact_score)}</span>
+        const item = document.createElement('div');
+        item.className = 'stress-bar-item';
+        item.innerHTML = `
+            <div class="stress-bar-label">${corridor.corridor}</div>
+            <div class="stress-bar-track">
+                <div class="stress-bar-fill" style="width: ${stress}%; background: ${color};"></div>
             </div>
+            <div class="stress-bar-value">${stress.toFixed(0)}</div>
         `;
-    }).join('');
+        container.appendChild(item);
+    });
 }
 
-// ===== RENDER RISK HEATMAP =====
-function renderRiskHeatmap(data) {
-    const container = document.getElementById('risk-heatmap');
+function renderRiskHeatmap() {
     const hourLabelsContainer = document.getElementById('risk-hour-labels');
-    if (!data) return;
+    const heatmapContainer = document.getElementById('risk-heatmap');
 
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    if (!hourLabelsContainer || !heatmapContainer || !riskData) return;
 
     // Convert array to lookup map
     const riskMap = {};
-    data.forEach(slot => {
+    riskData.forEach(slot => {
         riskMap[`${slot.weekday}_${slot.hour}`] = slot.event_count;
     });
 
-    // Get max count for color scaling
-    const maxCount = Math.max(...Object.values(riskMap));
+    // Find max for color scaling
+    const maxCount = Math.max(...riskData.map(s => s.event_count), 1);
 
-    // Render hour labels
-    hourLabelsContainer.innerHTML = '<div></div>'; // Empty cell for day label column
+    // Hour labels (0-23)
+    hourLabelsContainer.innerHTML = '<div></div>'; // Empty corner
     for (let h = 0; h < 24; h++) {
         const label = document.createElement('div');
         label.className = 'risk-hour-label';
@@ -182,231 +254,538 @@ function renderRiskHeatmap(data) {
         hourLabelsContainer.appendChild(label);
     }
 
-    container.innerHTML = '';
+    // Days grid
+    heatmapContainer.innerHTML = '';
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-    // Render in grid: 7 rows (days) x 24 columns (hours)
     for (let dayIdx = 0; dayIdx < 7; dayIdx++) {
         // Day label
         const dayLabel = document.createElement('div');
         dayLabel.className = 'risk-day-label';
         dayLabel.textContent = days[dayIdx];
-        container.appendChild(dayLabel);
+        heatmapContainer.appendChild(dayLabel);
 
         // Hour cells for this day
-        for (let hour = 0; hour < 24; hour++) {
-            const key = `${dayIdx}_${hour}`;
-            const count = riskMap[key] || 0;
-            const intensity = maxCount > 0 ? (count / maxCount) : 0;
+        for (let h = 0; h < 24; h++) {
+            const count = riskMap[`${dayIdx}_${h}`] || 0;
+            const intensity = count / maxCount;
+
+            let color = '#f1f5f9';
+            if (intensity > 0.7) color = '#dc2626';
+            else if (intensity > 0.5) color = '#ea580c';
+            else if (intensity > 0.3) color = '#f59e0b';
+            else if (intensity > 0.1) color = '#fbbf24';
 
             const cell = document.createElement('div');
             cell.className = 'risk-cell';
-
-            // Color based on intensity
-            if (intensity > 0.75) {
-                cell.style.backgroundColor = '#dc2626';
-            } else if (intensity > 0.5) {
-                cell.style.backgroundColor = '#ea580c';
-            } else if (intensity > 0.25) {
-                cell.style.backgroundColor = '#f59e0b';
-            } else if (count > 0) {
-                cell.style.backgroundColor = '#16a34a';
-            } else {
-                cell.style.backgroundColor = '#e2e8f0';
-            }
-
-            cell.title = `${days[dayIdx]} ${hour.toString().padStart(2, '0')}:00\n${count} incidents`;
-            container.appendChild(cell);
+            cell.style.backgroundColor = color;
+            cell.title = `${days[dayIdx]} ${h}:00 - ${count} incidents`;
+            heatmapContainer.appendChild(cell);
         }
     }
 }
 
-// ===== PANEL SWITCHING =====
-function showDefaultPanel() {
-    document.querySelectorAll('.panel-view').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-default').classList.add('active');
-}
+function renderIncidentFeed() {
+    const container = document.getElementById('live-feed');
+    const feedItems = cityData.feed || cityData.map_events || [];
+    if (!container || !feedItems.length) return;
 
-function showIncidentPanel() {
-    document.querySelectorAll('.panel-view').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-incident').classList.add('active');
-}
+    container.innerHTML = '';
 
-function showCorridorPanel() {
-    document.querySelectorAll('.panel-view').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-corridor').classList.add('active');
-}
+    feedItems.slice(0, 10).forEach(event => {
+        const item = document.createElement('div');
+        item.className = 'feed-item';
 
-// ===== INCIDENT DETAILS =====
-async function showIncidentDetails(incident) {
-    showIncidentPanel();
+        // Backend feed items have a pre-formatted timestamp string
+        const timeStr = event.timestamp || (event.start_datetime
+            ? new Date(event.start_datetime).toLocaleString('en-US', {
+                month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+            })
+            : 'Recent');
 
-    const detailsContainer = document.getElementById('incident-details');
-    detailsContainer.innerHTML = `
-        <div style="background: var(--bg-primary); padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
-                <div>
-                    <div style="font-size: 18px; font-weight: 700; color: var(--text-primary);">${formatLabel(incident.event_cause)}</div>
-                    <div style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">${incident.corridor || 'Non-corridor'}</div>
-                </div>
-                <div style="text-align: right;">
-                    <div style="font-size: 24px; font-weight: 700; color: ${getRiskColor(incident.impact_class)};">${Math.round(incident.impact_score)}</div>
-                    <div style="font-size: 12px; color: var(--text-secondary);">${incident.impact_class}</div>
-                </div>
-            </div>
-        </div>
-    `;
+        item.innerHTML = `
+            <span class="feed-time">${timeStr}</span>
+            <span class="feed-cause">${(event.cause || event.event_cause || 'Unknown').replace(/_/g, ' ')}</span>
+            <span class="feed-location">${event.corridor || 'Unknown location'}</span>
+        `;
 
-    // Run AI prediction
-    await runPrediction({
-        cause: incident.event_cause,
-        corridor: incident.corridor || 'Non-corridor',
-        vehicle_type: incident.vehicle_type || 'others',
-        hour: new Date().getHours(),
-        weekday: new Date().getDay(),
-        closure: incident.requires_road_closure || false
+        container.appendChild(item);
     });
 }
 
-function showIncidentFromFeed(item) {
-    showIncidentDetails(item);
-}
+// ============================================
+// 6. OVERLAY SWITCHING (PAGE 1 MAP)
+// ============================================
 
-// ===== CORRIDOR DETAILS =====
-async function showCorridorDetails(corridorName, stressIndex) {
-    showCorridorPanel();
-
-    document.getElementById('corridor-name').textContent = corridorName;
-
-    try {
-        const response = await fetch('/api/corridor-intelligence');
-        const data = await response.json();
-
-        // Find corridor in stress rankings
-        const corridor = data.stress_rankings.find(c => c.corridor === corridorName);
-
-        if (corridor) {
-            document.getElementById('corridor-total').textContent = corridor.total_incidents || '-';
-            document.getElementById('corridor-stress').textContent = corridor.stress_index.toFixed(1);
-            document.getElementById('corridor-tier').textContent = corridor.tier || '-';
-            document.getElementById('corridor-closure-rate').textContent = (corridor.closure_rate || 0) + '%';
-            document.getElementById('corridor-cause').textContent = formatLabel(corridor.dominant_cause || '-');
-            document.getElementById('corridor-peak').textContent = (corridor.peak_hour || '-') + ':00';
-        }
-    } catch (error) {
-        console.error('Corridor details error:', error);
+function switchOverlay(overlayType) {
+    if (overlayType === 'incidents') {
+        showIncidentsOverlay();
+    } else if (overlayType === 'corridors') {
+        showCorridorsOverlay();
+    } else if (overlayType === 'heatmap') {
+        showHeatmapOverlay();
     }
 }
 
-// ===== AI PREDICTION =====
-async function runPrediction(params) {
+function showIncidentsOverlay() {
+    // Clear corridor layers
+    corridorLayers.forEach(layer => mainMap.removeLayer(layer));
+    corridorLayers = [];
+
+    // Show all incident markers
+    incidentMarkers.forEach(marker => {
+        if (!mainMap.hasLayer(marker)) {
+            marker.addTo(mainMap);
+        }
+    });
+}
+
+function showCorridorsOverlay() {
+    // Hide incident markers
+    incidentMarkers.forEach(marker => mainMap.removeLayer(marker));
+
+    // Clear previous corridor layers
+    corridorLayers.forEach(layer => mainMap.removeLayer(layer));
+    corridorLayers = [];
+
+    if (!corridorData || !cityData) return;
+
+    // Show top 10 stressed corridors as large circles
+    const topCorridors = (corridorData.stress_rankings || corridorData.stress_leaderboard || []).slice(0, 10);
+
+    topCorridors.forEach(corridor => {
+        // Find incidents in this corridor to get average location
+        const corridorIncidents = cityData.map_events.filter(e => e.corridor === corridor.corridor);
+
+        if (corridorIncidents.length > 0) {
+            const avgLat = corridorIncidents.reduce((sum, e) => sum + (e.latitude || 0), 0) / corridorIncidents.length;
+            const avgLon = corridorIncidents.reduce((sum, e) => sum + (e.longitude || 0), 0) / corridorIncidents.length;
+
+            const stress = corridor.stress_index;
+            let color = stress >= 75 ? '#dc2626' : stress >= 50 ? '#ea580c' : stress >= 25 ? '#f59e0b' : '#16a34a';
+
+            const circle = L.circle([avgLat, avgLon], {
+                radius: 1000 + (stress * 20),
+                color: color,
+                fillColor: color,
+                fillOpacity: 0.25,
+                weight: 3,
+                opacity: 0.8
+            }).addTo(mainMap);
+
+            circle.bindPopup(`
+                <div style="font-family: 'DM Sans', sans-serif;">
+                    <strong style="font-size: 14px; color: #0f172a;">${corridor.corridor}</strong><br>
+                    <span style="font-size: 13px; color: #64748b;">Stress Index: <strong style="color: ${color};">${stress.toFixed(0)}</strong></span><br>
+                    <span style="font-size: 12px; color: #64748b;">Incidents: ${corridor.incident_count}</span>
+                </div>
+            `);
+
+            corridorLayers.push(circle);
+        }
+    });
+}
+
+function showHeatmapOverlay() {
+    // Hide incident markers
+    incidentMarkers.forEach(marker => mainMap.removeLayer(marker));
+
+    // Clear previous corridor layers
+    corridorLayers.forEach(layer => mainMap.removeLayer(layer));
+    corridorLayers = [];
+
+    if (!cityData) return;
+
+    // Create density-based heatmap visualization with LARGER, more visible circles
+    const heatData = cityData.map_events
+        .filter(e => e.latitude && e.longitude)
+        .map(e => {
+            const weight = (e.impact_score || 0) / 100;
+            return [e.latitude, e.longitude, weight, e.impact_score];
+        });
+
+    heatData.forEach(([lat, lon, weight, impactScore]) => {
+        const intensity = weight;
+
+        // Determine color
+        let color = '#16a34a';
+        if (intensity > 0.75) color = '#dc2626';
+        else if (intensity > 0.5) color = '#ea580c';
+        else if (intensity > 0.25) color = '#f59e0b';
+
+        // MUCH LARGER circles with gradient effect
+        const circle = L.circleMarker([lat, lon], {
+            radius: 15 + (intensity * 25), // Larger base size
+            fillColor: color,
+            color: color,
+            fillOpacity: 0.35,
+            opacity: 0.7,
+            weight: 2
+        }).addTo(mainMap);
+
+        circle.bindPopup(`
+            <div style="font-family: 'DM Sans', sans-serif;">
+                <strong style="font-size: 14px; color: ${color};">Heat Intensity</strong><br>
+                <span style="font-size: 13px; color: #64748b;">Impact Score: ${impactScore.toFixed(0)}</span>
+            </div>
+        `);
+
+        corridorLayers.push(circle);
+    });
+}
+
+// ============================================
+// 7. AI PREDICTOR (PAGE 2)
+// ============================================
+
+function initializeAIPredictor() {
+    populatePredictorDropdowns();
+
+    // Show placeholder before first prediction
+    const resultsContainer = document.getElementById('prediction-results');
+    if (resultsContainer) {
+        resultsContainer.innerHTML = `
+            <div class="empty-state">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6M5.6 5.6l4.2 4.2m4.2 4.2l4.2 4.2M1 12h6m6 0h6M5.6 18.4l4.2-4.2m4.2-4.2l4.2-4.2"/>
+                </svg>
+                <strong>No prediction yet</strong>
+                <p>Fill in the incident details on the left and click Analyze Impact.</p>
+            </div>`;
+    }
+
+    const predictBtn = document.getElementById('btn-predict');
+    if (predictBtn) {
+        predictBtn.addEventListener('click', handlePrediction);
+    }
+}
+
+async function populatePredictorDropdowns() {
+    try {
+        const response = await fetch('/api/metadata');
+        const options = await response.json();
+
+        // Populate Event Cause
+        const causeSelect = document.getElementById('input-cause');
+        if (causeSelect && options.event_causes) {
+            causeSelect.innerHTML = options.event_causes.map(cause =>
+                `<option value="${cause}">${cause.replace(/_/g, ' ')}</option>`
+            ).join('');
+        }
+
+        // Populate Corridor
+        const corridorSelect = document.getElementById('input-corridor');
+        if (corridorSelect && options.corridors) {
+            corridorSelect.innerHTML = options.corridors.map(corridor =>
+                `<option value="${corridor}">${corridor}</option>`
+            ).join('');
+        }
+
+        // Populate Vehicle Type
+        const vehicleSelect = document.getElementById('input-vehicle');
+        if (vehicleSelect && options.vehicle_types) {
+            vehicleSelect.innerHTML = options.vehicle_types.map(veh =>
+                `<option value="${veh}">${veh.replace(/_/g, ' ')}</option>`
+            ).join('');
+        }
+
+    } catch (error) {
+        console.error('Error loading predictor options:', error);
+    }
+}
+
+async function handlePrediction() {
+    const cause    = document.getElementById('input-cause').value;
+    const corridor = document.getElementById('input-corridor').value;
+    const vehicle  = document.getElementById('input-vehicle').value;
+    const hour     = parseInt(document.getElementById('input-hour').value);
+    const weekday  = parseInt(document.getElementById('input-weekday').value);
+    const closure  = document.getElementById('input-closure').checked;
+
+    const btn = document.getElementById('btn-predict');
+    const resultsContainer = document.getElementById('prediction-results');
+
+    // Loading state
+    btn.disabled = true;
+    btn.textContent = 'Analyzing…';
+    resultsContainer.innerHTML = `
+        <div class="loading-state">
+            <div class="spinner"></div>
+            <span>Running CatBoost model…</span>
+        </div>`;
+
     try {
         const response = await fetch('/api/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(params)
+            body: JSON.stringify({ cause, corridor, vehicle_type: vehicle, hour, weekday, closure })
         });
 
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const result = await response.json();
-
-        // Update score ring
-        document.getElementById('incident-score').textContent = Math.round(result.impact_score);
-        updateScoreRing('incident-ring', result.impact_score);
-
-        // Update class
-        const classEl = document.getElementById('incident-class');
-        classEl.textContent = result.risk_class;
-        classEl.style.color = getRiskColor(result.risk_class);
-
-        // Update confidence
-        document.getElementById('incident-confidence').textContent =
-            `${result.confidence.level} confidence (${result.confidence.matching_count} similar cases)`;
-
-        // Update resources
-        const resourcesContainer = document.getElementById('incident-resources');
-        const resources = result.resource_plan.resources;
-        resourcesContainer.innerHTML = `
-            <div style="background: var(--bg-primary); padding: 14px; border-radius: var(--radius-md);">
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 13px;">
-                    ${resources.police_units > 0 ? `<div><strong>Police Units:</strong> ${resources.police_units}</div>` : ''}
-                    ${resources.tow_trucks > 0 ? `<div><strong>Tow Trucks:</strong> ${resources.tow_trucks}</div>` : ''}
-                    ${resources.barricades > 0 ? `<div><strong>Barricades:</strong> ${resources.barricades}</div>` : ''}
-                    <div><strong>Diversion:</strong> ${resources.diversion_required ? 'Required' : 'Not needed'}</div>
-                </div>
-                <div style="margin-top: 10px; font-size: 12px; color: var(--text-secondary);">
-                    Expected Resolution: <strong>${result.resource_plan.resolution.median}</strong>
-                </div>
-            </div>
-        `;
-
-        // Update historical
-        const hist = result.historical_evidence;
-        const histContainer = document.getElementById('incident-historical');
-        histContainer.innerHTML = `
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-                <div style="text-align: center; background: var(--bg-primary); padding: 12px; border-radius: var(--radius-md);">
-                    <div style="font-size: 20px; font-weight: 700; color: var(--brand-primary);">${hist.count}</div>
-                    <div style="font-size: 11px; color: var(--text-tertiary);">Similar Cases</div>
-                </div>
-                <div style="text-align: center; background: var(--bg-primary); padding: 12px; border-radius: var(--radius-md);">
-                    <div style="font-size: 20px; font-weight: 700; color: var(--critical);">${hist.critical_rate}%</div>
-                    <div style="font-size: 11px; color: var(--text-tertiary);">Critical Rate</div>
-                </div>
-            </div>
-        `;
+        renderPredictionResult(result);
 
     } catch (error) {
+        resultsContainer.innerHTML = `
+            <div class="error-banner">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                Prediction failed — is the backend running?
+            </div>`;
         console.error('Prediction error:', error);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Analyze Impact';
     }
 }
 
-// ===== EVENT HANDLERS =====
-function setupEventHandlers() {
-    // Map overlay toggles
-    document.querySelectorAll('.map-control-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.map-control-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+function buildRecommendationList(result) {
+    // result.recommendations is a plain array (legacy)
+    // result.resource_plan is the backend's V2 structure: {units: [...], actions: [...], ...}
+    if (result.recommendations && result.recommendations.length) {
+        return result.recommendations.map(r => `<li>• ${r}</li>`).join('');
+    }
+    const plan = result.resource_plan;
+    if (!plan) return '<li>No recommendations available</li>';
 
-            const overlay = btn.dataset.overlay;
-            currentOverlay = overlay;
+    const lines = [];
+    if (plan.units && plan.units.length) {
+        plan.units.forEach(u => lines.push(`• Deploy ${u.count || ''} ${u.type || u} — ${u.location || ''}`));
+    }
+    if (plan.actions && plan.actions.length) {
+        plan.actions.forEach(a => lines.push(`• ${a}`));
+    }
+    if (plan.priority) lines.push(`• Priority: ${plan.priority}`);
+    if (plan.estimated_clearance_mins) lines.push(`• Est. clearance: ${plan.estimated_clearance_mins} min`);
 
-            // TODO: Implement overlay switching (corridors, heatmap)
-            if (overlay === 'incidents') {
-                // Already showing incidents
-            } else if (overlay === 'corridors') {
-                // Show corridor polygons
-            } else if (overlay === 'heatmap') {
-                // Show heatmap overlay
-            }
+    return lines.length ? lines.map(l => `<li>${l}</li>`).join('') : '<li>No recommendations available</li>';
+}
+
+function renderPredictionResult(result) {
+    const container = document.getElementById('prediction-results');
+
+    const score       = result.impact_score || 0;
+    const impactClass = (result.risk_class || result.impact_class || 'Unknown').toLowerCase();
+    const confidence  = result.confidence ? Math.round(result.confidence * 100) : null;
+
+    // Color per severity
+    const colorMap = { critical: '#dc2626', high: '#ea580c', medium: '#f59e0b', low: '#16a34a' };
+    const color = colorMap[impactClass] || '#2563eb';
+    const labelClass = colorMap[impactClass] ? impactClass : 'low';
+
+    // SVG ring
+    const circumference = 2 * Math.PI * 50;
+    const offset = circumference - (score / 100) * circumference;
+
+    const confidenceHTML = confidence !== null ? `
+        <div class="confidence-row">
+            <div class="confidence-label">
+                <span>Model Confidence</span>
+                <span>${confidence}%</span>
+            </div>
+            <div class="confidence-track">
+                <div class="confidence-fill" style="width: ${confidence}%"></div>
+            </div>
+        </div>` : '';
+
+    container.innerHTML = `
+        <div class="prediction-card">
+            <div class="score-circle">
+                <svg viewBox="0 0 120 120">
+                    <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+                    <circle class="ring-fg" cx="60" cy="60" r="50"
+                        style="stroke:${color}; stroke-dasharray:${circumference}; stroke-dashoffset:${offset};"></circle>
+                </svg>
+                <div class="score-text" style="color:${color};">${score.toFixed(0)}</div>
+            </div>
+
+            <div class="impact-label ${labelClass}"
+                 style="background:${color}18; color:${color};">
+                ${(result.risk_class || result.impact_class || 'Unknown')}
+            </div>
+
+            ${confidenceHTML}
+
+            <div class="recommendation-section">
+                <h4>Recommendations</h4>
+                <ul>${buildRecommendationList(result)}</ul>
+            </div>
+        </div>`;
+}
+
+// ============================================
+// 8. INTELLIGENCE CHARTS (PAGE 3)
+// ============================================
+
+let charts = {};
+
+async function renderIntelligenceCharts() {
+    if (!corridorData) {
+        // Show spinners in each chart section while loading
+        document.querySelectorAll('.chart-section canvas').forEach(c => {
+            c.style.display = 'none';
+            const loading = document.createElement('div');
+            loading.className = 'loading-state chart-loading';
+            loading.innerHTML = '<div class="spinner"></div><span>Loading…</span>';
+            c.parentNode.appendChild(loading);
         });
+        try {
+            const response = await fetch('/api/corridor-intelligence');
+            corridorData = await response.json();
+        } catch (error) {
+            console.error('Error loading corridor intelligence:', error);
+            return;
+        } finally {
+            document.querySelectorAll('.chart-section canvas').forEach(c => c.style.display = '');
+            document.querySelectorAll('.chart-loading').forEach(el => el.remove());
+        }
+    }
+
+    // Destroy existing charts
+    Object.values(charts).forEach(chart => {
+        if (chart) chart.destroy();
+    });
+    charts = {};
+
+    renderStressChart();
+    renderHourlyChart();
+    renderCausesChart();
+    renderClosuresChart();
+}
+
+function renderStressChart() {
+    const ctx = document.getElementById('chart-stress');
+    if (!ctx || !corridorData) return;
+
+    const topCorridors = (corridorData.stress_rankings || corridorData.stress_leaderboard || []).slice(0, 10);
+
+    charts.stress = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: topCorridors.map(c => c.corridor),
+            datasets: [{
+                label: 'Stress Index',
+                data: topCorridors.map(c => c.stress_index),
+                backgroundColor: topCorridors.map(c => {
+                    const s = c.stress_index;
+                    if (s >= 75) return '#dc2626';
+                    if (s >= 50) return '#ea580c';
+                    if (s >= 25) return '#f59e0b';
+                    return '#16a34a';
+                }),
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true, max: 100 } }
+        }
     });
 }
 
-// ===== UTILITIES =====
-function formatLabel(str) {
-    if (!str) return 'Unknown';
-    return str.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+function renderHourlyChart() {
+    const ctx = document.getElementById('chart-hourly');
+    if (!ctx || !riskData) return;
+
+    const hourlyData = Array(24).fill(0);
+    riskData.forEach(slot => {
+        hourlyData[slot.hour] += slot.event_count;
+    });
+
+    charts.hourly = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: Array.from({length: 24}, (_, i) => `${i}:00`),
+            datasets: [{
+                label: 'Incidents',
+                data: hourlyData,
+                borderColor: '#2563eb',
+                backgroundColor: 'rgba(37,99,235,0.08)',
+                fill: true,
+                tension: 0.4,
+                borderWidth: 2,
+                pointRadius: 3,
+                pointBackgroundColor: '#2563eb'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true } }
+        }
+    });
 }
 
-function getRiskColor(cls) {
-    if (cls === 'Critical') return '#dc2626';
-    if (cls === 'High') return '#ea580c';
-    if (cls === 'Medium') return '#f59e0b';
-    return '#16a34a';
+function renderCausesChart() {
+    const ctx = document.getElementById('chart-causes');
+    if (!ctx || !corridorData) return;
+
+    const causeData = corridorData.cause_distribution || {};
+    const labels = Object.keys(causeData).slice(0, 8);
+    const values = labels.map(l => causeData[l]);
+
+    charts.causes = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels.map(l => l.replace(/_/g, ' ')),
+            datasets: [{
+                data: values,
+                backgroundColor: [
+                    '#dc2626','#ea580c','#f59e0b','#fbbf24',
+                    '#16a34a','#2563eb','#7c3aed','#db2777'
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: { boxWidth: 12, font: { size: 11 } }
+                }
+            }
+        }
+    });
 }
 
-function updateScoreRing(circleId, score, maxScore = 100) {
-    const circle = document.getElementById(circleId);
-    if (!circle) return;
+function renderClosuresChart() {
+    const ctx = document.getElementById('chart-closures');
+    if (!ctx || !corridorData) return;
 
-    const r = parseFloat(circle.getAttribute('r'));
-    const circumference = 2 * Math.PI * r;
-    const offset = circumference - (score / maxScore) * circumference;
+    const closureData = corridorData.closure_analysis || {};
+    const labels = Object.keys(closureData).slice(0, 8);
+    const values = labels.map(l => closureData[l]);
 
-    circle.style.strokeDasharray = circumference;
-    circle.style.strokeDashoffset = offset;
-
-    // Color by risk class
-    const cls = score >= 75 ? 'Critical' : score >= 50 ? 'High' : score >= 25 ? 'Medium' : 'Low';
-    circle.style.stroke = getRiskColor(cls);
+    charts.closures = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels.map(l => l.replace(/_/g, ' ')),
+            datasets: [{
+                label: 'Closure Rate (%)',
+                data: values,
+                backgroundColor: '#ea580c',
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: { callback: v => v + '%' }
+                }
+            }
+        }
+    });
 }
